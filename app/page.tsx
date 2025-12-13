@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
 
@@ -7,6 +8,8 @@ const Home = () => {
       <Header />
 
       <HeroSection />
+
+      <Footer />
     </main>
   );
 };
