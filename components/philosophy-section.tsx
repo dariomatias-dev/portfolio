@@ -1,78 +1,24 @@
 "use client";
 
 import { Feather, Quote } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
+
+import { QuoteItem } from "@/@types/quote";
+import { quaoteGradients } from "@/constants/quaote-gradients";
+import { quotes } from "@/constants/quotes";
 
 export const PhilosophySection = () => {
-  const allQuotes = useMemo(
-    () => [
-      {
-        text: "Simplicity is the ultimate sophistication.",
-        author: "Leonardo da Vinci",
-      },
-      {
-        text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
-        author: "Martin Fowler",
-      },
-      {
-        text: "The best way to predict the future is to invent it.",
-        author: "Alan Kay",
-      },
-      {
-        text: "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
-        author: "Aristotle",
-      },
-      {
-        text: "Happiness depends more on what we are than on what we have.",
-        author: "Arthur Schopenhauer",
-      },
-      {
-        text: "Nothing that was will be again the way it once was.",
-        author: "Belchior",
-      },
-      {
-        text: "We cannot teach anyone anything; we can only help them find the answer within themselves.",
-        author: "Galileo Galilei",
-      },
-      {
-        text: "There is no favorable wind for those who do not know where to go.",
-        author: "Seneca",
-      },
-      { text: "True power is self-control.", author: "Buddha" },
-      {
-        text: "True freedom is living according to your own essence.",
-        author: "Epictetus",
-      },
-      {
-        text: "Your worst sin is having destroyed and betrayed yourself for nothing.",
-        author: "Dostoevsky",
-      },
-    ],
-    []
-  );
-
-  const gradients = useMemo(
-    () => [
-      "from-blue-50 via-indigo-50/50 to-white",
-      "from-indigo-50 via-purple-50/50 to-white",
-      "from-violet-50 via-fuchsia-50/50 to-white",
-    ],
-    []
-  );
-
-  const [quotes, setQuotes] = useState<typeof allQuotes>([]);
+  const [selectedQuotes, setSelectedQuotes] = useState<QuoteItem[]>([]);
 
   useEffect(() => {
     const shuffleQuotes = () => {
-      const shuffled = [...allQuotes]
-        .sort(() => 0.5 - Math.random())
-        .slice(0, 3);
+      const shuffled = quotes.sort(() => 0.5 - Math.random()).slice(0, 3);
 
-      setQuotes(shuffled);
+      setSelectedQuotes(shuffled);
     };
 
     shuffleQuotes();
-  }, [allQuotes, gradients]);
+  }, []);
 
   return (
     <section className="relative py-20 bg-white overflow-hidden selection:bg-blue-100 selection:text-blue-900">
@@ -98,13 +44,13 @@ export const PhilosophySection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {quotes.map((quote, index) => (
+          {selectedQuotes.map((quote, index) => (
             <div
               key={index}
               className="group relative flex flex-col h-full bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 overflow-hidden"
             >
               <div
-                className={`absolute inset-0 bg-linear-to-br ${gradients[index]} opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out`}
+                className={`absolute inset-0 bg-linear-to-br ${quaoteGradients[index]} opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out`}
               />
               <Quote
                 className="absolute -bottom-4 -right-4 text-slate-100/80 group-hover:text-white/80 group-hover:scale-110 transition-all duration-700 -rotate-12"
