@@ -1,3 +1,4 @@
+import { CareerSection } from "@/components/career-section";
 import { EducationSection } from "@/components/education-section";
 import { EngineeringSection } from "@/components/engineering-section";
 import { Footer } from "@/components/footer";
@@ -20,6 +21,8 @@ const Home = () => {
       <TechStackSection />
 
       <EducationSection />
+
+      <CareerSection />
 
       <Footer />
     </main>
