@@ -6,6 +6,7 @@ import { EngineeringSection } from "@/components/engineering-section";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
+import { PhilosophySection } from "@/components/philosophy-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { TechStackSection } from "@/components/tech-stack-section";
 
@@ -29,6 +30,8 @@ const Home = () => {
       <CommunitySection />
 
       <ContactSection />
+
+      <PhilosophySection />
 
       <Footer />
     </main>
