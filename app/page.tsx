@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
 import { ProjectsSection } from "@/components/projects-section";
+import { TechStackSection } from "@/components/tech-stack-section";
 
 const Home = () => {
   return (
@@ -14,6 +15,8 @@ const Home = () => {
       <EngineeringSection />
 
       <ProjectsSection />
+
+      <TechStackSection />
 
       <Footer />
     </main>
