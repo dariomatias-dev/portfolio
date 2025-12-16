@@ -12,6 +12,7 @@ import {
 import { useState } from "react";
 
 import { contributions } from "@/constants/community";
+import { BadgeSection } from "./badge-section";
 
 export const CommunitySection = () => {
   const [copied, setCopied] = useState<string | null>(null);
@@ -32,10 +33,8 @@ export const CommunitySection = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 md:mb-16 gap-8 lg:gap-12">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
-              <HeartHandshake size={12} />
-              Community
-            </span>
+            <BadgeSection theme="dark" icon={HeartHandshake}>Community</BadgeSection>
+
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-6">
               Building for{" "}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">

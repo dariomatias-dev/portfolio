@@ -12,6 +12,7 @@ import { useRef, useState } from "react";
 
 import { TechStackItem } from "@/@types/tech-stack";
 import { techStack } from "@/constants/technologies";
+import { BadgeSection } from "./badge-section";
 
 export const TechStackSection = () => {
   const [activeTab, setActiveTab] = useState("All");
@@ -61,10 +62,8 @@ export const TechStackSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6 md:gap-8">
           <div className="max-w-xl">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-4">
-              <Layers size={12} />
-              Tech Stack
-            </span>
+            <BadgeSection icon={Layers}>Tech Stack</BadgeSection>
+
             <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
               Comprehensive Development Stack
             </h2>

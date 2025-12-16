@@ -6,6 +6,7 @@ import {
   Smartphone,
   Terminal,
 } from "lucide-react";
+import { BadgeSection } from "./badge-section";
 
 export const EngineeringSection = () => {
   return (
@@ -18,10 +19,8 @@ export const EngineeringSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold uppercase tracking-wider mb-6">
-              <Terminal size={12} />
-              Engineering
-            </span>
+            <BadgeSection icon={Terminal}>Engineering</BadgeSection>
+
             <h2 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.1]">
               Systems built for <br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-indigo-600 to-violet-600">

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { QuoteItem } from "@/@types/quote";
 import { quaoteGradients } from "@/constants/quaote-gradients";
 import { quotes } from "@/constants/quotes";
+import { BadgeSection } from "./badge-section";
 
 export const PhilosophySection = () => {
   const [selectedQuotes, setSelectedQuotes] = useState<QuoteItem[]>([]);
@@ -27,10 +28,8 @@ export const PhilosophySection = () => {
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-4">
-            <Feather size={12} />
-            Philosophy & Inspiration
-          </span>
+          <BadgeSection icon={Feather}>Philosophy & Inspiration</BadgeSection>
+
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">
             Principles that <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600">

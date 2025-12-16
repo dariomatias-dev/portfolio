@@ -15,6 +15,7 @@ import { useState } from "react";
 
 import { Project } from "@/@types/project";
 import { projects } from "@/constants/projects";
+import { BadgeSection } from "./badge-section";
 
 const getCategoryTheme = (category: string) => {
   switch (category) {
@@ -190,10 +191,8 @@ export const ProjectsSection = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-10">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
-              <Code2 size={12} />
-              Projects
-            </span>
+            <BadgeSection theme="dark" icon={Code2}>Projects</BadgeSection>
+
             <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-6">
               Building{" "}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">

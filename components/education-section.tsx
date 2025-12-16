@@ -3,6 +3,7 @@
 import { Award, GraduationCap } from "lucide-react";
 
 import { educations } from "@/constants/educations";
+import { BadgeSection } from "./badge-section";
 
 export const EducationSection = () => {
   return (
@@ -17,9 +18,8 @@ export const EducationSection = () => {
 
       <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-16 md:mb-20">
-          <div className="inline-flex items-center justify-center p-3 bg-white rounded-xl shadow-sm border border-slate-100 mb-4">
-            <GraduationCap className="w-6 h-6 text-blue-600" />
-          </div>
+          <BadgeSection icon={GraduationCap}>Education</BadgeSection>
+
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
             Education & Certifications
           </h2>
