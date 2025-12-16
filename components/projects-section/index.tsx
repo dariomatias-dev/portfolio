@@ -1,12 +1,27 @@
 "use client";
 
-import { Code2, ExternalLink, Github } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Code2,
+  ExternalLink,
+  Github,
+} from "lucide-react";
+import { useState } from "react";
+import type { Swiper as SwiperType } from "swiper";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
 
 import { projects } from "@/constants/projects";
 import { BadgeSection } from "../badge-section";
 import { ProjectCard } from "./project-card";
 
 export const ProjectsSection = () => {
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <section
       id="projects"
@@ -16,7 +31,7 @@ export const ProjectsSection = () => {
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-10">
           <div className="max-w-2xl">
             <BadgeSection theme="dark" icon={Code2}>
               Projects
@@ -44,13 +59,86 @@ export const ProjectsSection = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, idx) => (
-            <ProjectCard key={idx} project={project} />
-          ))}
+        <div className="w-full">
+          <Swiper
+            modules={[Autoplay]}
+            onSwiper={setSwiper}
+            onSlideChange={(s) => setActiveIndex(s.realIndex)}
+            spaceBetween={32}
+            slidesPerView={1}
+            loop={false}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+            className="pb-12!"
+          >
+            {projects.map((project, idx) => (
+              <SwiperSlide key={idx} className="h-auto!">
+                <div className="h-full">
+                  <ProjectCard project={project} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
-        <div className="mt-16 md:hidden flex justify-center">
+        <div className="flex justify-center">
+          <div className="inline-flex items-center bg-[#0E0E10] border border-white/10 rounded-full p-1.5 shadow-2xl backdrop-blur-md">
+            <button
+              onClick={() => swiper?.slidePrev()}
+              disabled={activeIndex === 0}
+              className="group flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-all disabled:opacity-30 disabled:hover:bg-transparent cursor-pointer disabled:cursor-not-allowed"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft size={20} />
+            </button>
+
+            <div className="w-px h-6 bg-white/10 mx-2" />
+
+            <div className="flex items-center gap-2 px-2">
+              {projects.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => swiper?.slideTo(idx)}
+                  className="group py-2 cursor-pointer"
+                  aria-label={`Go to slide ${idx + 1}`}
+                >
+                  <div
+                    className={`rounded-full transition-all duration-300 ${
+                      idx === activeIndex
+                        ? "w-3 h-3 bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"
+                        : "w-1.5 h-1.5 bg-zinc-700 group-hover:bg-zinc-500"
+                    }`}
+                  />
+                </button>
+              ))}
+            </div>
+
+            <div className="w-px h-6 bg-white/10 mx-2" />
+
+            <button
+              onClick={() => swiper?.slideNext()}
+              disabled={
+                swiper
+                  ? activeIndex ===
+                    projects.length -
+                      ((swiper.params.slidesPerView as number) || 1)
+                  : false
+              }
+              className="group flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-all disabled:opacity-30 disabled:hover:bg-transparent cursor-pointer disabled:cursor-not-allowed"
+              aria-label="Next slide"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-12 md:hidden flex justify-center">
           <a
             href="https://github.com/dariomatias-dev?tab=repositories"
             target="_blank"
