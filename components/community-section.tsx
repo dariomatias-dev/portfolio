@@ -33,7 +33,9 @@ export const CommunitySection = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 md:mb-16 gap-8 lg:gap-12">
           <div className="max-w-2xl">
-            <BadgeSection theme="dark" icon={HeartHandshake}>Community</BadgeSection>
+            <BadgeSection theme="dark" icon={HeartHandshake}>
+              Community
+            </BadgeSection>
 
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-6">
               Building for{" "}
@@ -140,15 +142,30 @@ export const CommunitySection = () => {
                               {item.command}
                             </span>
                           </div>
+
                           <button
                             onClick={() => handleCopy(item.command)}
-                            className="pl-3 text-zinc-500 hover:text-white transition-colors active:scale-90 transform"
+                            className="relative text-zinc-500 hover:text-white transition-colors transform focus-visible:outline-0"
                           >
-                            {copied === item.command ? (
-                              <Check size={14} className="text-emerald-500" />
-                            ) : (
+                            <div
+                              className={`absolute inset-0 flex items-center justify-center text-emerald-500 transition-all duration-300 transform ${
+                                copied === item.command
+                                  ? "scale-100 opacity-100"
+                                  : "scale-50 opacity-0"
+                              }`}
+                            >
+                              <Check size={14} />
+                            </div>
+
+                            <div
+                              className={`transition-all duration-300 transform ${
+                                copied === item.command
+                                  ? "opacity-0 scale-50"
+                                  : "opacity-100 scale-100"
+                              }`}
+                            >
                               <Copy size={14} />
-                            )}
+                            </div>
                           </button>
                         </div>
                       </div>
