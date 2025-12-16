@@ -67,8 +67,8 @@ export const CareerSection = () => {
                   <div className="hidden md:block w-full md:w-[calc(50%+4rem)]" />
 
                   <div className="w-full md:w-[calc(50%-3rem)] mt-12 md:mt-0 relative z-10">
-                    <div className="relative p-6 md:p-8 rounded-2xl bg-white border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] hover:border-blue-100 transition-all duration-300 group overflow-hidden">
-                      <Globe className="absolute -right-4 -top-4 w-32 h-32 text-slate-50 -rotate-12 group-hover:text-blue-50/50 transition-colors duration-500" />
+                    <div className="relative p-6 md:p-8 rounded-2xl bg-white border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] transition-all duration-300 group overflow-hidden">
+                      <Globe className="absolute -right-4 -top-4 w-32 h-32 text-slate-50 -rotate-12 group-hover:text-blue-50/20 group-hover:scale-110 transition-all duration-700" />
 
                       <div
                         className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-t border-r border-slate-100 rotate-45 transform group-hover:border-blue-100 transition-colors duration-300 z-10 ${
@@ -91,7 +91,7 @@ export const CareerSection = () => {
                           </span>
                         </div>
 
-                        <h3 className="text-xl font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">
+                        <h3 className="text-xl font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-all duration-300">
                           {career.role}
                         </h3>
 
@@ -114,7 +114,7 @@ export const CareerSection = () => {
                           {career.skills.map((skill) => (
                             <span
                               key={skill}
-                              className="text-[11px] font-semibold text-slate-600 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100 group-hover:bg-white group-hover:shadow-sm transition-all"
+                              className="text-[11px] font-semibold text-slate-600 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100 group-hover:bg-white group-hover:shadow-sm transition-all duration-300"
                             >
                               {skill}
                             </span>
