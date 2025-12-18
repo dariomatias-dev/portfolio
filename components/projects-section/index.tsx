@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  ChevronLeft,
-  ChevronRight,
-  Code2,
-  ExternalLink,
-  Github,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, Code2, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { Autoplay } from "swiper/modules";
@@ -15,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import { projects } from "@/constants/projects";
+import { FiGithub } from "react-icons/fi";
 import { BadgeSection } from "../badge-section";
 import { ProjectCard } from "./project-card";
 
@@ -145,7 +140,7 @@ export const ProjectsSection = () => {
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-8 py-4 rounded-full bg-[#0E0E10] border border-white/10 text-sm font-bold text-white hover:bg-white/5 transition-all duration-300 active:scale-95"
           >
-            <Github size={20} />
+            <FiGithub size={20} />
             Explore more projects
           </a>
         </div>
