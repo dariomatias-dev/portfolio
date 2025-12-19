@@ -16,9 +16,6 @@ export const Footer = () => {
       id="contact"
       className="relative bg-black pt-14 md:pt-20 pb-10 overflow-hidden border-t border-white/10"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(30,58,138,0.2),transparent_70%)] pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-900/60 to-transparent shadow-[0_0_20px_rgba(30,58,138,0.6)]" />
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex justify-center mb-14 md:mb-16">
           <button

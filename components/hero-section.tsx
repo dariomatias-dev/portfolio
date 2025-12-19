@@ -55,8 +55,8 @@ const Typewriter = () => {
 export const HeroSection = () => {
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-[#050505] overflow-hidden selection:bg-blue-500/30 selection:text-blue-100">
-      <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-150 h-100 bg-blue-600/20 blur-[120px] rounded-[100%] mix-blend-screen animate-pulse-slow" />
-      <div className="absolute top-[10%] right-[-5%] w-100 h-100 bg-indigo-500/10 blur-[100px] rounded-full mix-blend-screen animate-blob" />
+      <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-72 h-48 sm:w-96 sm:h-64 md:w-120 md:h-80 lg:w-150 lg:h-100 bg-blue-700/20 blur-[80px] sm:blur-[100px] lg:blur-[120px] rounded-[100%] mix-blend-screen animate-pulse-slow" />
+      <div className="absolute top-[10%] right-[-5%] w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-100 lg:h-100 bg-indigo-500/10 blur-[60px] sm:blur-[80px] lg:blur-[100px] rounded-full mix-blend-screen animate-blob" />
 
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-5xl mx-auto">
         <div className="animate-fade-in mb-8">
