@@ -4,7 +4,6 @@ import {
   Check,
   Copy,
   GitFork,
-  Github,
   HeartHandshake,
   Star,
   Terminal,
@@ -12,6 +11,7 @@ import {
 import { useState } from "react";
 
 import { contributions } from "@/constants/community";
+import { SlSocialGithub } from "react-icons/sl";
 import { BadgeSection } from "./badge-section";
 
 export const CommunitySection = () => {
@@ -177,7 +177,7 @@ export const CommunitySection = () => {
                         className="flex items-center justify-center h-10 sm:h-full w-full sm:w-12 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 active:scale-95 shrink-0 gap-2"
                         title="View Source Code"
                       >
-                        <Github size={18} />
+                        <SlSocialGithub size={18} />
                         <span className="sm:hidden text-xs font-bold">
                           Source
                         </span>

@@ -71,14 +71,18 @@ export const Header = () => {
           <div className="hidden md:flex items-center">
             <Link
               href="/#contact-area"
-              className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-6 py-2.5 text-sm font-bold text-black transition-all duration-300 hover:bg-zinc-200"
+              className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-6 py-2.5 text-sm font-bold text-black transition-all duration-300
+             hover:bg-blue-50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.5)]
+             active:scale-95"
             >
               <span>Contact</span>
+
               <ArrowRight
                 size={16}
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
-              <div className="absolute inset-0 -z-10 bg-linear-to-r from-blue-400/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+              <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-r from-blue-400/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </Link>
           </div>
 

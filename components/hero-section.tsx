@@ -1,7 +1,9 @@
 "use client";
 
-import { Download, Github, Linkedin } from "lucide-react";
+import { Download } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { FiLinkedin } from "react-icons/fi";
+import { SlSocialGithub } from "react-icons/sl";
 
 const Typewriter = () => {
   const [text, setText] = useState("");
@@ -104,7 +106,7 @@ export const HeroSection = () => {
               target="_blank"
               className="text-zinc-500 hover:text-white transition-colors"
             >
-              <Github size={20} />
+              <SlSocialGithub size={20} />
             </a>
             <div className="w-px h-4 bg-zinc-800" />
             <a
@@ -112,7 +114,7 @@ export const HeroSection = () => {
               target="_blank"
               className="text-zinc-500 hover:text-white transition-colors"
             >
-              <Linkedin size={20} />
+              <FiLinkedin size={20} />
             </a>
           </div>
         </div>
