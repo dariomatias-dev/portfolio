@@ -49,7 +49,10 @@ export const Footer = () => {
               user-centric interactions.
             </p>
 
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-emerald-950/20 border border-emerald-500/20 cursor-default select-none hover:bg-emerald-950/30 transition-colors">
+            <a
+              href={"/#contact"}
+              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-emerald-950/20 border border-emerald-500/20 cursor-pointer select-none hover:bg-emerald-950/30 transition-colors"
+            >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-50" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_12px_#10b981]" />
@@ -57,7 +60,7 @@ export const Footer = () => {
               <span className="text-[11px] font-bold text-emerald-400 tracking-wide uppercase">
                 Available for new projects
               </span>
-            </div>
+            </a>
           </div>
 
           <div className="flex flex-col items-start md:items-end justify-center gap-6">

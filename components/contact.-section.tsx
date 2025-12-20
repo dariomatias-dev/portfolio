@@ -32,7 +32,7 @@ export const ContactSection = () => {
 
   return (
     <section
-      id="contact-area"
+      id="contact"
       className="relative py-16 md:py-24 bg-[#F8FAFC] overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none">
@@ -48,7 +48,7 @@ export const ContactSection = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
               </span>
-              Open for Opportunities
+              Available for new projects
             </div>
 
             <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 leading-tight tracking-tight">

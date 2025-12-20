@@ -61,17 +61,19 @@ export const HeroSection = () => {
       <div className="absolute top-[10%] right-[-5%] w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-100 lg:h-100 bg-indigo-500/10 blur-[60px] sm:blur-[80px] lg:blur-[100px] rounded-full mix-blend-screen animate-blob" />
 
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-5xl mx-auto">
-        <div className="animate-fade-in mb-8">
-          <div className="group relative inline-flex items-center gap-3 px-4 py-2 rounded-full border border-blue-500/20 bg-blue-950/10 backdrop-blur-xl shadow-[0_0_20px_-5px_rgba(59,130,246,0.2)] hover:border-blue-500/40 hover:bg-blue-950/20 transition-all duration-300">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500 shadow-[0_0_8px_#3b82f6]"></span>
-            </span>
-            <span className="text-xs font-semibold text-blue-100/90 tracking-wide uppercase">
-              Open for Opportunities
-            </span>
-          </div>
-        </div>
+        <a
+          href={"/#contact"}
+          className="mb-8 group relative inline-flex items-center gap-3 px-4 py-2 rounded-full border border-blue-500/20 bg-blue-950/10 backdrop-blur-xl shadow-[0_0_20px_-5px_rgba(59,130,246,0.2)] hover:border-blue-500/40 hover:bg-blue-950/20 transition-all duration-300"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500 shadow-[0_0_8px_#3b82f6]"></span>
+          </span>
+
+          <span className="text-xs font-semibold text-blue-100/90 tracking-wide uppercase">
+            Available for new projects
+          </span>
+        </a>
 
         <h1 className="text-5xl md:text-7xl lg:text-9xl font-semibold tracking-tighter text-transparent bg-clip-text bg-linear-to-b from-white via-white to-slate-500 mb-6 leading-tight pb-2">
           Software is <br />
@@ -120,14 +122,17 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer group opacity-60 hover:opacity-100 transition-opacity duration-500">
+      <a
+        href={"/#engineering"}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer group opacity-60 hover:opacity-100 transition-opacity duration-500"
+      >
         <span className="text-[9px] font-bold tracking-[0.3em] text-zinc-500 uppercase group-hover:text-blue-400 transition-all duration-300">
           Explore
         </span>
         <div className="h-16 w-px bg-linear-to-b from-transparent via-blue-500/30 to-transparent relative overflow-hidden group-hover:via-blue-400/80 transition-all duration-300">
           <div className="absolute top-0 left-0 w-full h-1/2 bg-linear-to-b from-transparent to-blue-500 animate-drop-light blur-[1px] group-hover:to-cyan-300 group-hover:shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
         </div>
-      </div>
+      </a>
     </section>
   );
 };

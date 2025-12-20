@@ -70,7 +70,7 @@ export const Header = () => {
 
           <div className="hidden md:flex items-center">
             <Link
-              href="/#contact-area"
+              href="/#contact"
               className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-6 py-2.5 text-sm font-bold text-black transition-all duration-300
              hover:bg-blue-50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.5)]
              active:scale-95"
@@ -129,7 +129,7 @@ export const Header = () => {
             }`}
           >
             <Link
-              href="/#contact-area"
+              href="/#contact"
               onClick={() => setMobileMenuOpen(false)}
               className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-white py-4 text-lg font-bold text-black transition-all duration-300 hover:bg-zinc-200 active:scale-95"
             >
