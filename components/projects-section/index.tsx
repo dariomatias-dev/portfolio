@@ -2,6 +2,7 @@
 
 import { ChevronLeft, ChevronRight, Code2, ExternalLink } from "lucide-react";
 import { useState } from "react";
+import { FiGithub } from "react-icons/fi";
 import type { Swiper as SwiperType } from "swiper";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,7 +10,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import { projects } from "@/constants/projects";
-import { FiGithub } from "react-icons/fi";
 import { BadgeSection } from "../badge-section";
 import { ProjectCard } from "./project-card";
 

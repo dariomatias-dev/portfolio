@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUp } from "lucide-react";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 
 export const Footer = () => {

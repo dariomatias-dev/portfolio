@@ -6,6 +6,7 @@ import {
   Smartphone,
   Terminal,
 } from "lucide-react";
+
 import { BadgeSection } from "./badge-section";
 
 export const EngineeringSection = () => {

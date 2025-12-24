@@ -9,9 +9,9 @@ import {
   Terminal,
 } from "lucide-react";
 import { useState } from "react";
+import { SlSocialGithub } from "react-icons/sl";
 
 import { contributions } from "@/constants/community";
-import { SlSocialGithub } from "react-icons/sl";
 import { BadgeSection } from "./badge-section";
 
 export const CommunitySection = () => {

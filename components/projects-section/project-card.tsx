@@ -2,10 +2,10 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { FiGithub } from "react-icons/fi";
+import { SlSocialGithub } from "react-icons/sl";
 
 import { Project } from "@/@types/project";
 import { getProjectCategoryTheme } from "@/utils/get-project-category-theme";
-import { SlSocialGithub } from "react-icons/sl";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
   const initialImage = `/screenshots/${project.title
@@ -99,7 +99,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           ))}
         </div>
 
-        <footer className="flex gap-2 pt-5 border-t border-white/5">
+        <footer className="flex flex-col sm:flex-row gap-3 sm:gap-2 pt-5 border-t border-white/5">
           <a
             href={primaryLink?.url}
             target="_blank"
