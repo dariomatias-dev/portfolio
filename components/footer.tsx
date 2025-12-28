@@ -4,6 +4,8 @@ import { ArrowUp } from "lucide-react";
 import { FaInstagram } from "react-icons/fa6";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 
+import { CONTACTS } from "@/constants/contacts";
+
 export const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -72,17 +74,17 @@ export const Footer = () => {
               {[
                 {
                   icon: FiGithub,
-                  href: "https://github.com/dariomatias-dev",
+                  href: CONTACTS.github,
                   label: "GitHub",
                 },
                 {
                   icon: FiLinkedin,
-                  href: "https://www.linkedin.com/in/dariomatias-dev/",
+                  href: CONTACTS.linkedin,
                   label: "LinkedIn",
                 },
                 {
                   icon: FaInstagram,
-                  href: "https://www.instagram.com/dariomatias_dev",
+                  href: CONTACTS.instagram,
                   label: "Instagram",
                 },
               ].map((social, i) => (

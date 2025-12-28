@@ -5,6 +5,8 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { FiLinkedin } from "react-icons/fi";
 import { SlSocialGithub } from "react-icons/sl";
 
+import { CONTACTS } from "@/constants/contacts";
+
 const Typewriter = () => {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -105,7 +107,7 @@ export const HeroSection = () => {
 
           <div className="flex items-center gap-4 px-6 h-12 rounded-full border border-zinc-800 bg-zinc-950/80 backdrop-blur-md hover:border-zinc-700 transition-colors duration-300">
             <a
-              href="https://github.com/dariomatias-dev"
+              href={CONTACTS.github}
               target="_blank"
               className="text-zinc-500 hover:text-white transition-colors"
             >
@@ -113,7 +115,7 @@ export const HeroSection = () => {
             </a>
             <div className="w-px h-4 bg-zinc-800" />
             <a
-              href="https://www.linkedin.com/in/dariomatias-dev"
+              href={CONTACTS.linkedin}
               target="_blank"
               className="text-zinc-500 hover:text-white transition-colors"
             >

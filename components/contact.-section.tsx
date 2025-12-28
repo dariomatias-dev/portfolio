@@ -1,5 +1,6 @@
 "use client";
 
+import { CONTACTS } from "@/constants/contacts";
 import {
   ArrowRight,
   Check,
@@ -26,7 +27,7 @@ export const ContactSection = () => {
   };
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("matiasdario75@gmail.com");
+    navigator.clipboard.writeText(CONTACTS.email);
 
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -81,7 +82,7 @@ export const ContactSection = () => {
                       Email Address
                     </p>
                     <p className="text-sm md:text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors break-all md:break-normal">
-                      matiasdario75@gmail.com
+                      {CONTACTS.email}
                     </p>
                   </div>
                 </div>
