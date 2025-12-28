@@ -35,11 +35,13 @@ export const TechStackSection = () => {
     const matchesSearch = tech.name
       .toLowerCase()
       .includes(searchQuery.toLowerCase());
+
     return matchesCategory && matchesSearch;
   });
 
   const handleTechClick = (tech: TechStackItem) => {
     setSelectedTech(tech);
+
     if (window.innerWidth < 1024 && detailsRef.current) {
       setTimeout(() => {
         detailsRef.current?.scrollIntoView({
@@ -113,6 +115,7 @@ export const TechStackSection = () => {
                 filteredTech.map((tech) => {
                   const Icon = tech.icon;
                   const isSelected = selectedTech.name === tech.name;
+
                   return (
                     <button
                       key={tech.name}

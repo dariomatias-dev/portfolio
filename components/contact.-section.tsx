@@ -20,12 +20,14 @@ export const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     setFormStatus("submitting");
     setTimeout(() => setFormStatus("success"), 1500);
   };
 
   const copyEmail = () => {
     navigator.clipboard.writeText("matiasdario75@gmail.com");
+
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

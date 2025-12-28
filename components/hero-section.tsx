@@ -43,6 +43,7 @@ const Typewriter = () => {
 
   useEffect(() => {
     const ticker = setInterval(tick, delta);
+
     return () => clearInterval(ticker);
   }, [tick, delta]);
 

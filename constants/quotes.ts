@@ -1,4 +1,6 @@
-export const quotes = [
+import { QuoteItem } from "@/@types/quote";
+
+export const quotes: QuoteItem[] = [
   {
     text: "Simplicity is the ultimate sophistication.",
     author: "Leonardo da Vinci",
