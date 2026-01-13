@@ -1,22 +1,27 @@
 "use client";
 
 import { ArrowRight, Menu, X } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { LanguageSwitcher } from "./language-switcher";
 
 export const Header = () => {
+  const t = useTranslations("header");
+
+  const locale = useLocale();
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Engineering", href: "/#engineering" },
-    { name: "Projects", href: "/#projects" },
-    { name: "Stack", href: "/#stack" },
-    { name: "Education", href: "/#education" },
-    { name: "Career", href: "/#experience" },
-    { name: "Community", href: "/#community" },
+    { key: "engineering", hash: "engineering" },
+    { key: "projects", hash: "projects" },
+    { key: "stack", hash: "stack" },
+    { key: "education", hash: "education" },
+    { key: "career", hash: "experience" },
+    { key: "community", hash: "community" },
   ];
 
   useEffect(() => {
@@ -30,11 +35,7 @@ export const Header = () => {
   }, []);
 
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "unset";
   }, [mobileMenuOpen]);
 
   return (
@@ -48,7 +49,7 @@ export const Header = () => {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <Link
-            href="/"
+            href={`/${locale}`}
             className="group flex items-center gap-2"
             onClick={() => setMobileMenuOpen(false)}
           >
@@ -60,11 +61,11 @@ export const Header = () => {
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
-                key={link.name}
-                href={link.href}
+                key={link.key}
+                href={`/${locale}/#${link.hash}`}
                 className="group relative text-sm font-medium text-zinc-400 hover:text-white transition-colors"
               >
-                {link.name}
+                {t(link.key)}
                 <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-blue-500 transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
@@ -74,19 +75,17 @@ export const Header = () => {
             <LanguageSwitcher />
 
             <Link
-              href="/#contact"
+              href={`/${locale}/#contact`}
               className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-6 py-2.5 text-sm font-bold text-black transition-all duration-300
-             hover:bg-blue-50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.5)]
-             active:scale-95"
+              hover:bg-blue-50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.5)]
+              active:scale-95"
             >
-              <span>Contact</span>
+              <span>{t("contact")}</span>
 
               <ArrowRight
                 size={16}
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
-
-              <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-r from-blue-400/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </Link>
           </div>
 
@@ -111,8 +110,8 @@ export const Header = () => {
         <div className="flex flex-col items-center gap-6 relative z-10 w-full px-6 text-center">
           {navLinks.map((link, idx) => (
             <Link
-              key={link.name}
-              href={link.href}
+              key={link.key}
+              href={`/${locale}/#${link.hash}`}
               onClick={() => setMobileMenuOpen(false)}
               className={`text-3xl font-bold text-zinc-500 hover:text-white transition-all duration-300 hover:scale-105 ${
                 mobileMenuOpen
@@ -121,7 +120,7 @@ export const Header = () => {
               }`}
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
-              {link.name}
+              {t(link.key)}
             </Link>
           ))}
 
@@ -143,11 +142,11 @@ export const Header = () => {
             }`}
           >
             <Link
-              href="/#contact"
+              href={`/${locale}/#contact`}
               onClick={() => setMobileMenuOpen(false)}
               className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-white py-4 text-lg font-bold text-black transition-all duration-300 hover:bg-zinc-200 active:scale-95"
             >
-              <span>Contact</span>
+              <span>{t("contact")}</span>
 
               <ArrowRight
                 size={20}

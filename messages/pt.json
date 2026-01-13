@@ -1,1 +1,11 @@
-{}
+{
+  "header": {
+    "engineering": "Engenharia",
+    "projects": "Projetos",
+    "stack": "Tecnologias",
+    "education": "Educação",
+    "career": "Carreira",
+    "community": "Comunidade",
+    "contact": "Contato"
+  }
+}
