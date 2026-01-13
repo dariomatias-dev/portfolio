@@ -3,10 +3,10 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 
 import "./globals.css";
 
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
-import { notFound } from "next/navigation";
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
 import { routing } from "@/i18n/routing";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Portfolio",
