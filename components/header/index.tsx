@@ -4,6 +4,8 @@ import { ArrowRight, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import { LanguageSwitcher } from "./language-switcher";
+
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,7 +38,7 @@ export const Header = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <>
+    <header>
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrolled
@@ -68,7 +70,9 @@ export const Header = () => {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center gap-8">
+            <LanguageSwitcher />
+
             <Link
               href="/#contact"
               className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-6 py-2.5 text-sm font-bold text-black transition-all duration-300
@@ -104,7 +108,7 @@ export const Header = () => {
       >
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,#1d4ed81a,transparent_100%)] pointer-events-none" />
 
-        <div className="flex flex-col items-center gap-6 relative z-10 w-full px-6">
+        <div className="flex flex-col items-center gap-6 relative z-10 w-full px-6 text-center">
           {navLinks.map((link, idx) => (
             <Link
               key={link.name}
@@ -122,7 +126,17 @@ export const Header = () => {
           ))}
 
           <div
-            className={`mt-24 w-full max-w-xs transition-all duration-500 delay-300 ${
+            className={`mt-4 transition-all duration-500 delay-300 ${
+              mobileMenuOpen
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
+          >
+            <LanguageSwitcher />
+          </div>
+
+          <div
+            className={`mt-12 w-full max-w-xs transition-all duration-500 delay-300 ${
               mobileMenuOpen
                 ? "translate-y-0 opacity-100"
                 : "translate-y-8 opacity-0"
@@ -134,15 +148,15 @@ export const Header = () => {
               className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-white py-4 text-lg font-bold text-black transition-all duration-300 hover:bg-zinc-200 active:scale-95"
             >
               <span>Contact</span>
+
               <ArrowRight
                 size={20}
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
-              <div className="absolute inset-0 -z-10 bg-linear-to-r from-blue-400/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </Link>
           </div>
         </div>
       </div>
-    </>
+    </header>
   );
 };
