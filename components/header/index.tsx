@@ -72,6 +72,7 @@ export const Header = () => {
 
           <div className="hidden md:flex items-center gap-8">
             <LanguageSwitcher />
+
             <Link
               href={`/${locale}/#contact`}
               className="group flex items-center gap-2 rounded-full bg-white px-6 py-2 text-[11px] font-black uppercase tracking-widest text-black hover:bg-zinc-200 transition-all"
@@ -98,7 +99,7 @@ export const Header = () => {
         <div className="flex h-full flex-col p-8 pt-28">
           <div className="space-y-4">
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-blue-500">
-              Navigation
+              {t("navigation")}
             </p>
 
             <div className="h-px w-full bg-linear-to-r from-white/10 to-transparent" />
@@ -106,7 +107,7 @@ export const Header = () => {
             <nav className="flex flex-col">
               {navLinks.map((link) => (
                 <Link
-                  key={link.hash}
+                  key={link.key}
                   href={`/${locale}/#${link.hash}`}
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-between py-3.5 text-lg font-bold uppercase tracking-[0.2em] text-zinc-300 active:text-white"
@@ -131,7 +132,7 @@ export const Header = () => {
           <div className="mt-auto grid grid-cols-2 gap-8 pb-10 border-t border-white/5 pt-8">
             <div className="space-y-4">
               <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-600">
-                Language
+                {t("language")}
               </p>
 
               <LanguageSwitcher />
@@ -139,7 +140,7 @@ export const Header = () => {
 
             <div className="space-y-4">
               <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-600">
-                {t("contact")}
+                {t("connect")}
               </p>
 
               <div className="flex gap-6">
