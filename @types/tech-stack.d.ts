@@ -6,7 +6,7 @@ export type TechStackCategoryType = "Frontend" | "Backend" | "Mobile" | "Databas
 export interface TechStackItem {
   name: string;
   category: TechStackCategoryType;
-  desc: string;
+  descriptionKey: string;
   url: string;
   docs: string;
   tags: string[];

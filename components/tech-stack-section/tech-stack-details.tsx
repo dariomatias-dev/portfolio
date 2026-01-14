@@ -11,6 +11,7 @@ interface TechStackDetailsProps {
 
 export const TechStackDetails = ({ tech }: TechStackDetailsProps) => {
   const t = useTranslations();
+
   const Icon = tech.icon;
 
   return (
@@ -44,7 +45,7 @@ export const TechStackDetails = ({ tech }: TechStackDetailsProps) => {
           </h3>
 
           <p className="text-base md:text-lg text-slate-400 leading-relaxed font-light border-l-2 border-blue-500/30 pl-4 md:pl-6">
-            {tech.desc}
+            {t(`stack.technologies.${tech.descriptionKey}.description`)}
           </p>
         </div>
 

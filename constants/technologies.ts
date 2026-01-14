@@ -32,7 +32,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "React",
     category: "Frontend",
-    desc: "The library for web and native user interfaces. Build UIs from individual pieces called components.",
+    descriptionKey: "react",
     url: "https://react.dev",
     docs: "https://react.dev/learn",
     tags: ["UI", "SPA", "Components"],
@@ -41,7 +41,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Next.js",
     category: "Frontend",
-    desc: "The React Framework for production. Enables you to create high-quality web applications with hybrid rendering and API routes.",
+    descriptionKey: "nextjs",
     url: "https://nextjs.org",
     docs: "https://nextjs.org/docs",
     tags: ["SSR", "Fullstack", "Performance"],
@@ -50,7 +50,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "TypeScript",
     category: "Frontend",
-    desc: "JavaScript with syntax for types. Adds safety and powerful tools for any scale of project.",
+    descriptionKey: "typescript",
     url: "https://www.typescriptlang.org",
     docs: "https://www.typescriptlang.org/docs/",
     tags: ["Typing", "Safety", "Scalability"],
@@ -59,7 +59,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Tailwind CSS",
     category: "Frontend",
-    desc: "Rapidly build modern websites without leaving your HTML. A utility-first CSS framework packed with classes.",
+    descriptionKey: "tailwindcss",
     url: "https://tailwindcss.com",
     docs: "https://tailwindcss.com/docs",
     tags: ["CSS", "Productivity", "Design System"],
@@ -68,7 +68,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "shadcn/ui",
     category: "Frontend",
-    desc: "Beautifully designed components that you can copy and paste into your apps. Accessible and customizable.",
+    descriptionKey: "shadcnui",
     url: "https://ui.shadcn.com",
     docs: "https://ui.shadcn.com/docs",
     tags: ["UI Kit", "Accessibility", "Radix"],
@@ -77,7 +77,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Flutter",
     category: "Mobile",
-    desc: "Google's UI toolkit for building natively compiled applications for mobile, web, and desktop.",
+    descriptionKey: "flutter",
     url: "https://flutter.dev",
     docs: "https://docs.flutter.dev",
     tags: ["Cross-Platform", "Widgets", "Google"],
@@ -86,7 +86,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Dart",
     category: "Mobile",
-    desc: "Client-optimized language for fast apps on any platform.",
+    descriptionKey: "dart",
     url: "https://dart.dev",
     docs: "https://dart.dev/guides",
     tags: ["Language", "Productivity", "Type Safe"],
@@ -95,7 +95,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Node.js",
     category: "Backend",
-    desc: "Asynchronous event-driven JavaScript runtime designed to build scalable network applications.",
+    descriptionKey: "nodejs",
     url: "https://nodejs.org",
     docs: "https://nodejs.org/en/docs/",
     tags: ["Server", "JS Runtime", "API"],
@@ -104,7 +104,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Java",
     category: "Backend",
-    desc: "Object-oriented programming language, robust and secure. Industry standard for enterprise applications.",
+    descriptionKey: "java",
     url: "https://www.java.com",
     docs: "https://docs.oracle.com/en/java/",
     tags: ["OOP", "Enterprise", "Robustness"],
@@ -113,7 +113,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Spring Boot",
     category: "Backend",
-    desc: "Framework that simplifies the development of Spring-based Java applications, focused on convention over configuration.",
+    descriptionKey: "springboot",
     url: "https://spring.io/projects/spring-boot",
     docs: "https://docs.spring.io/spring-boot/docs/current/reference/html/",
     tags: ["Java", "Framework", "Microservices"],
@@ -122,7 +122,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Express",
     category: "Backend",
-    desc: "Fast, unopinionated, minimalist web framework for Node.js, providing a robust set of features.",
+    descriptionKey: "express",
     url: "https://expressjs.com",
     docs: "https://expressjs.com/en/starter/installing.html",
     tags: ["Framework", "Minimalist", "Http"],
@@ -131,7 +131,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Fastify",
     category: "Backend",
-    desc: "Web framework highly focused on providing the best developer experience with the least overhead.",
+    descriptionKey: "fastify",
     url: "https://fastify.dev",
     docs: "https://fastify.dev/docs/latest/",
     tags: ["Performance", "Schema", "Logging"],
@@ -140,7 +140,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "NestJS",
     category: "Backend",
-    desc: "A progressive Node.js framework for building efficient, reliable, and scalable server-side applications.",
+    descriptionKey: "nestjs",
     url: "https://nestjs.com",
     docs: "https://docs.nestjs.com/",
     tags: ["Architecture", "Modular", "TypeScript"],
@@ -149,7 +149,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Go",
     category: "Backend",
-    desc: "Open source language supported by Google. Simple, secure, and ideal for scalable systems.",
+    descriptionKey: "go",
     url: "https://go.dev",
     docs: "https://go.dev/doc/",
     tags: ["Performance", "Concurrency", "Systems"],
@@ -158,7 +158,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Python",
     category: "Backend",
-    desc: "Programming language that lets you work quickly and integrate systems more effectively.",
+    descriptionKey: "python",
     url: "https://python.org",
     docs: "https://docs.python.org/3/",
     tags: ["AI", "Automation", "Data Science"],
@@ -167,7 +167,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Firebase",
     category: "Backend",
-    desc: "Google's platform that helps you build, improve, and grow your app quickly.",
+    descriptionKey: "firebase",
     url: "https://firebase.google.com",
     docs: "https://firebase.google.com/docs",
     tags: ["BaaS", "Realtime", "Auth"],
@@ -176,7 +176,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Prisma",
     category: "Database",
-    desc: "Next-generation ORM for Node.js and TypeScript. Type-safe queries and declarative modeling.",
+    descriptionKey: "prisma",
     url: "https://prisma.io",
     docs: "https://www.prisma.io/docs",
     tags: ["ORM", "TypeScript", "Migration"],
@@ -185,7 +185,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "PostgreSQL",
     category: "Database",
-    desc: "The world's most advanced open source relational database. Data reliability and integrity.",
+    descriptionKey: "postgresql",
     url: "https://postgresql.org",
     docs: "https://www.postgresql.org/docs/",
     tags: ["SQL", "Relational", "ACID"],
@@ -194,7 +194,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "SQLite",
     category: "Database",
-    desc: "Small, fast, self-contained, high-reliability, SQL database engine library.",
+    descriptionKey: "sqlite",
     url: "https://sqlite.org",
     docs: "https://sqlite.org/docs.html",
     tags: ["Embedded", "SQL", "Lightweight"],
@@ -203,7 +203,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "MongoDB",
     category: "Database",
-    desc: "Developer data platform. Document-oriented database for modern applications.",
+    descriptionKey: "mongodb",
     url: "https://mongodb.com",
     docs: "https://www.mongodb.com/docs/",
     tags: ["NoSQL", "Documents", "Flexible"],
@@ -212,7 +212,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Redis",
     category: "Database",
-    desc: "In-memory data structure store, used as a database, cache, and message broker.",
+    descriptionKey: "redis",
     url: "https://redis.io",
     docs: "https://redis.io/docs/",
     tags: ["Cache", "In-Memory", "Speed"],
@@ -221,7 +221,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "AWS",
     category: "DevOps",
-    desc: "The world's most comprehensive and broadly adopted cloud, offering over 200 fully featured services.",
+    descriptionKey: "aws",
     url: "https://aws.amazon.com",
     docs: "https://docs.aws.amazon.com/",
     tags: ["Cloud", "Infrastructure", "Serverless"],
@@ -230,7 +230,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Docker",
     category: "DevOps",
-    desc: "Platform for developing, shipping, and running applications. Separate your application from your infrastructure.",
+    descriptionKey: "docker",
     url: "https://docker.com",
     docs: "https://docs.docker.com/",
     tags: ["Containers", "Deploy", "Virtualization"],
@@ -239,7 +239,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Git",
     category: "DevOps",
-    desc: "Free and open source distributed version control system designed to handle everything.",
+    descriptionKey: "git",
     url: "https://git-scm.com",
     docs: "https://git-scm.com/doc",
     tags: ["Versioning", "Collaboration", "Code"],
@@ -248,7 +248,7 @@ export const techStack: TechStackItem[] = [
   {
     name: "Linux",
     category: "DevOps",
-    desc: "Open source operating system based on the Linux kernel. The foundation of modern server infrastructure.",
+    descriptionKey: "linux",
     url: "https://linux.org",
     docs: "https://docs.kernel.org/",
     tags: ["OS", "Server", "Open Source"],

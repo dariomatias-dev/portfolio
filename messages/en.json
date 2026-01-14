@@ -104,6 +104,83 @@
       "mobile": "Mobile",
       "database": "Database",
       "devops": "DevOps"
+    },
+    "technologies": {
+      "react": {
+        "description": "The library for web and native user interfaces. Build UIs from individual pieces called components."
+      },
+      "nextjs": {
+        "description": "The React Framework for production. Enables you to create high-quality web applications with hybrid rendering and API routes."
+      },
+      "typescript": {
+        "description": "JavaScript with syntax for types. Adds safety and powerful tools for any scale of project."
+      },
+      "tailwindcss": {
+        "description": "Rapidly build modern websites without leaving your HTML. A utility-first CSS framework packed with classes."
+      },
+      "shadcnui": {
+        "description": "Beautifully designed components that you can copy and paste into your apps. Accessible and customizable."
+      },
+      "flutter": {
+        "description": "Google's UI toolkit for building natively compiled applications for mobile, web, and desktop."
+      },
+      "dart": {
+        "description": "Client-optimized language for fast apps on any platform."
+      },
+      "nodejs": {
+        "description": "Asynchronous event-driven JavaScript runtime designed to build scalable network applications."
+      },
+      "java": {
+        "description": "Object-oriented programming language, robust and secure. Industry standard for enterprise applications."
+      },
+      "springboot": {
+        "description": "Framework that simplifies the development of Spring-based Java applications, focused on convention over configuration."
+      },
+      "express": {
+        "description": "Fast, unopinionated, minimalist web framework for Node.js, providing a robust set of features."
+      },
+      "fastify": {
+        "description": "Web framework highly focused on providing the best developer experience with the least overhead."
+      },
+      "nestjs": {
+        "description": "A progressive Node.js framework for building efficient, reliable, and scalable server-side applications."
+      },
+      "go": {
+        "description": "Open source language supported by Google. Simple, secure, and ideal for scalable systems."
+      },
+      "python": {
+        "description": "Programming language that lets you work quickly and integrate systems more effectively."
+      },
+      "firebase": {
+        "description": "Google's platform that helps you build, improve, and grow your app quickly."
+      },
+      "prisma": {
+        "description": "Next-generation ORM for Node.js and TypeScript. Type-safe queries and declarative modeling."
+      },
+      "postgresql": {
+        "description": "The world's most advanced open source relational database. Data reliability and integrity."
+      },
+      "sqlite": {
+        "description": "Small, fast, self-contained, high-reliability, SQL database engine library."
+      },
+      "mongodb": {
+        "description": "Developer data platform. Document-oriented database for modern applications."
+      },
+      "redis": {
+        "description": "In-memory data structure store, used as a database, cache, and message broker."
+      },
+      "aws": {
+        "description": "The world's most comprehensive and broadly adopted cloud, offering over 200 fully featured services."
+      },
+      "docker": {
+        "description": "Platform for developing, shipping, and running applications. Separate your application from your infrastructure."
+      },
+      "git": {
+        "description": "Free and open source distributed version control system designed to handle everything."
+      },
+      "linux": {
+        "description": "Open source operating system based on the Linux kernel. The foundation of modern server infrastructure."
+      }
     }
   },
 

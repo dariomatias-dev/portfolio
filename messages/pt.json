@@ -104,6 +104,83 @@
       "mobile": "Mobile",
       "database": "Banco de Dados",
       "devops": "DevOps"
+    },
+    "technologies": {
+      "react": {
+        "description": "A biblioteca para interfaces de usuário web e nativas. Construa UIs a partir de peças individuais chamadas componentes."
+      },
+      "nextjs": {
+        "description": "O framework React para produção. Permite criar aplicações web de alta qualidade com renderização híbrida e rotas de API."
+      },
+      "typescript": {
+        "description": "JavaScript com sintaxe para tipos. Adiciona segurança e ferramentas poderosas para projetos de qualquer escala."
+      },
+      "tailwindcss": {
+        "description": "Construa sites modernos rapidamente sem sair do seu HTML. Um framework CSS utilitário repleto de classes."
+      },
+      "shadcnui": {
+        "description": "Componentes lindamente projetados que você pode copiar e colar em seus apps. Acessíveis e customizáveis."
+      },
+      "flutter": {
+        "description": "Toolkit de UI do Google para criar aplicações compiladas nativamente para mobile, web e desktop."
+      },
+      "dart": {
+        "description": "Linguagem otimizada para o cliente para apps rápidos em qualquer plataforma."
+      },
+      "nodejs": {
+        "description": "Ambiente de execução JavaScript assíncrono orientado a eventos, projetado para criar aplicações de rede escaláveis."
+      },
+      "java": {
+        "description": "Linguagem de programação orientada a objetos, robusta e segura. Padrão da indústria para aplicações corporativas."
+      },
+      "springboot": {
+        "description": "Framework que simplifica o desenvolvimento de aplicações Java baseadas em Spring, focado em convenção sobre configuração."
+      },
+      "express": {
+        "description": "Framework web rápido, minimalista e sem opiniões para Node.js, fornecendo um conjunto robusto de recursos."
+      },
+      "fastify": {
+        "description": "Framework web focado em oferecer a melhor experiência ao desenvolvedor com o mínimo de processamento extra."
+      },
+      "nestjs": {
+        "description": "Um framework Node.js progressivo para construção de aplicações do lado do servidor eficientes, confiáveis e escaláveis."
+      },
+      "go": {
+        "description": "Linguagem de código aberto suportada pelo Google. Simples, segura e ideal para sistemas escaláveis."
+      },
+      "python": {
+        "description": "Linguagem de programação que permite trabalhar rapidamente e integrar sistemas de forma mais eficaz."
+      },
+      "firebase": {
+        "description": "Plataforma do Google que ajuda você a construir, melhorar e expandir seu app rapidamente."
+      },
+      "prisma": {
+        "description": "ORM de próxima geração para Node.js e TypeScript. Consultas seguras quanto ao tipo e modelagem declarativa."
+      },
+      "postgresql": {
+        "description": "O banco de dados relacional de código aberto mais avançado do mundo. Confiabilidade e integridade de dados."
+      },
+      "sqlite": {
+        "description": "Mecanismo de banco de dados SQL pequeno, rápido, independente e de alta confiabilidade."
+      },
+      "mongodb": {
+        "description": "Plataforma de dados para desenvolvedores. Banco de dados orientado a documentos para aplicações modernas."
+      },
+      "redis": {
+        "description": "Armazenamento de estrutura de dados na memória, usado como banco de dados, cache e corretor de mensagens."
+      },
+      "aws": {
+        "description": "A nuvem mais abrangente e adotada do mundo, oferecendo mais de 200 serviços completos."
+      },
+      "docker": {
+        "description": "Plataforma para desenvolver, enviar e executar aplicações. Separe sua aplicação da sua infraestrutura."
+      },
+      "git": {
+        "description": "Sistema de controle de versão distribuído gratuito e de código aberto projetado para lidar com tudo."
+      },
+      "linux": {
+        "description": "Sistema operacional de código aberto baseado no kernel Linux. A base da infraestrutura de servidores moderna."
+      }
     }
   },
 
