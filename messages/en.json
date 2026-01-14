@@ -223,6 +223,47 @@
     }
   },
 
+  "community": {
+    "badge": "Community",
+    "title": "Building for <highlight>developers.</highlight>",
+    "subtitle": "Contributions shared with the community, encompassing study materials, practical solutions, and libraries.",
+    "stars": "Total Stars",
+    "downloads": "Downloads",
+    "source": "Source",
+    "items": {
+      "materials": {
+        "type": "Learning Repository",
+        "title": "Materials",
+        "description": "Personal repository containing study materials, code examples, notes, and references on programming concepts, languages, tools, and best practices.",
+        "tags": ["Study", "Examples", "Programming"]
+      },
+      "scrollInfinity": {
+        "type": "Flutter Package",
+        "title": "Scroll Infinity",
+        "description": "Flutter package that provides a simple and reusable solution for implementing infinite scrolling in lists, reducing boilerplate and improving code readability.",
+        "tags": ["Dart", "Flutter"]
+      },
+      "syntaxHighlighter": {
+        "type": "Flutter Package",
+        "title": "Flutter Syntax Highlighter",
+        "description": "Customizable syntax highlighting widget for Dart and Flutter code, supporting light and dark themes, line numbers, selectable code blocks, and easy integration into existing projects.",
+        "tags": ["Dart", "Flutter"]
+      },
+      "goValidators": {
+        "type": "Go Package",
+        "title": "Go Validators",
+        "description": "Lightweight validation utilities for Go applications, focused on ensuring data integrity using only native libraries, without external dependencies or performance overhead.",
+        "tags": ["Go"]
+      },
+      "errorHandling": {
+        "type": "Dart Solution",
+        "title": "Flutter Error Handling",
+        "description": "Repository that presents a well-structured approach to handling results and failures in Dart and Flutter applications, promoting consistent error management, improved code readability, and more predictable application flows.",
+        "tags": ["Dart", "Flutter", "Error Handling", "Architecture"]
+      }
+    }
+  },
+
   "footer": {
     "description": "Development of interfaces and systems with a focus on scalability, performance, and a clear, efficient, and well-structured user experience.",
     "rights": "All rights reserved.",

@@ -227,6 +227,47 @@
     }
   },
 
+  "community": {
+    "badge": "Comunidade",
+    "title": "Construindo para <highlight>desenvolvedores.</highlight>",
+    "subtitle": "Contribuições compartilhadas com a comunidade, abrangendo materiais de estudo, soluções práticas e bibliotecas.",
+    "stars": "Total de Estrelas",
+    "downloads": "Downloads",
+    "source": "Código",
+    "items": {
+      "materials": {
+        "type": "Repositório de Estudos",
+        "title": "Materiais de Programação",
+        "description": "Repositório pessoal contendo materiais de estudo, exemplos de código, anotações e referências sobre conceitos de programação, linguagens, ferramentas e boas práticas.",
+        "tags": ["Estudo", "Exemplos", "Programação"]
+      },
+      "scrollInfinity": {
+        "type": "Pacote Flutter",
+        "title": "Scroll Infinity",
+        "description": "Pacote Flutter que fornece uma solução simples e reutilizável para implementar rolagem infinita em listas, reduzindo boilerplate e melhorando a legibilidade.",
+        "tags": ["Dart", "Flutter"]
+      },
+      "syntaxHighlighter": {
+        "type": "Pacote Flutter",
+        "title": "Flutter Syntax Highlighter",
+        "description": "Widget de destaque de sintaxe customizável para Flutter, com suporte a temas claro/escuro, números de linha, blocos selecionáveis e fácil integração.",
+        "tags": ["Dart", "Flutter"]
+      },
+      "goValidators": {
+        "type": "Pacote Go",
+        "title": "Go Validators",
+        "description": "Utilitários de validação leves para Go, focados em garantir a integridade dos dados usando apenas bibliotecas nativas, sem dependências externas.",
+        "tags": ["Go"]
+      },
+      "errorHandling": {
+        "type": "Solução Dart",
+        "title": "Flutter Error Handling",
+        "description": "Projeto que apresenta uma abordagem estruturada para lidar com resultados e falhas em apps Dart/Flutter, promovendo fluxos mais previsíveis e legíveis.",
+        "tags": ["Dart", "Flutter", "Error Handling", "Arquitetura"]
+      }
+    }
+  },
+
   "footer": {
     "description": "Desenvolvimento de interfaces e sistemas com foco em escalabilidade, performance e uma experiência do usuário clara, eficiente e bem estruturada.",
     "rights": "Todos os direitos reservados.",

@@ -4,10 +4,10 @@ export interface CommunityStats {
 }
 
 export interface ContributionItem {
-  type: string;
+  typeKey: string;
   title: string;
-  description: string;
-  tags: string[];
+  descriptionKey: string;
+  tagKeys: string;
   stats: CommunityStats;
   icon: IconType;
   color: string;

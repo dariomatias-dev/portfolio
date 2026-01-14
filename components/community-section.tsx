@@ -10,16 +10,20 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { SlSocialGithub } from "react-icons/sl";
+import { useTranslations } from "next-intl";
 
 import { contributions } from "@/constants/community";
 import { BadgeSection } from "./badge-section";
 
 export const CommunitySection = () => {
+  const t = useTranslations("community");
   const [copied, setCopied] = useState<string | null>(null);
 
   const handleCopy = (command: string) => {
     navigator.clipboard.writeText(command);
+
     setCopied(command);
+
     setTimeout(() => setCopied(null), 2000);
   };
 
@@ -34,18 +38,20 @@ export const CommunitySection = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 md:mb-16 gap-8 lg:gap-12">
           <div className="max-w-2xl">
             <BadgeSection theme="dark" icon={HeartHandshake}>
-              Community
+              {t("badge")}
             </BadgeSection>
 
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-6">
-              Building for{" "}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">
-                developers.
-              </span>
+              {t.rich("title", {
+                highlight: (chunks) => (
+                  <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">
+                    {chunks}
+                  </span>
+                ),
+              })}
             </h2>
             <p className="text-lg text-zinc-400 font-light leading-relaxed">
-              Contributions that accelerate development. From CLI tools to UI
-              libraries and scalable architectures.
+              {t("subtitle")}
             </p>
           </div>
 
@@ -55,7 +61,7 @@ export const CommunitySection = () => {
                 17
               </span>
               <span className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-wider font-bold mt-1">
-                Total Stars
+                {t("stars")}
               </span>
             </div>
             <div className="flex flex-col">
@@ -63,7 +69,7 @@ export const CommunitySection = () => {
                 400+
               </span>
               <span className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-wider font-bold mt-1">
-                Downloads
+                {t("downloads")}
               </span>
             </div>
           </div>
@@ -72,6 +78,7 @@ export const CommunitySection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {contributions.map((item, idx) => {
             const Icon = item.icon;
+            const tags = t.raw(item.tagKeys) as string[];
 
             return (
               <div
@@ -106,19 +113,19 @@ export const CommunitySection = () => {
                     <span
                       className={`inline-block text-[10px] font-bold uppercase tracking-widest mb-2 ${item.color} opacity-90`}
                     >
-                      {item.type}
+                      {t(item.typeKey)}
                     </span>
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-blue-100 transition-colors">
                       {item.title}
                     </h3>
                     <p className="text-zinc-400 text-sm leading-relaxed transition-all">
-                      {item.description}
+                      {t(item.descriptionKey)}
                     </p>
                   </div>
 
                   <div className="mt-auto pt-6 border-t border-white/5 flex flex-col gap-5">
                     <div className="flex flex-wrap gap-2">
-                      {item.tags.map((tag) => (
+                      {tags.map((tag) => (
                         <span
                           key={tag}
                           className="px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-zinc-400 text-[10px] font-bold uppercase tracking-wider group-hover:bg-white/10 group-hover:text-zinc-200 transition-colors"
@@ -176,11 +183,11 @@ export const CommunitySection = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center h-10 sm:h-full w-full sm:w-12 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 active:scale-95 shrink-0 gap-2"
-                        title="View Source Code"
+                        title={t("source")}
                       >
                         <SlSocialGithub size={18} />
                         <span className="sm:hidden text-xs font-bold">
-                          Source
+                          {t("source")}
                         </span>
                       </a>
                     </div>
