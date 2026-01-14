@@ -26,7 +26,9 @@
     "viewProject": "Ver Projeto",
     "source": "Código",
     "privateRepo": "Repositório Privado",
-    "viewSourceCode": "Ver Código Fonte"
+    "viewSourceCode": "Ver Código Fonte",
+    "officialWebsite": "Site Oficial",
+    "documentation": "Documentação"
   },
 
   "hero": {
@@ -85,6 +87,23 @@
       "elevasign": {
         "description": "Plataforma de assinatura digital para gestão de contratos e documentos. Participei do desenvolvimento desde versões iniciais adicionando múltiplas funcionalidades."
       }
+    }
+  },
+
+  "stack": {
+    "title": "Stack de Desenvolvimento Abrangente",
+    "subtitle": "Uma coleção selecionada de ferramentas e tecnologias para construir soluções digitais robustas e escaláveis.",
+    "searchPlaceholder": "Buscar tecnologia...",
+    "noResults": "Nenhuma tecnologia encontrada.",
+    "productionReady": "Pronto para Produção",
+    "useCases": "Casos de Uso",
+    "categories": {
+      "all": "Todos",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "mobile": "Mobile",
+      "database": "Banco de Dados",
+      "devops": "DevOps"
     }
   },
 

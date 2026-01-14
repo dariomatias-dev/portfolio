@@ -1,4 +1,7 @@
+"use client";
+
 import { ArrowUpRight, CheckCircle2, Code2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { TechStackItem } from "@/@types/tech-stack";
 
@@ -7,6 +10,7 @@ interface TechStackDetailsProps {
 }
 
 export const TechStackDetails = ({ tech }: TechStackDetailsProps) => {
+  const t = useTranslations();
   const Icon = tech.icon;
 
   return (
@@ -29,7 +33,7 @@ export const TechStackDetails = ({ tech }: TechStackDetailsProps) => {
             </span>
 
             <span className="flex items-center gap-1.5 text-emerald-400 text-[10px] font-bold uppercase tracking-widest">
-              <CheckCircle2 size={12} /> Production Ready
+              <CheckCircle2 size={12} /> {t("stack.productionReady")}
             </span>
           </div>
         </div>
@@ -46,7 +50,7 @@ export const TechStackDetails = ({ tech }: TechStackDetailsProps) => {
 
         <div className="mb-auto">
           <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">
-            Use Cases
+            {t("stack.useCases")}
           </h4>
 
           <div className="flex flex-wrap gap-2">
@@ -68,7 +72,7 @@ export const TechStackDetails = ({ tech }: TechStackDetailsProps) => {
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white text-slate-900 font-bold hover:bg-slate-200 transition-all shadow-lg hover:shadow-xl group text-sm md:text-base"
           >
-            <span>Official Website</span>
+            <span>{t("actions.officialWebsite")}</span>
 
             <ArrowUpRight
               size={18}
@@ -84,7 +88,7 @@ export const TechStackDetails = ({ tech }: TechStackDetailsProps) => {
           >
             <Code2 size={18} />
 
-            <span>Documentation</span>
+            <span>{t("actions.documentation")}</span>
           </a>
         </div>
       </div>

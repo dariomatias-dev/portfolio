@@ -2,6 +2,7 @@
 
 import { Layers } from "lucide-react";
 import { useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 import { TechStackItem } from "@/@types/tech-stack";
 import { techStack } from "@/constants/technologies";
@@ -11,23 +12,25 @@ import { TechStackListItem } from "./tech-stack-list-item";
 import { TechStackSearchInput } from "./tech-stack-search-input";
 
 export const TechStackSection = () => {
-  const [activeTab, setActiveTab] = useState("All");
+  const t = useTranslations();
+  const [activeTab, setActiveTab] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTech, setSelectedTech] = useState<TechStackItem>(techStack[0]);
 
   const detailsRef = useRef<HTMLDivElement>(null);
 
   const categories = [
-    "All",
-    "Frontend",
-    "Backend",
-    "Mobile",
-    "Database",
-    "DevOps",
+    "all",
+    "frontend",
+    "backend",
+    "mobile",
+    "database",
+    "devops",
   ];
 
   const filteredTech = techStack.filter((tech) => {
-    const matchesCategory = activeTab === "All" || tech.category === activeTab;
+    const matchesCategory =
+      activeTab === "all" || tech.category.toLowerCase() === activeTab;
     const matchesSearch = tech.name
       .toLowerCase()
       .includes(searchQuery.toLowerCase());
@@ -58,15 +61,14 @@ export const TechStackSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6 md:gap-8">
           <div className="max-w-xl">
-            <BadgeSection icon={Layers}>Tech Stack</BadgeSection>
+            <BadgeSection icon={Layers}>{t("navigation.stack")}</BadgeSection>
 
             <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-              Comprehensive Development Stack
+              {t("stack.title")}
             </h2>
 
             <p className="text-slate-500 text-lg leading-relaxed">
-              A curated collection of tools and technologies to build scalable
-              and robust digital solutions.
+              {t("stack.subtitle")}
             </p>
           </div>
         </div>
@@ -75,7 +77,7 @@ export const TechStackSection = () => {
           <div className="lg:col-span-5 flex flex-col h-125 lg:h-full bg-white rounded-3xl md:rounded-4xl border border-slate-200 shadow-sm overflow-hidden">
             <div className="p-4 md:p-6 border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-20">
               <TechStackSearchInput
-                placeholder="Search technology..."
+                placeholder={t("stack.searchPlaceholder")}
                 value={searchQuery}
                 onChange={setSearchQuery}
               />
@@ -91,7 +93,7 @@ export const TechStackSection = () => {
                         : "bg-slate-50 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
                     }`}
                   >
-                    {cat}
+                    {t(`stack.categories.${cat}`)}
                   </button>
                 ))}
               </div>
@@ -110,7 +112,7 @@ export const TechStackSection = () => {
               ) : (
                 <div className="flex flex-col items-center justify-center h-40 text-center px-4">
                   <p className="text-slate-400 text-sm font-medium">
-                    No technology found.
+                    {t("stack.noResults")}
                   </p>
                 </div>
               )}

@@ -26,7 +26,9 @@
     "viewProject": "View Project",
     "source": "Source",
     "privateRepo": "Private Repository",
-    "viewSourceCode": "View Source Code"
+    "viewSourceCode": "View Source Code",
+    "officialWebsite": "Official Website",
+    "documentation": "Documentation"
   },
 
   "hero": {
@@ -85,6 +87,23 @@
       "elevasign": {
         "description": "Digital Signature Platform for managing contracts and documents. I have participated in the development since early versions, adding multiple features to the application."
       }
+    }
+  },
+
+  "stack": {
+    "title": "Comprehensive Development Stack",
+    "subtitle": "A curated collection of tools and technologies to build scalable and robust digital solutions.",
+    "searchPlaceholder": "Search technology...",
+    "noResults": "No technology found.",
+    "productionReady": "Production Ready",
+    "useCases": "Use Cases",
+    "categories": {
+      "all": "All",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "mobile": "Mobile",
+      "database": "Database",
+      "devops": "DevOps"
     }
   },
 
