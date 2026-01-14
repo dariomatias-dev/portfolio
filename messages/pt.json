@@ -184,6 +184,34 @@
     }
   },
 
+  "education": {
+    "title": "Educação e Certificações",
+    "subtitle": "Uma base sólida construída através de aprendizado contínuo e validação técnica.",
+    "badge": "Educação",
+    "items": {
+      "ads": {
+        "degree": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+        "institution": "Instituto Federal da Paraíba",
+        "type": "Grau Acadêmico",
+        "year": "Fev 2024 - Dez 2027",
+        "description": "Graduação focada na análise e desenvolvimento de sistemas, com ênfase em programação, banco de dados e engenharia de software.",
+        "tags": [
+          "Análise de Sistemas",
+          "Desenvolvimento de Software",
+          "Programação"
+        ]
+      },
+      "highSchool": {
+        "degree": "Ensino Médio",
+        "institution": "ECI Francisco Apolinário da Silva",
+        "type": "Grau Acadêmico",
+        "year": "Fev 2019 - Dez 2022",
+        "description": "Educação básica geral.",
+        "tags": []
+      }
+    }
+  },
+
   "footer": {
     "description": "Desenvolvimento de interfaces e sistemas com foco em escalabilidade, performance e uma experiência do usuário clara, eficiente e bem estruturada.",
     "rights": "Todos os direitos reservados.",

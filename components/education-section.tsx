@@ -1,11 +1,14 @@
 "use client";
 
 import { Award, GraduationCap } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { educations } from "@/constants/educations";
 import { BadgeSection } from "./badge-section";
 
 export const EducationSection = () => {
+  const t = useTranslations("education");
+
   return (
     <section
       id="education"
@@ -18,14 +21,15 @@ export const EducationSection = () => {
 
       <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-16 md:mb-20">
-          <BadgeSection icon={GraduationCap}>Education</BadgeSection>
+          <BadgeSection icon={GraduationCap}>
+            {t("badge")}
+          </BadgeSection>
 
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-            Education & Certifications
+            {t("title")}
           </h2>
           <p className="text-slate-500 max-w-2xl mx-auto text-lg">
-            A solid foundation built through continuous learning and technical
-            validation.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -35,6 +39,7 @@ export const EducationSection = () => {
           <div className="space-y-12 md:space-y-12">
             {educations.map((edu, index) => {
               const isEven = index % 2 === 0;
+              const tags = t.raw(edu.tagKeys) as string[];
 
               return (
                 <div
@@ -70,28 +75,28 @@ export const EducationSection = () => {
                       <div className="relative z-10">
                         <div className="flex flex-wrap items-center justify-between mb-4 gap-2">
                           <span className="px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-600 border border-blue-100">
-                            {edu.year}
+                            {t(edu.yearKey)}
                           </span>
                           <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                            {edu.type}
+                            {t(edu.typeKey)}
                           </span>
                         </div>
 
                         <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-all duration-300">
-                          {edu.degree}
+                          {t(edu.degreeKey)}
                         </h3>
                         <p className="text-slate-500 font-medium text-sm mb-4 flex items-center gap-2">
                           <span className="w-1.5 h-1.5 rounded-full bg-slate-300" />
-                          {edu.institution}
+                          {t(edu.institutionKey)}
                         </p>
 
                         <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                          {edu.description}
+                          {t(edu.descriptionKey)}
                         </p>
 
-                        {edu.tags.length != 0 && (
+                        {tags.length > 0 && (
                           <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-50">
-                            {edu.tags.map((tag) => (
+                            {tags.map((tag) => (
                               <span
                                 key={tag}
                                 className="text-[11px] font-semibold text-slate-600 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100 group-hover:bg-white group-hover:shadow-sm transition-all duration-300 cursor-default"

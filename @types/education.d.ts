@@ -1,8 +1,8 @@
 export interface EducationItem {
-  degree: string;
-  institution: string;
-  type: string;
-  year: string;
-  description: string;
-  tags: string[];
+  degreeKey: string;
+  institutionKey: string;
+  typeKey: string;
+  yearKey: string;
+  descriptionKey: string;
+  tagKeys: string;
 }
