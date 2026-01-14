@@ -10,7 +10,7 @@ import { HeaderMobileMenu } from "./header-mobile-menu";
 import { LanguageSwitcher } from "./language-switcher";
 
 export const Header = () => {
-  const t = useTranslations("header");
+  const tNav = useTranslations("navigation");
 
   const locale = useLocale();
 
@@ -56,7 +56,7 @@ export const Header = () => {
                 href={`/${locale}/#${link.hash}`}
                 className="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors"
               >
-                {t(link.key)}
+                {tNav(link.key)}
               </Link>
             ))}
           </div>
@@ -68,8 +68,7 @@ export const Header = () => {
               href={`/${locale}/#contact`}
               className="group flex items-center gap-2 rounded-full bg-white px-6 py-2 text-[11px] font-black uppercase tracking-widest text-black hover:bg-zinc-200 transition-all"
             >
-              <span>{t("contact")}</span>
-
+              <span>{tNav("contact")}</span>
               <ArrowRight size={14} />
             </Link>
           </div>

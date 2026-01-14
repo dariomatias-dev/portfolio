@@ -6,9 +6,13 @@ import { FaInstagram } from "react-icons/fa6";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 
 import { CONTACTS } from "@/constants/contacts";
+import Link from "next/link";
 
 export const Footer = () => {
-  const t = useTranslations("footer");
+  const tFooter = useTranslations("footer");
+  const tActions = useTranslations("actions");
+  const tStatus = useTranslations("status");
+  const tLabels = useTranslations("labels");
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -33,7 +37,7 @@ export const Footer = () => {
             />
 
             <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 group-hover:text-blue-200 transition-colors">
-              {t("backToTop")}
+              {tActions("backToTop")}
             </span>
           </button>
         </div>
@@ -50,11 +54,11 @@ export const Footer = () => {
             </a>
 
             <p className="text-zinc-400 text-sm leading-7 font-light">
-              {t("description")}
+              {tFooter("description")}
             </p>
 
-            <a
-              href={"/#contact"}
+            <Link
+              href="/#contact"
               className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-emerald-950/20 border border-emerald-500/20 cursor-pointer select-none hover:bg-emerald-950/30 transition-colors"
             >
               <span className="relative flex h-2 w-2">
@@ -63,23 +67,19 @@ export const Footer = () => {
               </span>
 
               <span className="text-[11px] font-bold text-emerald-400 tracking-wide uppercase">
-                {t("available")}
+                {tStatus("availableForProjects")}
               </span>
-            </a>
+            </Link>
           </div>
 
           <div className="flex flex-col items-start md:items-end justify-center gap-6">
             <h3 className="text-zinc-500 font-mono text-[11px] tracking-widest uppercase">
-              {t("connect")}
+              {tLabels("connect")}
             </h3>
 
             <div className="flex gap-4">
               {[
-                {
-                  icon: FiGithub,
-                  href: CONTACTS.github,
-                  label: "GitHub",
-                },
+                { icon: FiGithub, href: CONTACTS.github, label: "GitHub" },
                 {
                   icon: FiLinkedin,
                   href: CONTACTS.linkedin,
@@ -110,11 +110,11 @@ export const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-white/5">
           <p className="text-zinc-500 text-xs font-mono">
-            &copy; {currentYear} Dário Matias. {t("rights")}
+            &copy; {currentYear} Dário Matias. {tFooter("rights")}
           </p>
 
           <div className="flex items-center gap-4 text-xs font-medium">
-            <span className="text-zinc-600">{t("builtWith")}</span>
+            <span className="text-zinc-600">{tFooter("builtWith")}</span>
 
             <div className="flex items-center gap-3 px-4 py-1.5 rounded-full bg-zinc-900/50 border border-white/5 backdrop-blur-sm">
               <span className="text-zinc-300 hover:text-white transition-colors">

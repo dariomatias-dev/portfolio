@@ -1,31 +1,40 @@
 {
-  "header": {
+  "navigation": {
     "engineering": "Engenharia",
     "projects": "Projetos",
     "stack": "Tecnologias",
     "education": "Educação",
     "career": "Carreira",
     "community": "Comunidade",
-    "contact": "Contato",
+    "contact": "Contato"
+  },
+
+  "labels": {
     "navigation": "Navegação",
     "language": "Idioma",
     "connect": "Redes"
   },
+
+  "status": {
+    "availableForProjects": "Disponível para novos projetos"
+  },
+
+  "actions": {
+    "downloadCv": "Baixar CV",
+    "explore": "Explorar",
+    "backToTop": "Voltar ao Topo"
+  },
+
   "hero": {
-    "badge": "Disponível para novos projetos",
     "title": "Software é",
     "description": "Eu projeto e construo sistemas digitais rigorosos. Focando na intersecção entre <design>design</design> e <technical>técnico</technical>.",
     "design": "engenharia de design",
     "technical": "performance técnica",
-    "download": "Baixar CV",
-    "explore": "Explorar",
     "typewriter": "Intuitivo.,Escalável.,Seguro.,Moderno."
   },
+
   "footer": {
-    "backToTop": "Voltar ao Topo",
     "description": "Desenvolvimento de interfaces e sistemas com foco em escalabilidade, performance e uma experiência do usuário clara, eficiente e bem estruturada.",
-    "available": "Disponível para novos projetos",
-    "connect": "Redes",
     "rights": "Todos os direitos reservados.",
     "builtWith": "Desenvolvido com"
   }

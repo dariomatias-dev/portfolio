@@ -1,31 +1,40 @@
 {
-  "header": {
+  "navigation": {
     "engineering": "Engineering",
     "projects": "Projects",
     "stack": "Stack",
     "education": "Education",
     "career": "Career",
     "community": "Community",
-    "contact": "Contact",
+    "contact": "Contact"
+  },
+
+  "labels": {
     "navigation": "Navigation",
     "language": "Language",
     "connect": "Connect"
   },
+
+  "status": {
+    "availableForProjects": "Available for new projects"
+  },
+
+  "actions": {
+    "downloadCv": "Download CV",
+    "explore": "Explore",
+    "backToTop": "Back to Top"
+  },
+
   "hero": {
-    "badge": "Available for new projects",
     "title": "Software is",
     "description": "I design and build rigorous digital systems. Focusing on the intersection of <design>design</design> and <technical>technical</technical>.",
     "design": "design engineering",
     "technical": "technical performance",
-    "download": "Download CV",
-    "explore": "Explore",
     "typewriter": "Intuitive.,Scalable.,Secure.,Modern."
   },
+
   "footer": {
-    "backToTop": "Back to Top",
     "description": "Development of interfaces and systems with a focus on scalability, performance, and a clear, efficient, and well-structured user experience.",
-    "available": "Available for new projects",
-    "connect": "Connect",
     "rights": "All rights reserved.",
     "builtWith": "Built with"
   }

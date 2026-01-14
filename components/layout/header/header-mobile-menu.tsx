@@ -21,7 +21,8 @@ export const HeaderMobileMenu = ({
   onClose,
   locale,
 }: HeaderMobileMenuProps) => {
-  const t = useTranslations("header");
+  const tNav = useTranslations("navigation");
+  const tLabels = useTranslations("labels");
 
   return (
     <div
@@ -32,7 +33,7 @@ export const HeaderMobileMenu = ({
       <div className="flex h-full flex-col p-8 pt-28">
         <div className="space-y-4">
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-blue-500">
-            {t("navigation")}
+            {tLabels("navigation")}
           </p>
 
           <div className="h-px w-full bg-linear-to-r from-white/10 to-transparent" />
@@ -45,7 +46,7 @@ export const HeaderMobileMenu = ({
                 onClick={onClose}
                 className="flex items-center justify-between py-3.5 text-lg font-bold uppercase tracking-[0.2em] text-zinc-300 active:text-white"
               >
-                {t(link.key)}
+                {tNav(link.key)}
                 <ArrowRight size={18} className="text-zinc-800" />
               </Link>
             ))}
@@ -58,14 +59,14 @@ export const HeaderMobileMenu = ({
             onClick={onClose}
             className="flex items-center justify-center w-full rounded-full bg-white py-4 text-xs font-black uppercase tracking-[0.2em] text-black active:scale-[0.98] transition-transform"
           >
-            {t("contact")}
+            {tNav("contact")}
           </Link>
         </div>
 
         <div className="mt-auto grid grid-cols-2 gap-8 pb-10 border-t border-white/5 pt-8">
           <div className="space-y-4">
             <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-600">
-              {t("language")}
+              {tLabels("language")}
             </p>
 
             <LanguageSwitcher />
@@ -73,7 +74,7 @@ export const HeaderMobileMenu = ({
 
           <div className="space-y-4">
             <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-600">
-              {t("connect")}
+              {tLabels("connect")}
             </p>
 
             <div className="flex gap-6">
