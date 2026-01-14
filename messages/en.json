@@ -22,7 +22,11 @@
   "actions": {
     "downloadCv": "Download CV",
     "explore": "Explore",
-    "backToTop": "Back to Top"
+    "backToTop": "Back to Top",
+    "viewProject": "View Project",
+    "source": "Source",
+    "privateRepo": "Private Repository",
+    "viewSourceCode": "View Source Code"
   },
 
   "hero": {
@@ -67,7 +71,21 @@
     "exploreMore": "Explore more projects",
     "prevSlide": "Previous slide",
     "nextSlide": "Next slide",
-    "goToSlide": "Go to slide"
+    "goToSlide": "Go to slide",
+    "list": {
+      "portfolio": {
+        "description": "Personal portfolio with information about me, projects, experiences, and contact."
+      },
+      "flutter_guide_app": {
+        "description": "Flutter Guide is an educational app that helps developers learn Flutter through practical examples."
+      },
+      "flutter_guide_web": {
+        "description": "Official Flutter Guide website with information, main features, screenshots, privacy policy, and a direct link to download on the Google Play Store."
+      },
+      "elevasign": {
+        "description": "Digital Signature Platform for managing contracts and documents. I have participated in the development since early versions, adding multiple features to the application."
+      }
+    }
   },
 
   "footer": {

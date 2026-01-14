@@ -1,4 +1,7 @@
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { FiGithub } from "react-icons/fi";
@@ -8,9 +11,11 @@ import { Project } from "@/@types/project";
 import { getProjectCategoryTheme } from "@/utils/get-project-category-theme";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
+  const t = useTranslations();
   const initialImage = `/screenshots/${project.title
     .toLowerCase()
     .replace(/\s+/g, "_")}_screenshot.png`;
+
   const [imgSrc, setImgSrc] = useState(initialImage);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -18,6 +23,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
     () => getProjectCategoryTheme(project.category),
     [project.category]
   );
+
   const Icon = theme.icon;
 
   const primaryLink = useMemo(
@@ -84,7 +90,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
             {project.title}
           </h3>
           <p className="text-zinc-400 text-sm font-medium leading-relaxed line-clamp-3 group-hover:text-zinc-300 transition-colors duration-300">
-            {project.description}
+            {t(`projects.list.${project.descriptionKey}.description`)}
           </p>
         </header>
 
@@ -107,7 +113,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
             className="group/btn relative flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white text-black font-bold text-sm overflow-hidden transition-all duration-300 hover:bg-zinc-200 active:scale-95"
           >
             <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/80 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]" />
-            <span className="relative z-10">View Project</span>
+            <span className="relative z-10">{t("actions.viewProject")}</span>
             <ArrowUpRight
               size={16}
               strokeWidth={2.5}
@@ -121,15 +127,17 @@ export const ProjectCard = ({ project }: { project: Project }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center h-10 sm:h-full w-full sm:w-12 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 active:scale-95 shrink-0 gap-2"
-              title="View Source Code"
+              title={t("actions.viewSourceCode")}
             >
               <SlSocialGithub size={18} />
-              <span className="sm:hidden text-xs font-bold">Source</span>
+              <span className="sm:hidden text-xs font-bold">
+                {t("actions.source")}
+              </span>
             </a>
           ) : (
             <div
               className="flex items-center justify-center w-12 rounded-xl bg-zinc-900/50 border border-white/5 text-zinc-700 cursor-not-allowed"
-              title="Private Repository"
+              title={t("actions.privateRepo")}
             >
               <FiGithub size={18} />
             </div>

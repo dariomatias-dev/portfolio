@@ -6,12 +6,12 @@ export type ProjectLinkType =
   | "goDev";
 
 export type ProjectCategory = 
-  | "Frontend" 
-  | "Backend" 
-  | "Mobile" 
-  | "Full Stack" 
-  | "Package" 
-  | "DevOps";
+  | "frontend" 
+  | "backend" 
+  | "mobile" 
+  | "fullstack" 
+  | "package" 
+  | "devops";
 
 export interface ProjectLink {
   type: ProjectLinkType;
@@ -20,7 +20,7 @@ export interface ProjectLink {
 
 export interface Project {
   title: string;
-  description: string;
+  descriptionKey: string;
   technologies: string[];
   category: ProjectCategory;
   links: ProjectLink[];
