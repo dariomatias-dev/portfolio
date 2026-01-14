@@ -12,7 +12,11 @@
   "labels": {
     "navigation": "Navigation",
     "language": "Language",
-    "connect": "Connect"
+    "connect": "Connect",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message"
   },
 
   "status": {
@@ -261,6 +265,30 @@
         "description": "Repository that presents a well-structured approach to handling results and failures in Dart and Flutter applications, promoting consistent error management, improved code readability, and more predictable application flows.",
         "tags": ["Dart", "Flutter", "Error Handling", "Architecture"]
       }
+    }
+  },
+
+  "contact": {
+    "status": "Available for new projects",
+    "title": "Let's create something <remarkable>remarkable.</remarkable>",
+    "subtitle": "Whether you have a question, a project proposal, or just want to say hi, I'll try my best to get back to you.",
+    "emailLabel": "Email Address",
+    "locationLabel": "Current Location",
+    "locationValue": "Areial - PB, Brazil",
+    "formTitle": "Send a Message",
+    "placeholders": {
+      "message": "Tell me about your project..."
+    },
+    "subjects": {
+      "project": "Project Inquiry",
+      "job": "Job Opportunity",
+      "mentorship": "Mentorship",
+      "other": "Other"
+    },
+    "button": {
+      "idle": "Send Message",
+      "submitting": "Sending...",
+      "success": "Message Sent"
     }
   },
 

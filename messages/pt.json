@@ -12,7 +12,11 @@
   "labels": {
     "navigation": "Navegação",
     "language": "Idioma",
-    "connect": "Redes"
+    "connect": "Redes",
+    "name": "Nome",
+    "email": "E-mail",
+    "subject": "Assunto",
+    "message": "Mensagem"
   },
 
   "status": {
@@ -265,6 +269,30 @@
         "description": "Projeto que apresenta uma abordagem estruturada para lidar com resultados e falhas em apps Dart/Flutter, promovendo fluxos mais previsíveis e legíveis.",
         "tags": ["Dart", "Flutter", "Error Handling", "Arquitetura"]
       }
+    }
+  },
+
+  "contact": {
+    "status": "Disponível para novos projetos",
+    "title": "Vamos criar algo <remarkable>extraordinário.</remarkable>",
+    "subtitle": "Se você tem uma pergunta, uma proposta de projeto ou apenas quer dar um oi, farei o meu melhor para responder.",
+    "emailLabel": "E-mail",
+    "locationLabel": "Localização Atual",
+    "locationValue": "Areial - PB, Brasil",
+    "formTitle": "Envie uma Mensagem",
+    "placeholders": {
+      "message": "Conte-me sobre seu projeto..."
+    },
+    "subjects": {
+      "project": "Consulta de Projeto",
+      "job": "Oportunidade de Trabalho",
+      "mentorship": "Mentoria",
+      "other": "Outro"
+    },
+    "button": {
+      "idle": "Enviar Mensagem",
+      "submitting": "Enviando...",
+      "success": "Mensagem Enviada"
     }
   },
 
