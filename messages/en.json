@@ -10,5 +10,15 @@
     "navigation": "Navigation",
     "language": "Language",
     "connect": "Connect"
+  },
+  "hero": {
+    "badge": "Available for new projects",
+    "title": "Software is",
+    "description": "I design and build rigorous digital systems. Focusing on the intersection of <design>design</design> and <technical>technical</technical>.",
+    "design": "design engineering",
+    "technical": "technical performance",
+    "download": "Download CV",
+    "explore": "Explore",
+    "typewriter": "Intuitive.,Scalable.,Secure.,Modern."
   }
 }

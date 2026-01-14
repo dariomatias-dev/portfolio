@@ -10,5 +10,15 @@
     "navigation": "Navegação",
     "language": "Idioma",
     "connect": "Redes"
+  },
+  "hero": {
+    "badge": "Disponível para novos projetos",
+    "title": "Software é",
+    "description": "Eu projeto e construo sistemas digitais rigorosos. Focando na intersecção entre <design>design</design> e <technical>técnico</technical>.",
+    "design": "engenharia de design",
+    "technical": "performance técnica",
+    "download": "Baixar CV",
+    "explore": "Explorar",
+    "typewriter": "Intuitivo.,Escalável.,Seguro.,Moderno."
   }
 }
