@@ -6,20 +6,20 @@ import Link from "next/link";
 import { FiLinkedin } from "react-icons/fi";
 import { SlSocialGithub } from "react-icons/sl";
 
+import { CONTACTS } from "@/constants/contacts";
+import { navLinks } from "@/constants/nav-links";
 import { LanguageSwitcher } from "./language-switcher";
 
 interface HeaderMobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
   locale: string;
-  navLinks: { key: string; hash: string }[];
 }
 
 export const HeaderMobileMenu = ({
   isOpen,
   onClose,
   locale,
-  navLinks,
 }: HeaderMobileMenuProps) => {
   const t = useTranslations("header");
 
@@ -77,19 +77,21 @@ export const HeaderMobileMenu = ({
             </p>
 
             <div className="flex gap-6">
-              <Link
-                href="#"
+              <a
+                href={CONTACTS.github}
+                target="_blank"
                 className="text-zinc-400 active:text-white transition-colors"
               >
                 <SlSocialGithub size={22} />
-              </Link>
+              </a>
 
-              <Link
-                href="#"
+              <a
+                href={CONTACTS.linkedin}
+                target="_blank"
                 className="text-zinc-400 active:text-white transition-colors"
               >
                 <FiLinkedin size={22} />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

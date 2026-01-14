@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import { navLinks } from "@/constants/nav-links";
 import { HeaderMobileMenu } from "./header-mobile-menu";
 import { LanguageSwitcher } from "./language-switcher";
 
@@ -15,15 +16,6 @@ export const Header = () => {
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navLinks = [
-    { key: "engineering", hash: "engineering" },
-    { key: "projects", hash: "projects" },
-    { key: "stack", hash: "stack" },
-    { key: "education", hash: "education" },
-    { key: "career", hash: "experience" },
-    { key: "community", hash: "community" },
-  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -77,6 +69,7 @@ export const Header = () => {
               className="group flex items-center gap-2 rounded-full bg-white px-6 py-2 text-[11px] font-black uppercase tracking-widest text-black hover:bg-zinc-200 transition-all"
             >
               <span>{t("contact")}</span>
+
               <ArrowRight size={14} />
             </Link>
           </div>
@@ -94,7 +87,6 @@ export const Header = () => {
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
         locale={locale}
-        navLinks={navLinks}
       />
     </header>
   );

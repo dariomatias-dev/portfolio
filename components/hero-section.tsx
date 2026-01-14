@@ -113,7 +113,9 @@ export const HeroSection = () => {
             >
               <SlSocialGithub size={20} />
             </a>
+
             <div className="w-px h-4 bg-zinc-800" />
+
             <a
               href={CONTACTS.linkedin}
               target="_blank"
