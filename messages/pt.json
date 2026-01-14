@@ -212,6 +212,21 @@
     }
   },
 
+  "career": {
+    "badge": "Carreira",
+    "title": "Jornada Profissional",
+    "subtitle": "Evolução profissional focada em impacto técnico e entrega de valor.",
+    "items": {
+      "media4all": {
+        "role": "Desenvolvedor Mobile",
+        "company": "Media4ALL Soluções em Tecnologia",
+        "location": "João Pessoa, Paraíba, Brasil · Remoto",
+        "period": "Mar 2024 - Atual",
+        "description": "Desenvolvimento e manutenção de aplicações móveis construídas com Flutter e integração com APIs REST."
+      }
+    }
+  },
+
   "footer": {
     "description": "Desenvolvimento de interfaces e sistemas com foco em escalabilidade, performance e uma experiência do usuário clara, eficiente e bem estruturada.",
     "rights": "Todos os direitos reservados.",

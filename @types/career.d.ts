@@ -1,9 +1,9 @@
 export interface CareerItem {
-  role: string;
+  roleKey: string;
   company: string;
-  location: string;
-  period: string;
+  locationKey: string;
+  periodKey: string;
   current: boolean;
-  description: string;
+  descriptionKey: string;
   skills: string[];
 }

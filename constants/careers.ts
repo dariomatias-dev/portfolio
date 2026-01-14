@@ -2,13 +2,12 @@ import { CareerItem } from "@/@types/career";
 
 export const careers: CareerItem[] = [
   {
-    role: "Mobile Developer",
+    roleKey: "items.media4all.role",
     company: "Media4ALL Soluções em Tecnologia",
-    location: "João Pessoa, Paraíba, Brazil · Remote",
-    period: "Mar 2024 - Present",
+    locationKey: "items.media4all.location",
+    periodKey: "items.media4all.period",
     current: true,
-    description:
-      "Development and maintenance of mobile applications built with Flutter and integration with REST APIs.",
+    descriptionKey: "items.media4all.description",
     skills: ["Flutter", "Dart", "REST APIs"],
   },
 ];

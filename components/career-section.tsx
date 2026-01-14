@@ -1,11 +1,14 @@
 "use client";
 
 import { Briefcase, Building2, Globe, MapPin } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { careers } from "@/constants/careers";
 import { BadgeSection } from "./badge-section";
 
 export const CareerSection = () => {
+  const t = useTranslations("career");
+
   return (
     <section
       id="experience"
@@ -17,14 +20,13 @@ export const CareerSection = () => {
 
       <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-16 md:mb-20">
-          <BadgeSection icon={Briefcase}>Career</BadgeSection>
+          <BadgeSection icon={Briefcase}>{t("badge")}</BadgeSection>
 
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-            Professional Journey
+            {t("title")}
           </h2>
           <p className="text-slate-500 max-w-2xl mx-auto text-lg">
-            Professional evolution focused on technical impact and value
-            delivery.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -87,12 +89,12 @@ export const CareerSection = () => {
                                 : "bg-slate-100 text-slate-600 border-slate-200"
                             }`}
                           >
-                            {career.period}
+                            {t(career.periodKey)}
                           </span>
                         </div>
 
                         <h3 className="text-xl font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-all duration-300">
-                          {career.role}
+                          {t(career.roleKey)}
                         </h3>
 
                         <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 font-medium mb-5">
@@ -102,12 +104,12 @@ export const CareerSection = () => {
                           </div>
                           <div className="flex items-center gap-1.5">
                             <MapPin size={14} className="text-blue-500" />
-                            {career.location}
+                            {t(career.locationKey)}
                           </div>
                         </div>
 
                         <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                          {career.description}
+                          {t(career.descriptionKey)}
                         </p>
 
                         <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-50">

@@ -208,6 +208,21 @@
     }
   },
 
+  "career": {
+    "badge": "Career",
+    "title": "Professional Journey",
+    "subtitle": "Professional evolution focused on technical impact and value delivery.",
+    "items": {
+      "media4all": {
+        "role": "Mobile Developer",
+        "company": "Media4ALL Soluções em Tecnologia",
+        "location": "João Pessoa, Paraíba, Brazil · Remote",
+        "period": "Mar 2024 - Current",
+        "description": "Development and maintenance of mobile applications built with Flutter and integration with REST APIs."
+      }
+    }
+  },
+
   "footer": {
     "description": "Development of interfaces and systems with a focus on scalability, performance, and a clear, efficient, and well-structured user experience.",
     "rights": "All rights reserved.",
