@@ -1,12 +1,15 @@
 "use client";
 
 import { ArrowUp } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { FaInstagram } from "react-icons/fa6";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 
 import { CONTACTS } from "@/constants/contacts";
 
 export const Footer = () => {
+  const t = useTranslations("footer");
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -28,8 +31,9 @@ export const Footer = () => {
               size={14}
               className="text-zinc-500 group-hover:text-blue-400 group-hover:-translate-y-0.5 transition-transform duration-300"
             />
+
             <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 group-hover:text-blue-200 transition-colors">
-              Back to Top
+              {t("backToTop")}
             </span>
           </button>
         </div>
@@ -46,9 +50,7 @@ export const Footer = () => {
             </a>
 
             <p className="text-zinc-400 text-sm leading-7 font-light">
-              Designing interfaces that feel invisible and engineering systems
-              that feel invincible. Focused on scalability, performance, and
-              user-centric interactions.
+              {t("description")}
             </p>
 
             <a
@@ -59,15 +61,16 @@ export const Footer = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-50" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_12px_#10b981]" />
               </span>
+
               <span className="text-[11px] font-bold text-emerald-400 tracking-wide uppercase">
-                Available for new projects
+                {t("available")}
               </span>
             </a>
           </div>
 
           <div className="flex flex-col items-start md:items-end justify-center gap-6">
             <h3 className="text-zinc-500 font-mono text-[11px] tracking-widest uppercase">
-              Connect
+              {t("connect")}
             </h3>
 
             <div className="flex gap-4">
@@ -107,11 +110,11 @@ export const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-white/5">
           <p className="text-zinc-500 text-xs font-mono">
-            &copy; {currentYear} Dário Matias. All rights reserved.
+            &copy; {currentYear} Dário Matias. {t("rights")}
           </p>
 
           <div className="flex items-center gap-4 text-xs font-medium">
-            <span className="text-zinc-600">Built with</span>
+            <span className="text-zinc-600">{t("builtWith")}</span>
 
             <div className="flex items-center gap-3 px-4 py-1.5 rounded-full bg-zinc-900/50 border border-white/5 backdrop-blur-sm">
               <span className="text-zinc-300 hover:text-white transition-colors">

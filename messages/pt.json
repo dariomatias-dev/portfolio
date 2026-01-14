@@ -20,5 +20,13 @@
     "download": "Baixar CV",
     "explore": "Explorar",
     "typewriter": "Intuitivo.,Escalável.,Seguro.,Moderno."
+  },
+  "footer": {
+    "backToTop": "Voltar ao Topo",
+    "description": "Desenvolvimento de interfaces e sistemas com foco em escalabilidade, performance e uma experiência do usuário clara, eficiente e bem estruturada.",
+    "available": "Disponível para novos projetos",
+    "connect": "Redes",
+    "rights": "Todos os direitos reservados.",
+    "builtWith": "Desenvolvido com"
   }
 }

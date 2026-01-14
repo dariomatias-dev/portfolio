@@ -20,5 +20,13 @@
     "download": "Download CV",
     "explore": "Explore",
     "typewriter": "Intuitive.,Scalable.,Secure.,Modern."
+  },
+  "footer": {
+    "backToTop": "Back to Top",
+    "description": "Development of interfaces and systems with a focus on scalability, performance, and a clear, efficient, and well-structured user experience.",
+    "available": "Available for new projects",
+    "connect": "Connect",
+    "rights": "All rights reserved.",
+    "builtWith": "Built with"
   }
 }
