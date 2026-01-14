@@ -60,6 +60,16 @@
     }
   },
 
+  "projects": {
+    "title": "Construindo <highlight>Produtos Digitais.</highlight>",
+    "subtitle": "Projetos selecionados que demonstram proficiência em desenvolvimento full-stack, aplicações móveis e arquitetura de sistemas.",
+    "viewGithub": "Ver GitHub",
+    "exploreMore": "Explorar mais projetos",
+    "prevSlide": "Slide anterior",
+    "nextSlide": "Próximo slide",
+    "goToSlide": "Ir para o slide"
+  },
+
   "footer": {
     "description": "Desenvolvimento de interfaces e sistemas com foco em escalabilidade, performance e uma experiência do usuário clara, eficiente e bem estruturada.",
     "rights": "Todos os direitos reservados.",

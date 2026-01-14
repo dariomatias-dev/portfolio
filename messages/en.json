@@ -60,6 +60,16 @@
     }
   },
 
+  "projects": {
+    "title": "Building <highlight>Digital Products.</highlight>",
+    "subtitle": "Selected projects showcasing proficiency in full-stack development, mobile applications, and system architecture.",
+    "viewGithub": "View GitHub",
+    "exploreMore": "Explore more projects",
+    "prevSlide": "Previous slide",
+    "nextSlide": "Next slide",
+    "goToSlide": "Go to slide"
+  },
+
   "footer": {
     "description": "Development of interfaces and systems with a focus on scalability, performance, and a clear, efficient, and well-structured user experience.",
     "rights": "All rights reserved.",

@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight, Code2, ExternalLink } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { FiGithub } from "react-icons/fi";
 import type { Swiper as SwiperType } from "swiper";
@@ -14,6 +15,8 @@ import { BadgeSection } from "../badge-section";
 import { ProjectCard } from "./project-card";
 
 export const ProjectsSection = () => {
+  const t = useTranslations();
+
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -29,18 +32,20 @@ export const ProjectsSection = () => {
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-10">
           <div className="max-w-2xl">
             <BadgeSection theme="dark" icon={Code2}>
-              Projects
+              {t("navigation.projects")}
             </BadgeSection>
 
             <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-6">
-              Building{" "}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">
-                Digital Products.
-              </span>
+              {t.rich("projects.title", {
+                highlight: (chunks) => (
+                  <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-500">
+                    {chunks}
+                  </span>
+                ),
+              })}
             </h2>
             <p className="text-lg text-zinc-400 font-light leading-relaxed">
-              Selected projects showcasing proficiency in full-stack
-              development, mobile applications, and system architecture.
+              {t("projects.subtitle")}
             </p>
           </div>
 
@@ -50,7 +55,7 @@ export const ProjectsSection = () => {
             rel="noopener noreferrer"
             className="hidden md:flex items-center gap-2 text-sm font-bold text-zinc-400 hover:text-white transition-colors border-b border-transparent hover:border-blue-500 pb-0.5"
           >
-            View GitHub <ExternalLink size={14} />
+            {t("projects.viewGithub")} <ExternalLink size={14} />
           </a>
         </div>
 
@@ -63,12 +68,8 @@ export const ProjectsSection = () => {
             slidesPerView={1}
             loop={false}
             breakpoints={{
-              768: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
             }}
             className="pb-12!"
           >
@@ -88,7 +89,7 @@ export const ProjectsSection = () => {
               onClick={() => swiper?.slidePrev()}
               disabled={activeIndex === 0}
               className="group flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-all disabled:opacity-30 disabled:hover:bg-transparent cursor-pointer disabled:cursor-not-allowed"
-              aria-label="Previous slide"
+              aria-label={t("projects.prevSlide")}
             >
               <ChevronLeft size={20} />
             </button>
@@ -101,7 +102,7 @@ export const ProjectsSection = () => {
                   key={idx}
                   onClick={() => swiper?.slideTo(idx)}
                   className="group py-2 cursor-pointer"
-                  aria-label={`Go to slide ${idx + 1}`}
+                  aria-label={`${t("projects.goToSlide")} ${idx + 1}`}
                 >
                   <div
                     className={`rounded-full transition-all duration-300 ${
@@ -126,7 +127,7 @@ export const ProjectsSection = () => {
                   : false
               }
               className="group flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-all disabled:opacity-30 disabled:hover:bg-transparent cursor-pointer disabled:cursor-not-allowed"
-              aria-label="Next slide"
+              aria-label={t("projects.nextSlide")}
             >
               <ChevronRight size={20} />
             </button>
@@ -141,7 +142,7 @@ export const ProjectsSection = () => {
             className="flex items-center gap-2 px-8 py-4 rounded-full bg-[#0E0E10] border border-white/10 text-sm font-bold text-white hover:bg-white/5 transition-all duration-300 active:scale-95"
           >
             <FiGithub size={20} />
-            Explore more projects
+            {t("projects.exploreMore")}
           </a>
         </div>
       </div>
