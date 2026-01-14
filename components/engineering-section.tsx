@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Cloud,
   Code2,
@@ -6,10 +8,13 @@ import {
   Smartphone,
   Terminal,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { BadgeSection } from "./badge-section";
 
 export const EngineeringSection = () => {
+  const t = useTranslations();
+
   return (
     <section
       id="engineering"
@@ -20,18 +25,23 @@ export const EngineeringSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="max-w-3xl">
-            <BadgeSection icon={Terminal}>Engineering</BadgeSection>
+            <BadgeSection icon={Terminal}>
+              {t("navigation.engineering")}
+            </BadgeSection>
 
             <h2 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.1]">
-              Systems built for <br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-indigo-600 to-violet-600">
-                Performance & Longevity.
-              </span>
+              {t.rich("engineering.title", {
+                br: () => <br />,
+                highlight: (chunks) => (
+                  <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-indigo-600 to-violet-600">
+                    {chunks}
+                  </span>
+                ),
+              })}
             </h2>
+
             <p className="text-lg text-slate-600 font-medium max-w-xl leading-relaxed">
-              Engineering driven by architecture, clarity, and maintainability.
-              Technical decisions focused on scalability, simplicity, and
-              continuous evolution.
+              {t("engineering.subtitle")}
             </p>
           </div>
 
@@ -52,12 +62,11 @@ export const EngineeringSection = () => {
               </div>
 
               <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
-                Frontend Engineering
+                {t("engineering.cards.frontend.title")}
               </h3>
+
               <p className="text-slate-500 leading-relaxed mb-8">
-                High-performance, accessible, and consistent interfaces.
-                Component architecture, design systems, and a strong focus on
-                real user experience.
+                {t("engineering.cards.frontend.description")}
               </p>
 
               <div className="flex flex-wrap gap-2">
@@ -84,12 +93,10 @@ export const EngineeringSection = () => {
               </div>
 
               <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">
-                Backend Architecture
+                {t("engineering.cards.backend.title")}
               </h3>
               <p className="text-slate-500 leading-relaxed mb-8">
-                Robust APIs and scalable services. Data modeling, modular
-                architecture, and a focus on consistency, performance, and
-                observability.
+                {t("engineering.cards.backend.description")}
               </p>
 
               <div className="flex flex-wrap gap-2">
@@ -122,14 +129,16 @@ export const EngineeringSection = () => {
                 <div className="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl flex items-center justify-center text-white mb-6">
                   <Smartphone size={24} />
                 </div>
+
                 <h3 className="text-xl font-bold text-white mb-2">
-                  Mobile Engineering
+                  {t("engineering.cards.mobile.title")}
                 </h3>
+
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  Native mobile applications focused on performance,
-                  predictability, and offline-first user experience.
+                  {t("engineering.cards.mobile.description")}
                 </p>
               </div>
+
               <div className="mt-6 flex items-center gap-2">
                 <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
                   <div className="h-full w-2/3 bg-blue-500 rounded-full group-hover:w-full transition-all duration-700 ease-out" />
@@ -143,12 +152,13 @@ export const EngineeringSection = () => {
               <div className="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 mb-6 group-hover:rotate-12 transition-transform duration-300">
                 <Cloud size={24} />
               </div>
+
               <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors">
-                DevOps
+                {t("engineering.cards.devops.title")}
               </h3>
+
               <p className="text-slate-500 text-sm leading-relaxed">
-                Reproducible environments, automated pipelines, and simple
-                infrastructure designed to scale and remain maintainable.
+                {t("engineering.cards.devops.description")}
               </p>
             </div>
           </div>
@@ -158,12 +168,13 @@ export const EngineeringSection = () => {
               <div className="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 mb-6 group-hover:rotate-12 transition-transform duration-300">
                 <Code2 size={24} />
               </div>
+
               <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-purple-700 transition-colors">
-                Code Quality
+                {t("engineering.cards.quality.title")}
               </h3>
+
               <p className="text-slate-500 text-sm leading-relaxed">
-                Readable, predictable, and sustainable code. Best practices,
-                consistency, and a long-term maintenance mindset.
+                {t("engineering.cards.quality.description")}
               </p>
             </div>
           </div>

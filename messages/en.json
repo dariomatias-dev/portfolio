@@ -33,6 +33,33 @@
     "typewriter": "Intuitive.,Scalable.,Secure.,Modern."
   },
 
+  "engineering": {
+    "title": "Systems built for <highlight>Performance & Longevity.</highlight>",
+    "subtitle": "Engineering driven by architecture, clarity, and maintainability. Technical decisions focused on scalability, simplicity, and continuous evolution.",
+    "cards": {
+      "frontend": {
+        "title": "Frontend Engineering",
+        "description": "High-performance, accessible, and consistent interfaces. Component architecture, design systems, and a strong focus on real user experience."
+      },
+      "backend": {
+        "title": "Backend Architecture",
+        "description": "Robust APIs and scalable services. Data modeling, modular architecture, and a focus on consistency, performance, and observability."
+      },
+      "mobile": {
+        "title": "Mobile Engineering",
+        "description": "Native mobile applications focused on performance, predictability, and offline-first user experience."
+      },
+      "devops": {
+        "title": "DevOps",
+        "description": "Reproducible environments, automated pipelines, and simple infrastructure designed to scale and remain maintainable."
+      },
+      "quality": {
+        "title": "Code Quality",
+        "description": "Readable, predictable, and sustainable code. Best practices, consistency, and a long-term maintenance mindset."
+      }
+    }
+  },
+
   "footer": {
     "description": "Development of interfaces and systems with a focus on scalability, performance, and a clear, efficient, and well-structured user experience.",
     "rights": "All rights reserved.",

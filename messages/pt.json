@@ -33,6 +33,33 @@
     "typewriter": "Intuitivo.,Escalável.,Seguro.,Moderno."
   },
 
+  "engineering": {
+    "title": "Sistemas construídos para <highlight>Performance e Longevidade.</highlight>",
+    "subtitle": "Engenharia orientada por arquitetura, clareza e manutenibilidade. Decisões técnicas focadas em escalabilidade, simplicidade e evolução contínua.",
+    "cards": {
+      "frontend": {
+        "title": "Engenharia de Frontend",
+        "description": "Interfaces consistentes, acessíveis e de alta performance. Arquitetura de componentes, design systems e foco total na experiência real do usuário."
+      },
+      "backend": {
+        "title": "Arquitetura de Backend",
+        "description": "APIs robustas e serviços escaláveis. Modelagem de dados, arquitetura modular e foco em consistência, performance e observabilidade."
+      },
+      "mobile": {
+        "title": "Engenharia Mobile",
+        "description": "Aplicações móveis nativas focadas em performance, previsibilidade e experiência do usuário offline-first."
+      },
+      "devops": {
+        "title": "DevOps",
+        "description": "Ambientes reproduzíveis, pipelines automatizados e infraestrutura simples projetada para escalar e permanecer manutenível."
+      },
+      "quality": {
+        "title": "Qualidade de Código",
+        "description": "Código legível, previsível e sustentável. Boas práticas, consistência e uma mentalidade de manutenção a longo prazo."
+      }
+    }
+  },
+
   "footer": {
     "description": "Desenvolvimento de interfaces e sistemas com foco em escalabilidade, performance e uma experiência do usuário clara, eficiente e bem estruturada.",
     "rights": "Todos os direitos reservados.",
