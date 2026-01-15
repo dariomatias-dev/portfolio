@@ -9,6 +9,7 @@ import { SlSocialGithub } from "react-icons/sl";
 
 import { Project } from "@/@types/project";
 import { getProjectCategoryTheme } from "@/utils/get-project-category-theme";
+import { LinkButton } from "../buttons/link-button";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
   const t = useTranslations();
@@ -106,27 +107,26 @@ export const ProjectCard = ({ project }: { project: Project }) => {
         </div>
 
         <footer className="flex flex-col sm:flex-row gap-3 sm:gap-2 pt-5 border-t border-white/5">
-          <a
-            href={primaryLink?.url}
+          <LinkButton
+            href={primaryLink?.url ?? "#"}
             target="_blank"
-            rel="noopener noreferrer"
-            className="group/btn relative flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white text-black font-bold text-sm overflow-hidden transition-all duration-300 hover:bg-zinc-200 active:scale-95"
+            className="flex-1 text-sm justify-center px-4 py-2.5"
           >
-            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/80 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]" />
             <span className="relative z-10">{t("actions.viewProject")}</span>
+
             <ArrowUpRight
               size={16}
               strokeWidth={2.5}
               className="relative z-10 transition-transform duration-300 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5"
             />
-          </a>
+          </LinkButton>
 
           {repoLink ? (
             <a
               href={repoLink.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center h-10 sm:h-full w-full sm:w-12 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 active:scale-95 shrink-0 gap-2"
+              className="flex items-center justify-center h-10 sm:h-full w-full sm:w-12 rounded-full bg-white/5 text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 active:scale-95 shrink-0 gap-2"
               title={t("actions.viewSourceCode")}
             >
               <SlSocialGithub size={18} />
@@ -136,7 +136,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
             </a>
           ) : (
             <div
-              className="flex items-center justify-center w-12 rounded-xl bg-zinc-900/50 border border-white/5 text-zinc-700 cursor-not-allowed"
+              className="flex items-center justify-center w-12 rounded-full bg-zinc-900/50 text-zinc-700 cursor-not-allowed"
               title={t("actions.privateRepo")}
             >
               <FiGithub size={18} />

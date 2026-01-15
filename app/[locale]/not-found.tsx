@@ -2,7 +2,8 @@
 
 import { Activity, Binary, Home, ShieldAlert } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+
+import { LinkButton } from "@/components/buttons/link-button";
 
 const NotFound = () => {
   const t = useTranslations("notFound");
@@ -85,14 +86,11 @@ const NotFound = () => {
         </div>
 
         <div className="flex w-full justify-center px-4">
-          <Link
-            href="/"
-            className="group relative inline-flex h-12 md:h-14 w-full sm:w-auto items-center justify-center gap-3 overflow-hidden rounded-full bg-white px-8 md:px-12 text-xs md:text-sm font-black text-black transition-all hover:bg-blue-50 hover:shadow-[0_0_40px_-5px_rgba(59,130,246,0.6)] active:scale-95"
-          >
+          <LinkButton href="/" className="py-4 px-8">
             <Home className="size-4 sm:size-5" />
 
             <span className="uppercase">{t("backButton")}</span>
-          </Link>
+          </LinkButton>
         </div>
       </div>
     </main>

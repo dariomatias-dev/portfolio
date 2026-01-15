@@ -1,6 +1,5 @@
 "use client";
 
-import { CONTACTS } from "@/constants/contacts";
 import {
   ArrowRight,
   Check,
@@ -14,7 +13,9 @@ import {
   User,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import React, { useState } from "react";
+import { useState } from "react";
+
+import { CONTACTS } from "@/constants/contacts";
 
 export const ContactSection = () => {
   const t = useTranslations();
@@ -231,7 +232,7 @@ export const ContactSection = () => {
                   disabled={
                     formStatus === "submitting" || formStatus === "success"
                   }
-                  className={`group w-full py-3.5 rounded-xl font-bold text-sm text-white flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-[0.98] ${
+                  className={`group w-full py-3.5 rounded-full font-bold text-sm text-white flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-[0.98] ${
                     formStatus === "success"
                       ? "bg-emerald-500 hover:bg-emerald-600"
                       : "bg-[#0F172A] hover:bg-black hover:shadow-lg hover:shadow-black/10"

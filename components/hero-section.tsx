@@ -8,6 +8,7 @@ import { FiLinkedin } from "react-icons/fi";
 import { SlSocialGithub } from "react-icons/sl";
 
 import { CONTACTS } from "@/constants/contacts";
+import { LinkButton } from "./buttons/link-button";
 
 const Typewriter = ({ words }: { words: string[] }) => {
   const [text, setText] = useState("");
@@ -104,13 +105,13 @@ export const HeroSection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 w-full justify-center items-center">
-          <a
+          <LinkButton
             href="#projects"
-            className="group relative inline-flex h-12 items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-8 text-sm font-bold text-black transition-all hover:bg-blue-50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.5)] active:scale-95"
+            className="relative inline-flex h-12 justify-center px-8 text-sm"
           >
             <Download size={16} />
             <span>{tActions("downloadCv")}</span>
-          </a>
+          </LinkButton>
 
           <div className="flex items-center gap-4 px-6 h-12 rounded-full border border-zinc-800 bg-zinc-950/80 backdrop-blur-md hover:border-zinc-700 transition-colors duration-300">
             <a

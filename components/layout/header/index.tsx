@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import { LinkButton } from "@/components/buttons/link-button";
 import { navLinks } from "@/constants/nav-links";
 import { HeaderMobileMenu } from "./header-mobile-menu";
 import { LanguageSwitcher } from "./language-switcher";
@@ -64,13 +65,10 @@ export const Header = () => {
           <div className="hidden md:flex items-center gap-8">
             <LanguageSwitcher />
 
-            <Link
-              href={`/${locale}/#contact`}
-              className="group flex items-center gap-2 rounded-full bg-white px-6 py-2 text-[11px] font-black uppercase tracking-widest text-black hover:bg-zinc-200 transition-all"
-            >
+            <LinkButton href={`/${locale}/#contact`} className="uppercase">
               <span>{tNav("contact")}</span>
               <ArrowRight size={14} />
-            </Link>
+            </LinkButton>
           </div>
 
           <button

@@ -4,6 +4,7 @@ import { ArrowUpRight, CheckCircle2, Code2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { TechStackItem } from "@/@types/tech-stack";
+import { LinkButton } from "../buttons/link-button";
 
 interface TechStackDetailsProps {
   tech: TechStackItem;
@@ -67,11 +68,10 @@ export const TechStackDetails = ({ tech }: TechStackDetailsProps) => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-8 border-t border-white/5">
-          <a
+          <LinkButton
             href={tech.url}
             target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white text-slate-900 font-bold hover:bg-slate-200 transition-all shadow-lg hover:shadow-xl group text-sm md:text-base"
+            className="flex items-center justify-center gap-2 px-6 py-4 text-sm md:text-base"
           >
             <span>{t("actions.officialWebsite")}</span>
 
@@ -79,18 +79,17 @@ export const TechStackDetails = ({ tech }: TechStackDetailsProps) => {
               size={18}
               className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
             />
-          </a>
+          </LinkButton>
 
-          <a
+          <LinkButton
             href={tech.docs}
             target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm text-sm md:text-base"
+            className="flex items-center justify-center gap-2 px-6 py-4 bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-white/20 text-sm md:text-base"
           >
             <Code2 size={18} />
 
             <span>{t("actions.documentation")}</span>
-          </a>
+          </LinkButton>
         </div>
       </div>
     </div>
