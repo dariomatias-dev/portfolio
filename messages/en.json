@@ -73,7 +73,7 @@
   "projects": {
     "title": "Building <highlight>Digital Products.</highlight>",
     "subtitle": "Selected projects showcasing proficiency in full-stack development, mobile applications, and system architecture.",
-    "viewGithub": "View GitHub",
+    "viewRepositories": "View Repositories",
     "exploreMore": "Explore more projects",
     "prevSlide": "Previous slide",
     "nextSlide": "Next slide",

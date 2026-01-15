@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUp } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { FaInstagram } from "react-icons/fa6";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 
@@ -13,6 +13,8 @@ export const Footer = () => {
   const tActions = useTranslations("actions");
   const tStatus = useTranslations("status");
   const tLabels = useTranslations("labels");
+
+  const locale = useLocale();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -58,7 +60,7 @@ export const Footer = () => {
             </p>
 
             <Link
-              href="/#contact"
+              href={`/${locale}/#contact`}
               className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-emerald-950/20 border border-emerald-500/20 cursor-pointer select-none hover:bg-emerald-950/30 transition-colors"
             >
               <span className="relative flex h-2 w-2">

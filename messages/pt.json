@@ -73,7 +73,7 @@
   "projects": {
     "title": "Construindo <highlight>Produtos Digitais.</highlight>",
     "subtitle": "Projetos selecionados que demonstram proficiência em desenvolvimento full-stack, aplicações móveis e arquitetura de sistemas.",
-    "viewGithub": "Ver GitHub",
+    "viewRepositories": "Ver Repositórios",
     "exploreMore": "Explorar mais projetos",
     "prevSlide": "Slide anterior",
     "nextSlide": "Próximo slide",
@@ -273,7 +273,6 @@
   },
 
   "contact": {
-    "status": "Disponível para novos projetos",
     "title": "Vamos criar algo <remarkable>extraordinário.</remarkable>",
     "subtitle": "Se você tem uma pergunta, uma proposta de projeto ou apenas quer dar um oi, farei o meu melhor para responder.",
     "emailLabel": "E-mail",

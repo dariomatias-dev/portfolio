@@ -55,7 +55,7 @@ export const ProjectsSection = () => {
             rel="noopener noreferrer"
             className="hidden md:flex items-center gap-2 text-sm font-bold text-zinc-400 hover:text-white transition-colors border-b border-transparent hover:border-blue-500 pb-0.5"
           >
-            {t("projects.viewGithub")} <ExternalLink size={14} />
+            {t("projects.viewRepositories")} <ExternalLink size={14} />
           </a>
         </div>
 

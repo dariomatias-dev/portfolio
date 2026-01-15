@@ -79,7 +79,7 @@ export const HeroSection = () => {
 
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-5xl mx-auto">
         <Link
-          href="/#contact"
+          href={`/${locale}/#contact`}
           className="mb-8 group relative inline-flex items-center gap-3 px-4 py-2 rounded-full border border-blue-500/20 bg-blue-950/10 backdrop-blur-xl shadow-[0_0_20px_-5px_rgba(59,130,246,0.2)] hover:border-blue-500/40 hover:bg-blue-950/20 transition-all duration-300"
         >
           <span className="relative flex h-2 w-2">
