@@ -1,5 +1,7 @@
 "use client";
 
+import emailjs from "@emailjs/browser";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   ArrowRight,
   CheckCircle2,
@@ -10,14 +12,42 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import * as z from "zod";
 
 import { cn } from "@/lib/utils";
 import { Dropdown } from "../dropdown";
 
 export const ContactForm = () => {
   const t = useTranslations();
-  const [formStatus, setFormStatus] = useState("idle");
-  const [subject, setSubject] = useState("");
+  const [formStatus, setFormStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+
+  const schema = z.object({
+    name: z.string().min(1, t("contact.form.errors.name")),
+    email: z.email(t("contact.form.errors.emailInvalid")),
+    subject: z.string().min(1, t("contact.form.errors.subject")),
+    message: z.string().min(1, t("contact.form.errors.message")),
+  });
+
+  type FormData = z.infer<typeof schema>;
+
+  const {
+    register,
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+  });
 
   const subjectOptions = [
     { id: "project", name: t("contact.subjects.project") },
@@ -26,12 +56,37 @@ export const ContactForm = () => {
     { id: "other", name: t("contact.subjects.other") },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const onSubmit = async (data: FormData) => {
     setFormStatus("submitting");
 
-    setTimeout(() => setFormStatus("success"), 1500);
+    const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID as string;
+    const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID as string;
+    const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY as string;
+
+    try {
+      await emailjs.send(
+        serviceID,
+        templateID,
+        {
+          from_name: data.name,
+          subject: data.subject,
+          message: data.message,
+          reply_to: data.email,
+        },
+        publicKey
+      );
+
+      setFormStatus("success");
+      reset();
+
+      setTimeout(() => setFormStatus("idle"), 5000);
+    } catch (error) {
+      console.error("Erro ao enviar email:", error);
+
+      setFormStatus("error");
+
+      setTimeout(() => setFormStatus("idle"), 3000);
+    }
   };
 
   return (
@@ -49,7 +104,7 @@ export const ContactForm = () => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-1.5">
               <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wide ml-1.5">
@@ -62,12 +117,21 @@ export const ContactForm = () => {
                 </div>
 
                 <input
+                  {...register("name")}
                   type="text"
                   placeholder="Dário Matias"
-                  className="w-full pl-11 pr-4 py-3 bg-slate-50 hover:bg-slate-100 focus:bg-white rounded-xl border border-transparent focus:border-black/5 focus:shadow-md outline-none transition-all duration-300 text-slate-800 placeholder:text-slate-400 text-sm font-medium"
-                  required
+                  className={cn(
+                    "w-full pl-11 pr-4 py-3 bg-slate-50 hover:bg-slate-100 focus:bg-white rounded-xl border border-transparent focus:border-black/5 focus:shadow-md outline-none transition-all duration-300 text-slate-800 placeholder:text-slate-400 text-sm font-medium",
+                    errors.name && "border-red-200 bg-red-50/30"
+                  )}
                 />
               </div>
+
+              {errors.name && (
+                <p className="text-[10px] text-red-500 ml-1.5 font-medium">
+                  {errors.name.message}
+                </p>
+              )}
             </div>
 
             <div className="space-y-1.5">
@@ -81,23 +145,48 @@ export const ContactForm = () => {
                 </div>
 
                 <input
+                  {...register("email")}
                   type="email"
                   placeholder="dario@gmail.com"
-                  className="w-full pl-11 pr-4 py-3 bg-slate-50 hover:bg-slate-100 focus:bg-white rounded-xl border border-transparent focus:border-black/5 focus:shadow-md outline-none transition-all duration-300 text-slate-800 placeholder:text-slate-400 text-sm font-medium"
-                  required
+                  className={cn(
+                    "w-full pl-11 pr-4 py-3 bg-slate-50 hover:bg-slate-100 focus:bg-white rounded-xl border border-transparent focus:border-black/5 focus:shadow-md outline-none transition-all duration-300 text-slate-800 placeholder:text-slate-400 text-sm font-medium",
+                    errors.email && "border-red-200 bg-red-50/30"
+                  )}
                 />
               </div>
+
+              {errors.email && (
+                <p className="text-[10px] text-red-500 ml-1.5 font-medium">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
           </div>
 
-          <Dropdown
-            label={t("labels.subject")}
-            placeholder={t("labels.subject")}
-            icon={MessageSquare}
-            options={subjectOptions}
-            value={subject}
-            onChange={setSubject}
-          />
+          <div className="space-y-1.5">
+            <Controller
+              name="subject"
+              control={control}
+              render={({ field, fieldState }) => (
+                <>
+                  <Dropdown
+                    label={t("labels.subject")}
+                    placeholder={t("labels.subject")}
+                    icon={MessageSquare}
+                    options={subjectOptions}
+                    value={field.value}
+                    onChange={(value) => field.onChange(value)}
+                  />
+
+                  {fieldState.error && (
+                    <p className="text-[10px] text-red-500 ml-1.5 font-medium">
+                      {fieldState.error.message}
+                    </p>
+                  )}
+                </>
+              )}
+            />
+          </div>
 
           <div className="space-y-1.5">
             <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wide ml-1.5">
@@ -105,11 +194,20 @@ export const ContactForm = () => {
             </label>
 
             <textarea
+              {...register("message")}
               rows={4}
               placeholder={t("contact.placeholders.message")}
-              className="w-full px-4 py-3 bg-slate-50 hover:bg-slate-100 focus:bg-white rounded-xl border border-transparent focus:border-black/5 focus:shadow-md outline-none transition-all duration-300 text-slate-800 placeholder:text-slate-400 text-sm font-medium resize-none"
-              required
+              className={cn(
+                "w-full px-4 py-3 bg-slate-50 hover:bg-slate-100 focus:bg-white rounded-xl border border-transparent focus:border-black/5 focus:shadow-md outline-none transition-all duration-300 text-slate-800 placeholder:text-slate-400 text-sm font-medium resize-none",
+                errors.message && "border-red-200 bg-red-50/30"
+              )}
             />
+
+            {errors.message && (
+              <p className="text-[10px] text-red-500 ml-1.5 font-medium">
+                {errors.message.message}
+              </p>
+            )}
           </div>
 
           <button
@@ -119,12 +217,16 @@ export const ContactForm = () => {
               "group w-full py-3.5 rounded-full font-bold text-sm text-white flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-[0.98]",
               formStatus === "success"
                 ? "bg-emerald-500 hover:bg-emerald-600"
+                : formStatus === "error"
+                ? "bg-red-500"
                 : "bg-[#0F172A] hover:bg-black hover:shadow-lg hover:shadow-black/10"
             )}
           >
-            {formStatus === "idle" && (
+            {(formStatus === "idle" || formStatus === "error") && (
               <>
-                {t("contact.button.idle")}
+                {formStatus === "error"
+                  ? t("contact.button.error")
+                  : t("contact.button.idle")}
 
                 <ArrowRight
                   size={16}
@@ -136,7 +238,6 @@ export const ContactForm = () => {
             {formStatus === "submitting" && (
               <span className="flex items-center gap-2">
                 <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-
                 {t("contact.button.submitting")}
               </span>
             )}

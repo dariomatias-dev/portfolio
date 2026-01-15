@@ -285,10 +285,20 @@
       "mentorship": "Mentorship",
       "other": "Other"
     },
+    "form": {
+      "errors": {
+        "name": "Please enter your name",
+        "emailRequired": "Please enter your email",
+        "emailInvalid": "Please enter a valid email address",
+        "subject": "Please select a subject",
+        "message": "Please enter your message"
+      }
+    },
     "button": {
       "idle": "Send Message",
       "submitting": "Sending...",
-      "success": "Message Sent"
+      "success": "Message Sent",
+      "error": "Error. Try again"
     }
   },
 

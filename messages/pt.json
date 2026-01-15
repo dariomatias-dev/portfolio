@@ -273,6 +273,7 @@
   },
 
   "contact": {
+    "status": "Disponível para novos projetos",
     "title": "Vamos criar algo <remarkable>extraordinário.</remarkable>",
     "subtitle": "Se você tem uma pergunta, uma proposta de projeto ou apenas quer dar um oi, farei o meu melhor para responder.",
     "emailLabel": "E-mail",
@@ -288,10 +289,20 @@
       "mentorship": "Mentoria",
       "other": "Outro"
     },
+    "form": {
+      "errors": {
+        "name": "Por favor, insira seu nome",
+        "emailRequired": "Por favor, insira seu e-mail",
+        "emailInvalid": "Por favor, insira um e-mail válido",
+        "subject": "Por favor, selecione um assunto",
+        "message": "Por favor, insira sua mensagem"
+      }
+    },
     "button": {
       "idle": "Enviar Mensagem",
       "submitting": "Enviando...",
-      "success": "Mensagem Enviada"
+      "success": "Mensagem Enviada",
+      "error": "Erro. Tente novamente"
     }
   },
 
