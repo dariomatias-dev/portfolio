@@ -292,6 +292,25 @@
     }
   },
 
+  "philosophy": {
+    "badge": "Philosophy & Inspiration",
+    "title": "Principles that <highlight>shape the future.</highlight>",
+    "subtitle": "Our foundation is built on timeless ideas that bring together design, engineering, and a vision for the future.",
+    "quotes": {
+      "simplicity": "Simplicity is the ultimate sophistication.",
+      "human_code": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+      "predict_future": "The best way to predict the future is to invent it.",
+      "excellence_habit": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+      "happiness_being": "Happiness depends more on what we are than on what we have.",
+      "nothing_remains": "Nothing that was will be again the way it once was.",
+      "inner_answer": "We cannot teach anyone anything; we can only help them find the answer within themselves.",
+      "favorable_wind": "There is no favorable wind for those who do not know where to go.",
+      "self_control": "True power is self-control.",
+      "freedom_essence": "True freedom is living according to your own essence.",
+      "betrayed_self": "Your worst sin is having destroyed and betrayed yourself for nothing."
+    }
+  },
+
   "footer": {
     "description": "Development of interfaces and systems with a focus on scalability, performance, and a clear, efficient, and well-structured user experience.",
     "rights": "All rights reserved.",

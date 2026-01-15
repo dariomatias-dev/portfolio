@@ -296,6 +296,25 @@
     }
   },
 
+  "philosophy": {
+    "badge": "Filosofia e Inspiração",
+    "title": "Princípios que <highlight>moldam o futuro.</highlight>",
+    "subtitle": "Nossa base é construída sobre ideias atemporais que unem design, engenharia e uma visão para o futuro.",
+    "quotes": {
+      "simplicity": "A simplicidade é o último grau de sofisticação.",
+      "human_code": "Qualquer tolo consegue escrever código que um computador entenda. Bons programadores escrevem código que humanos entendam.",
+      "predict_future": "A melhor maneira de prever o futuro é inventá-lo.",
+      "excellence_habit": "Nós somos o que fazemos repetidamente. A excelência, portanto, não é um ato, mas um hábito.",
+      "happiness_being": "A felicidade depende mais do que somos do que do que temos.",
+      "nothing_remains": "Nada do que foi será de novo do jeito que já foi um dia.",
+      "inner_answer": "Não podemos ensinar nada a ninguém; só podemos ajudá-los a encontrar a resposta dentro de si mesmos.",
+      "favorable_wind": "Não existe vento favorável para quem não sabe para onde ir.",
+      "self_control": "O verdadeiro poder é o autocontrole.",
+      "freedom_essence": "A verdadeira liberdade é viver de acordo com a própria essência.",
+      "betrayed_self": "O seu pior pecado é ter se destruído e se traído por nada."
+    }
+  },
+
   "footer": {
     "description": "Desenvolvimento de interfaces e sistemas com foco em escalabilidade, performance e uma experiência do usuário clara, eficiente e bem estruturada.",
     "rights": "Todos os direitos reservados.",

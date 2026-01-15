@@ -1,4 +1,4 @@
 export interface QuoteItem {
-  text: string;
+  textKey: string;
   author: string;
 }

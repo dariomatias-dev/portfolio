@@ -1,6 +1,7 @@
 "use client";
 
 import { Feather, Quote } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 import { QuoteItem } from "@/@types/quote";
@@ -9,11 +10,13 @@ import { quotes } from "@/constants/quotes";
 import { BadgeSection } from "./badge-section";
 
 export const PhilosophySection = () => {
+  const t = useTranslations("philosophy");
+
   const [selectedQuotes, setSelectedQuotes] = useState<QuoteItem[]>([]);
 
   useEffect(() => {
     const shuffleQuotes = () => {
-      const shuffled = quotes.sort(() => 0.5 - Math.random()).slice(0, 3);
+      const shuffled = [...quotes].sort(() => 0.5 - Math.random()).slice(0, 3);
 
       setSelectedQuotes(shuffled);
     };
@@ -28,24 +31,27 @@ export const PhilosophySection = () => {
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <BadgeSection icon={Feather}>Philosophy & Inspiration</BadgeSection>
+          <BadgeSection icon={Feather}>{t("badge")}</BadgeSection>
 
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">
-            Principles that <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600">
-              shape the future.
-            </span>
+            {t.rich("title", {
+              highlight: (chunks) => (
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600">
+                  {chunks}
+                </span>
+              ),
+              br: () => <br className="hidden md:block" />,
+            })}
           </h2>
           <p className="text-base text-slate-500 leading-relaxed max-w-2xl mx-auto">
-            Our foundation is built on timeless ideas that bring together
-            design, engineering, and a vision for the future.
+            {t("subtitle")}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {selectedQuotes.map((quote, index) => (
             <div
-              key={index}
+              key={quote.textKey}
               className="group relative flex flex-col h-full bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 overflow-hidden"
             >
               <div
@@ -68,7 +74,7 @@ export const PhilosophySection = () => {
 
                 <blockquote className="grow">
                   <p className="text-lg text-slate-700 font-medium leading-relaxed tracking-tight mb-6">
-                    &quot;{quote.text}&quot;
+                    &quot;{t(quote.textKey)}&quot;
                   </p>
                 </blockquote>
 

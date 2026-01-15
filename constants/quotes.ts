@@ -2,44 +2,47 @@ import { QuoteItem } from "@/@types/quote";
 
 export const quotes: QuoteItem[] = [
   {
-    text: "Simplicity is the ultimate sophistication.",
+    textKey: "quotes.simplicity",
     author: "Leonardo da Vinci",
   },
   {
-    text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+    textKey: "quotes.human_code",
     author: "Martin Fowler",
   },
   {
-    text: "The best way to predict the future is to invent it.",
+    textKey: "quotes.predict_future",
     author: "Alan Kay",
   },
   {
-    text: "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+    textKey: "quotes.excellence_habit",
     author: "Aristotle",
   },
   {
-    text: "Happiness depends more on what we are than on what we have.",
+    textKey: "quotes.happiness_being",
     author: "Arthur Schopenhauer",
   },
   {
-    text: "Nothing that was will be again the way it once was.",
+    textKey: "quotes.nothing_remains",
     author: "Belchior",
   },
   {
-    text: "We cannot teach anyone anything; we can only help them find the answer within themselves.",
+    textKey: "quotes.inner_answer",
     author: "Galileo Galilei",
   },
   {
-    text: "There is no favorable wind for those who do not know where to go.",
+    textKey: "quotes.favorable_wind",
     author: "Seneca",
   },
-  { text: "True power is self-control.", author: "Buddha" },
   {
-    text: "True freedom is living according to your own essence.",
+    textKey: "quotes.self_control",
+    author: "Buddha",
+  },
+  {
+    textKey: "quotes.freedom_essence",
     author: "Epictetus",
   },
   {
-    text: "Your worst sin is having destroyed and betrayed yourself for nothing.",
+    textKey: "quotes.betrayed_self",
     author: "Dostoevsky",
   },
 ];
