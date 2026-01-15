@@ -10,6 +10,16 @@ import { ContributionCard } from "./contribution-card";
 export const CommunitySection = () => {
   const t = useTranslations("community");
 
+  const totalStars = contributions.reduce(
+    (acc, item) => acc + item.stats.stars,
+    0
+  );
+
+  const stats = [
+    { value: totalStars.toString(), labelKey: "stars" },
+    { value: `400+`, labelKey: "downloads" },
+  ];
+
   return (
     <section
       id="community"
@@ -40,25 +50,17 @@ export const CommunitySection = () => {
           </div>
 
           <div className="flex gap-8 lg:border-l lg:border-white/10 lg:pl-8 w-full lg:w-auto mt-4 lg:mt-0">
-            <div className="flex flex-col">
-              <span className="text-2xl md:text-3xl font-bold text-white">
-                17
-              </span>
+            {stats.map((stat, idx) => (
+              <div key={idx} className="flex flex-col">
+                <span className="text-2xl md:text-3xl font-bold text-white">
+                  {stat.value}
+                </span>
 
-              <span className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-wider font-bold mt-1">
-                {t("stars")}
-              </span>
-            </div>
-
-            <div className="flex flex-col">
-              <span className="text-2xl md:text-3xl font-bold text-white">
-                400+
-              </span>
-
-              <span className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-wider font-bold mt-1">
-                {t("downloads")}
-              </span>
-            </div>
+                <span className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-wider font-bold mt-1">
+                  {t(stat.labelKey)}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
