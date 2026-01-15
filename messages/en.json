@@ -311,6 +311,23 @@
     }
   },
 
+  "notFound": {
+    "badge": "System Routing Error",
+    "title": "Page <highlight>not found.</highlight>",
+    "description": "The page you are looking for does not exist or may have been moved. Please check the URL or return to the homepage.",
+    "labels": {
+      "statusCode": "Status Code",
+      "accessLevel": "Access Level",
+      "operation": "Operation"
+    },
+    "values": {
+      "pathNotResolved": "Path_Not_Resolved",
+      "restrictedEntry": "Restricted_Entry",
+      "haltedCore": "Halted_Core"
+    },
+    "backButton": "Back to home"
+  },
+
   "footer": {
     "description": "Development of interfaces and systems with a focus on scalability, performance, and a clear, efficient, and well-structured user experience.",
     "rights": "All rights reserved.",

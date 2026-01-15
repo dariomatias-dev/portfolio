@@ -315,6 +315,23 @@
     }
   },
 
+  "notFound": {
+    "badge": "Erro de Roteamento do Sistema",
+    "title": "Página <highlight>não encontrada.</highlight>",
+    "description": "A página que você tentou acessar não existe ou foi movida. Verifique o endereço informado ou retorne à página inicial.",
+    "labels": {
+      "statusCode": "Código de Status",
+      "accessLevel": "Nível de Acesso",
+      "operation": "Operação"
+    },
+    "values": {
+      "pathNotResolved": "Caminho_Não_Resolvido",
+      "restrictedEntry": "Entrada_Restrita",
+      "haltedCore": "Núcleo_Paralisado"
+    },
+    "backButton": "Voltar para o início"
+  },
+
   "footer": {
     "description": "Desenvolvimento de interfaces e sistemas com foco em escalabilidade, performance e uma experiência do usuário clara, eficiente e bem estruturada.",
     "rights": "Todos os direitos reservados.",
