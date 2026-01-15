@@ -3,7 +3,6 @@
 import {
   ArrowRight,
   CheckCircle2,
-  ChevronDown,
   Mail,
   MessageSquare,
   Send,
@@ -12,13 +11,26 @@ import {
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
+import { cn } from "@/lib/utils";
+import { Dropdown } from "../dropdown";
+
 export const ContactForm = () => {
   const t = useTranslations();
   const [formStatus, setFormStatus] = useState("idle");
+  const [subject, setSubject] = useState("");
+
+  const subjectOptions = [
+    { id: "project", name: t("contact.subjects.project") },
+    { id: "job", name: t("contact.subjects.job") },
+    { id: "mentorship", name: t("contact.subjects.mentorship") },
+    { id: "other", name: t("contact.subjects.other") },
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     setFormStatus("submitting");
+
     setTimeout(() => setFormStatus("success"), 1500);
   };
 
@@ -78,28 +90,14 @@ export const ContactForm = () => {
             </div>
           </div>
 
-          <div className="space-y-1.5">
-            <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wide ml-1.5">
-              {t("labels.subject")}
-            </label>
-
-            <div className="relative group">
-              <div className="absolute left-4 top-3.5 text-slate-400 group-focus-within:text-black transition-colors duration-300 pointer-events-none">
-                <MessageSquare size={18} />
-              </div>
-
-              <div className="absolute right-4 top-3.5 text-slate-400 pointer-events-none">
-                <ChevronDown size={16} />
-              </div>
-
-              <select className="w-full pl-11 pr-10 py-3 bg-slate-50 hover:bg-slate-100 focus:bg-white rounded-xl border border-transparent focus:border-black/5 focus:shadow-md outline-none transition-all duration-300 text-slate-800 text-sm font-medium appearance-none cursor-pointer">
-                <option>{t("contact.subjects.project")}</option>
-                <option>{t("contact.subjects.job")}</option>
-                <option>{t("contact.subjects.mentorship")}</option>
-                <option>{t("contact.subjects.other")}</option>
-              </select>
-            </div>
-          </div>
+          <Dropdown
+            label={t("labels.subject")}
+            placeholder={t("labels.subject")}
+            icon={MessageSquare}
+            options={subjectOptions}
+            value={subject}
+            onChange={setSubject}
+          />
 
           <div className="space-y-1.5">
             <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wide ml-1.5">
@@ -111,21 +109,23 @@ export const ContactForm = () => {
               placeholder={t("contact.placeholders.message")}
               className="w-full px-4 py-3 bg-slate-50 hover:bg-slate-100 focus:bg-white rounded-xl border border-transparent focus:border-black/5 focus:shadow-md outline-none transition-all duration-300 text-slate-800 placeholder:text-slate-400 text-sm font-medium resize-none"
               required
-            ></textarea>
+            />
           </div>
 
           <button
             type="submit"
             disabled={formStatus === "submitting" || formStatus === "success"}
-            className={`group w-full py-3.5 rounded-full font-bold text-sm text-white flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-[0.98] ${
+            className={cn(
+              "group w-full py-3.5 rounded-full font-bold text-sm text-white flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-[0.98]",
               formStatus === "success"
                 ? "bg-emerald-500 hover:bg-emerald-600"
                 : "bg-[#0F172A] hover:bg-black hover:shadow-lg hover:shadow-black/10"
-            }`}
+            )}
           >
             {formStatus === "idle" && (
               <>
                 {t("contact.button.idle")}
+
                 <ArrowRight
                   size={16}
                   className="transition-transform duration-300 group-hover:translate-x-1"
@@ -135,14 +135,17 @@ export const ContactForm = () => {
 
             {formStatus === "submitting" && (
               <span className="flex items-center gap-2">
-                <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+
                 {t("contact.button.submitting")}
               </span>
             )}
 
             {formStatus === "success" && (
               <>
-                {t("contact.button.success")} <CheckCircle2 size={18} />
+                {t("contact.button.success")}
+
+                <CheckCircle2 size={18} />
               </>
             )}
           </button>
