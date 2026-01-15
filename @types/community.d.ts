@@ -1,6 +1,6 @@
 export interface CommunityStats {
-  stars: string;
-  forks: string;
+  stars: number;
+  forks: number;
 }
 
 export interface ContributionItem {

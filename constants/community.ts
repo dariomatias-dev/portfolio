@@ -1,5 +1,6 @@
 import { Layers } from "lucide-react";
 import { SiDart, SiFlutter, SiGo } from "react-icons/si";
+
 import { ContributionItem } from "@/@types/community";
 
 export const contributions: ContributionItem[] = [
@@ -8,7 +9,7 @@ export const contributions: ContributionItem[] = [
     title: "Materials",
     descriptionKey: "items.materials.description",
     tagKeys: "items.materials.tags",
-    stats: { stars: "8", forks: "0" },
+    stats: { stars: 8, forks: 0 },
     icon: Layers,
     color: "text-zinc-400",
     bg: "bg-zinc-900/40",
@@ -22,7 +23,7 @@ export const contributions: ContributionItem[] = [
     title: "Scroll Infinity",
     descriptionKey: "items.scrollInfinity.description",
     tagKeys: "items.scrollInfinity.tags",
-    stats: { stars: "2", forks: "0" },
+    stats: { stars: 2, forks: 0 },
     icon: SiFlutter,
     color: "text-blue-400",
     bg: "bg-blue-950/30",
@@ -36,7 +37,7 @@ export const contributions: ContributionItem[] = [
     title: "Flutter Syntax Highlighter",
     descriptionKey: "items.syntaxHighlighter.description",
     tagKeys: "items.syntaxHighlighter.tags",
-    stats: { stars: "2", forks: "0" },
+    stats: { stars: 2, forks: 0 },
     icon: SiFlutter,
     color: "text-purple-400",
     bg: "bg-purple-950/30",
@@ -50,7 +51,7 @@ export const contributions: ContributionItem[] = [
     title: "Go Validators",
     descriptionKey: "items.goValidators.description",
     tagKeys: "items.goValidators.tags",
-    stats: { stars: "2", forks: "0" },
+    stats: { stars: 2, forks: 0 },
     icon: SiGo,
     color: "text-cyan-400",
     bg: "bg-cyan-950/30",
@@ -64,7 +65,7 @@ export const contributions: ContributionItem[] = [
     title: "Flutter Error Handling",
     descriptionKey: "items.errorHandling.description",
     tagKeys: "items.errorHandling.tags",
-    stats: { stars: "1", forks: "0" },
+    stats: { stars: 1, forks: 0 },
     icon: SiDart,
     color: "text-red-400",
     bg: "bg-red-950/30",
