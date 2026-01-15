@@ -6,8 +6,11 @@ import { useTransition } from "react";
 
 export const LanguageSwitcher = () => {
   const router = useRouter();
+
   const pathname = usePathname();
+
   const locale = useLocale();
+
   const [isPending, startTransition] = useTransition();
 
   const switchLocale = (nextLocale: string) => {

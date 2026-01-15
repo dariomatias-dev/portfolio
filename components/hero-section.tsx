@@ -1,7 +1,7 @@
 "use client";
 
 import { Download } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { FiLinkedin } from "react-icons/fi";
@@ -10,7 +10,11 @@ import { SlSocialGithub } from "react-icons/sl";
 import { CONTACTS } from "@/constants/contacts";
 import { LinkButton } from "./buttons/link-button";
 
-const Typewriter = ({ words }: { words: string[] }) => {
+interface TypewriterProps {
+  words: string[];
+}
+
+const Typewriter = ({ words }: TypewriterProps) => {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
@@ -43,6 +47,7 @@ const Typewriter = ({ words }: { words: string[] }) => {
 
   useEffect(() => {
     const ticker = setInterval(tick, delta);
+
     return () => clearInterval(ticker);
   }, [tick, delta]);
 
@@ -59,6 +64,8 @@ export const HeroSection = () => {
   const tActions = useTranslations("actions");
   const tStatus = useTranslations("status");
 
+  const locale = useLocale();
+
   const typewriterWords = useMemo(
     () => tHero("typewriter").split(","),
     [tHero]
@@ -67,6 +74,7 @@ export const HeroSection = () => {
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-[#050505] overflow-hidden selection:bg-blue-500/30 selection:text-blue-100">
       <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-72 h-48 sm:w-96 sm:h-64 md:w-120 md:h-80 lg:w-150 lg:h-100 bg-blue-700/20 blur-[80px] sm:blur-[100px] lg:blur-[120px] rounded-[100%] mix-blend-screen animate-pulse-slow" />
+
       <div className="absolute top-[10%] right-[-5%] w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-100 lg:h-100 bg-indigo-500/10 blur-[60px] sm:blur-[80px] lg:blur-[100px] rounded-full mix-blend-screen animate-blob" />
 
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-5xl mx-auto">
@@ -136,7 +144,7 @@ export const HeroSection = () => {
       </div>
 
       <Link
-        href="/#engineering"
+        href={`/${locale}/#engineering`}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer group opacity-60 hover:opacity-100 transition-opacity duration-500"
       >
         <span className="text-[9px] font-bold tracking-[0.3em] text-zinc-500 uppercase group-hover:text-blue-400 transition-all duration-300">
