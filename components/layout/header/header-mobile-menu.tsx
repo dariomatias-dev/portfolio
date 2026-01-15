@@ -42,7 +42,7 @@ export const HeaderMobileMenu = ({
             {navLinks.map((link) => (
               <Link
                 key={link.key}
-                href={`/${locale}/#${link.hash}`}
+                href={`/${locale}/#${link.key}`}
                 onClick={onClose}
                 className="flex items-center justify-between py-3.5 text-lg font-bold uppercase tracking-[0.2em] text-zinc-300 active:text-white"
               >

@@ -11,7 +11,7 @@ import { HeaderMobileMenu } from "./header-mobile-menu";
 import { LanguageSwitcher } from "./language-switcher";
 
 export const Header = () => {
-  const tNav = useTranslations("navigation");
+  const t = useTranslations("navigation");
 
   const locale = useLocale();
 
@@ -54,10 +54,10 @@ export const Header = () => {
             {navLinks.map((link) => (
               <Link
                 key={link.key}
-                href={`/${locale}/#${link.hash}`}
-                className="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors"
+                href={`/${locale}/#${link.key}`}
+                className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors"
               >
-                {tNav(link.key)}
+                {t(link.key)}
               </Link>
             ))}
           </div>
@@ -66,7 +66,7 @@ export const Header = () => {
             <LanguageSwitcher />
 
             <LinkButton href={`/${locale}/#contact`} className="uppercase">
-              <span>{tNav("contact")}</span>
+              <span>{t("contact")}</span>
               <ArrowRight size={14} />
             </LinkButton>
           </div>
