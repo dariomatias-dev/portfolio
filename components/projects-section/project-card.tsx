@@ -4,7 +4,6 @@ import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useMemo, useState } from "react";
-import { FiGithub } from "react-icons/fi";
 import { SlSocialGithub } from "react-icons/sl";
 
 import { Project } from "@/@types/project";
@@ -110,7 +109,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           <LinkButton
             href={primaryLink?.url ?? "#"}
             target="_blank"
-            className="flex-1 text-sm justify-center px-4 py-2.5"
+            className="flex-1 text-sm justify-center px-4 py-2.5 rounded-xl"
           >
             <span className="relative z-10">{t("actions.viewProject")}</span>
 
@@ -126,7 +125,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
               href={repoLink.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center h-10 sm:h-full w-full sm:w-12 rounded-full bg-white/5 text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 active:scale-95 shrink-0 gap-2"
+              className="flex items-center justify-center h-10 sm:h-full w-full sm:w-12 rounded-xl border border-white/10 bg-white/5 text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 active:scale-95 shrink-0 gap-2"
               title={t("actions.viewSourceCode")}
             >
               <SlSocialGithub size={18} />
@@ -136,10 +135,14 @@ export const ProjectCard = ({ project }: { project: Project }) => {
             </a>
           ) : (
             <div
-              className="flex items-center justify-center w-12 rounded-full bg-zinc-900/50 text-zinc-700 cursor-not-allowed"
+              className="flex items-center justify-center w-full sm:w-12 py-2.5 rounded-xl border border-white/5 bg-zinc-900/50 text-zinc-700 cursor-not-allowed shrink-0 gap-2"
               title={t("actions.privateRepo")}
             >
-              <FiGithub size={18} />
+              <SlSocialGithub size={18} />
+
+              <span className="sm:hidden text-xs font-bold">
+                {t("actions.source")}
+              </span>
             </div>
           )}
         </footer>
