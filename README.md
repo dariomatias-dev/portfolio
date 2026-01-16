@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<br>
+<div align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js">
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+</div>
+<br>
+
+<h1 align="center">Personal Portfolio</h1>
+
+<p align="center">
+  A clean, responsive single-page application built to showcase my skills and projects.
+  <br>
+  <a href="#about-the-project"><strong>Explore the docs »</strong></a>
+  <br>
+  <br>
+  <a href="https://dariomatias-dev.com">View Live Version</a> · 
+  <a href="https://github.com/dariomatias-dev/portfolio/issues">Report Bug</a> · 
+  <a href="https://github.com/dariomatias-dev/portfolio/issues">Request Feature</a>
+</p>
+
+## Table of Contents
+
+- [About The Project](#about-the-project)
+- [Features](#features)
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+- [License](#license)
+- [Author](#author)
+
+## About The Project
+
+This portfolio was created to serve as a central showcase of my skills, projects, and professional background.  
+It is designed to be a clean, fast, and responsive single-page application that effectively communicates my capabilities as a developer.
+
+The project was built with a focus on performance and modern development practices.
+
+## Features
+
+- **Responsive Design**: Fully functional and visually appealing on all devices, from mobile phones to desktops.
+- **Projects Section**: A curated list of my work, complete with descriptions and links to live demos and source code.
+- **About Me**: A brief introduction to my professional journey, technical skills, and interests.
+- **Performance Optimized**: Built with Next.js to ensure fast load times and a smooth user experience.
+
+## Built With
+
+This project was developed using the following core technologies:
+
+- **[React](https://reactjs.org/)** – A JavaScript library for building user interfaces.
+- **[Next.js](https://nextjs.org/)** – A React framework optimized for performance and SEO.
+- **[TypeScript](https://www.typescriptlang.org/)** – A typed superset of JavaScript that compiles to plain JavaScript.
+- **[Tailwind CSS](https://tailwindcss.com/)** – A utility-first CSS framework for rapid UI development.
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+Ensure you have Node.js and a package manager (pnpm) installed on your machine.
+
+- Node.js
+- pnpm
+
+### Installation
+
+Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/dariomatias-dev/portfolio.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Navigate into the project directory:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd portfolio
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Install the required packages:
 
-## Learn More
+```bash
+pnpm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Running The Project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm run dev
+```
 
-## Deploy on Vercel
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the result.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Distributed under the **MIT License**. See the [LICENSE](LICENSE) file for more information.
+
+## Author
+
+Developed by **Dário Matias**:
+
+- **Portfolio**: [dariomatias-dev](https://dariomatias-dev.com)
+- **GitHub**: [dariomatias-dev](https://github.com/dariomatias-dev)
+- **Email**: [matiasdario75@gmail.com](mailto:matiasdario75@gmail.com)
+- **Instagram**: [@dariomatias_dev](https://instagram.com/dariomatias_dev)
+- **LinkedIn**: [linkedin.com/in/dariomatias-dev](https://linkedin.com/in/dariomatias-dev)
