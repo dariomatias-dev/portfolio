@@ -7,6 +7,7 @@ import { useMemo, useState } from "react";
 import { SlSocialGithub } from "react-icons/sl";
 
 import { Project } from "@/@types/project";
+import { cn } from "@/lib/utils";
 import { getProjectCategoryTheme } from "@/utils/get-project-category-theme";
 import { LinkButton } from "../buttons/link-button";
 
@@ -120,31 +121,22 @@ export const ProjectCard = ({ project }: { project: Project }) => {
             />
           </LinkButton>
 
-          {repoLink ? (
-            <a
-              href={repoLink.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center h-10 sm:h-full w-full sm:w-12 rounded-xl border border-white/10 bg-white/5 text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 active:scale-95 shrink-0 gap-2"
-              title={t("actions.viewSourceCode")}
-            >
-              <SlSocialGithub size={18} />
-              <span className="sm:hidden text-xs font-bold">
-                {t("actions.source")}
-              </span>
-            </a>
-          ) : (
-            <div
-              className="flex items-center justify-center w-full sm:w-12 py-2.5 rounded-xl border border-white/5 bg-zinc-900/50 text-zinc-700 cursor-not-allowed shrink-0 gap-2"
-              title={t("actions.privateRepo")}
-            >
-              <SlSocialGithub size={18} />
-
-              <span className="sm:hidden text-xs font-bold">
-                {t("actions.source")}
-              </span>
-            </div>
-          )}
+          <LinkButton
+            href={repoLink?.url ?? "#"}
+            target="_blank"
+            disabled={!repoLink}
+            className={cn(
+              "flex items-center justify-center h-10 sm:h-full w-full sm:w-12 rounded-xl border text-white gap-2 shrink-0 px-0 transition-all duration-300 active:scale-95",
+              repoLink
+                ? "border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20"
+                : "border-white/10 bg-zinc-900/50 text-zinc-500"
+            )}
+          >
+            <SlSocialGithub size={18} />
+            <span className="sm:hidden text-xs font-bold">
+              {t("actions.source")}
+            </span>
+          </LinkButton>
         </footer>
       </div>
     </article>

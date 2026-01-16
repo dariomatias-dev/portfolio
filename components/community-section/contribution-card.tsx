@@ -7,6 +7,7 @@ import { SlSocialGithub } from "react-icons/sl";
 
 import { ContributionItem } from "@/@types/community";
 import { cn } from "@/lib/utils";
+import { LinkButton } from "../buttons/link-button";
 
 interface ContributionCardProps {
   item: ContributionItem;
@@ -142,16 +143,15 @@ export const ContributionCard = ({ item }: ContributionCardProps) => {
               </div>
             </div>
 
-            <a
+            <LinkButton
               href={item.repoUrl}
               target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center h-10 sm:h-full w-full sm:w-12 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 active:scale-95 shrink-0 gap-2"
-              title={t("source")}
+              className="flex items-center justify-center h-10 sm:h-full w-full sm:w-12 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 active:scale-95 shrink-0 gap-2 p-0 font-normal"
             >
               <SlSocialGithub size={18} />
+
               <span className="sm:hidden text-xs font-bold">{t("source")}</span>
-            </a>
+            </LinkButton>
           </div>
         </div>
       </div>
