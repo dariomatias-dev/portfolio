@@ -18,20 +18,21 @@ import * as z from "zod";
 import { cn } from "@/lib/utils";
 import { Dropdown } from "../dropdown";
 
+const schema = z.object({
+  name: z.string().min(1, "contact.form.errors.name"),
+  email: z.email("contact.form.errors.emailInvalid"),
+  subject: z.string().min(1, "contact.form.errors.subject"),
+  message: z.string().min(1, "contact.form.errors.message"),
+});
+
+type FormData = z.infer<typeof schema>;
+
 export const ContactForm = () => {
   const t = useTranslations();
+
   const [formStatus, setFormStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
-
-  const schema = z.object({
-    name: z.string().min(1, t("contact.form.errors.name")),
-    email: z.email(t("contact.form.errors.emailInvalid")),
-    subject: z.string().min(1, t("contact.form.errors.subject")),
-    message: z.string().min(1, t("contact.form.errors.message")),
-  });
-
-  type FormData = z.infer<typeof schema>;
 
   const {
     register,
@@ -71,7 +72,7 @@ export const ContactForm = () => {
           from_name: data.name,
           subject: data.subject,
           message: data.message,
-          reply_to: data.email,
+          email: data.email,
         },
         publicKey
       );
@@ -129,7 +130,7 @@ export const ContactForm = () => {
 
               {errors.name && (
                 <p className="text-[10px] text-red-500 ml-1.5 font-medium">
-                  {errors.name.message}
+                  {t(errors.name.message!)}
                 </p>
               )}
             </div>
@@ -157,7 +158,7 @@ export const ContactForm = () => {
 
               {errors.email && (
                 <p className="text-[10px] text-red-500 ml-1.5 font-medium">
-                  {errors.email.message}
+                  {t(errors.email.message!)}
                 </p>
               )}
             </div>
@@ -180,7 +181,7 @@ export const ContactForm = () => {
 
                   {fieldState.error && (
                     <p className="text-[10px] text-red-500 ml-1.5 font-medium">
-                      {fieldState.error.message}
+                      {t(fieldState.error.message!)}
                     </p>
                   )}
                 </>
@@ -205,7 +206,7 @@ export const ContactForm = () => {
 
             {errors.message && (
               <p className="text-[10px] text-red-500 ml-1.5 font-medium">
-                {errors.message.message}
+                {t(errors.message.message!)}
               </p>
             )}
           </div>
