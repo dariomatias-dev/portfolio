@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 import { IconType } from "react-icons";
 
@@ -15,13 +16,16 @@ const themeStyles: Record<BadgeTheme, string> = {
 };
 
 export const BadgeSection = ({
-  theme = 'light',
+  theme = "light",
   icon: Icon,
   children,
 }: BadgeSectionProps) => {
   return (
     <span
-      className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-bold uppercase mb-6 ${themeStyles[theme]}`}
+      className={cn(
+        "inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-bold uppercase mb-6",
+        themeStyles[theme]
+      )}
     >
       <Icon size={12} />
 

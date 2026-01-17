@@ -10,6 +10,7 @@ import { BadgeSection } from "../badge-section";
 import { TechStackDetails } from "./tech-stack-details";
 import { TechStackListItem } from "./tech-stack-list-item";
 import { TechStackSearchInput } from "./tech-stack-search-input";
+import { cn } from "@/lib/utils";
 
 export const TechStackSection = () => {
   const t = useTranslations();
@@ -84,17 +85,18 @@ export const TechStackSection = () => {
               />
 
               <div className="flex flex-wrap gap-2">
-                {categories.map((cat) => (
+                {categories.map((category) => (
                   <button
-                    key={cat}
-                    onClick={() => setActiveTab(cat)}
-                    className={`px-3 py-1.5 rounded-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-300 ${
-                      activeTab === cat
+                    key={category}
+                    onClick={() => setActiveTab(category)}
+                    className={cn(
+                      "px-3 py-1.5 rounded-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-300",
+                      activeTab === category
                         ? "bg-slate-900 text-white shadow-lg shadow-slate-900/20"
                         : "bg-slate-50 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
-                    }`}
+                    )}
                   >
-                    {t(`stack.categories.${cat}`)}
+                    {t(`stack.categories.${category}`)}
                   </button>
                 ))}
               </div>

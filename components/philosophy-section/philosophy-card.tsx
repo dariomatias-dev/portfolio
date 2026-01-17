@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 
 import { QuoteItem } from "@/@types/quote";
 import { quaoteGradients } from "@/constants/quaote-gradients";
+import { cn } from "@/lib/utils";
 
 interface PhilosophyCardProps {
   quote: QuoteItem;
@@ -17,7 +18,10 @@ export const PhilosophyCard = ({ quote, index }: PhilosophyCardProps) => {
   return (
     <div className="group relative flex flex-col h-full bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] transition-all duration-500 overflow-hidden">
       <div
-        className={`absolute inset-0 bg-linear-to-br ${quaoteGradients[index]} opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out`}
+        className={cn(
+          "absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out",
+          quaoteGradients[index]
+        )}
       />
 
       <Quote

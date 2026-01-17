@@ -71,13 +71,18 @@ export const ProjectCard = ({ project }: { project: Project }) => {
         <div className="absolute top-4 right-4 z-20">
           <div className="relative flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-950/50 backdrop-blur-xl border border-white/10 shadow-2xl">
             <div
-              className={`absolute inset-0 rounded-full opacity-20 blur-md ${theme.glow}`}
+              className={cn(
+                "absolute inset-0 rounded-full opacity-20 blur-md",
+                theme.glow
+              )}
             />
+
             <Icon
               size={12}
               strokeWidth={3}
               className="relative z-10 text-white"
             />
+
             <span className="relative z-10 text-[10px] font-black uppercase tracking-[0.15em] text-zinc-100">
               {project.category}
             </span>
@@ -90,6 +95,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           <h3 className="text-xl font-bold text-white mb-2 tracking-tight transition-all duration-300 group-hover:text-zinc-200">
             {project.title}
           </h3>
+
           <p className="text-zinc-400 text-sm font-medium leading-relaxed line-clamp-3 group-hover:text-zinc-300 transition-colors duration-300">
             {t(`projects.list.${project.descriptionKey}.description`)}
           </p>
@@ -110,7 +116,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           <LinkButton
             href={primaryLink?.url ?? "#"}
             target="_blank"
-            className="flex-1 text-sm justify-center px-4 py-2.5 rounded-xl"
+            className="flex-1 text-sm justify-center px-4 py-2.5 rounded-full group/btn"
           >
             <span className="relative z-10">{t("actions.viewProject")}</span>
 
@@ -126,13 +132,14 @@ export const ProjectCard = ({ project }: { project: Project }) => {
             target="_blank"
             disabled={!repoLink}
             className={cn(
-              "flex items-center justify-center h-10 sm:h-full w-full sm:w-12 rounded-xl border text-white gap-2 shrink-0 px-0 transition-all duration-300 active:scale-95",
+              "flex items-center justify-center h-10 sm:h-full w-full sm:w-12 rounded-full border text-white gap-2 shrink-0 px-0 transition-all duration-300 active:scale-95",
               repoLink
                 ? "border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20"
                 : "border-white/10 bg-zinc-900/50 text-zinc-500"
             )}
           >
             <SlSocialGithub size={18} />
+
             <span className="sm:hidden text-xs font-bold">
               {t("actions.source")}
             </span>

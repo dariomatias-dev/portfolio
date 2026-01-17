@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { useTransition } from "react";
@@ -26,11 +27,12 @@ export const LanguageSwitcher = () => {
       <button
         onClick={() => switchLocale("en")}
         disabled={isPending || locale === "en"}
-        className={`transition-all duration-300 ${
+        className={cn(
+          "transition-all duration-300",
           locale === "en"
             ? "text-white scale-110"
             : "text-zinc-600 hover:text-zinc-400 cursor-pointer"
-        }`}
+        )}
       >
         EN
       </button>
@@ -40,11 +42,12 @@ export const LanguageSwitcher = () => {
       <button
         onClick={() => switchLocale("pt")}
         disabled={isPending || locale === "pt"}
-        className={`transition-all duration-300 ${
+        className={cn(
+          "transition-all duration-300",
           locale === "pt"
             ? "text-white scale-110"
             : "text-zinc-600 hover:text-zinc-400 cursor-pointer"
-        }`}
+        )}
       >
         PT
       </button>

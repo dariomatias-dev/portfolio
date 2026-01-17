@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { CONTACTS } from "@/constants/contacts";
 import { ContactForm } from "./contact-form";
+import { cn } from "@/lib/utils";
 
 export const ContactSection = () => {
   const t = useTranslations();
@@ -81,17 +82,19 @@ export const ContactSection = () => {
 
                 <div className="relative z-10 pl-2 md:pr-4 flex items-center justify-center">
                   <div
-                    className={`absolute text-emerald-500 transition-all duration-300 transform ${
+                    className={cn(
+                      "absolute text-emerald-500 transition-all duration-300 transform",
                       copied ? "scale-100 opacity-100" : "scale-50 opacity-0"
-                    }`}
+                    )}
                   >
                     <Check size={20} />
                   </div>
 
                   <div
-                    className={`text-slate-300 group-hover:text-blue-500 transition-all duration-300 transform ${
+                    className={cn(
+                      "text-slate-300 group-hover:text-blue-500 transition-all duration-300 transform",
                       copied ? "opacity-0 scale-50" : "opacity-100 scale-100"
-                    }`}
+                    )}
                   >
                     <Copy size={20} />
                   </div>

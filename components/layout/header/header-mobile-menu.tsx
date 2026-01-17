@@ -9,6 +9,7 @@ import { SlSocialGithub } from "react-icons/sl";
 import { CONTACTS } from "@/constants/contacts";
 import { navLinks } from "@/constants/nav-links";
 import { LanguageSwitcher } from "./language-switcher";
+import { cn } from "@/lib/utils";
 
 interface HeaderMobileMenuProps {
   isOpen: boolean;
@@ -26,9 +27,10 @@ export const HeaderMobileMenu = ({
 
   return (
     <div
-      className={`fixed inset-0 z-40 bg-[#02040a] transition-transform duration-500 md:hidden ${
+      className={cn(
+        "fixed inset-0 z-40 bg-[#02040a] transition-transform duration-500 md:hidden",
         isOpen ? "translate-x-0" : "translate-x-full"
-      }`}
+      )}
     >
       <div className="flex h-full flex-col p-8 pt-28">
         <div className="space-y-4">

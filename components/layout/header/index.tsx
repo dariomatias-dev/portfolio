@@ -9,6 +9,7 @@ import { LinkButton } from "@/components/buttons/link-button";
 import { navLinks } from "@/constants/nav-links";
 import { HeaderMobileMenu } from "./header-mobile-menu";
 import { LanguageSwitcher } from "./language-switcher";
+import { cn } from "@/lib/utils";
 
 export const Header = () => {
   const t = useTranslations("navigation");
@@ -33,11 +34,12 @@ export const Header = () => {
   return (
     <header>
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        className={cn(
+          "fixed top-0 left-0 w-full z-50 transition-all duration-300",
           scrolled
             ? "bg-[#02040a]/80 backdrop-blur-xl border-b border-white/5 py-4"
             : "bg-transparent py-8 border-b border-transparent"
-        }`}
+        )}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <Link

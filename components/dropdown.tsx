@@ -106,17 +106,17 @@ export const Dropdown = ({
                 <button
                   key={opt.id}
                   type="button"
-                  onClick={() => {
-                    onChange(opt.id);
-
-                    setIsOpen(false);
-                  }}
                   className={cn(
                     "w-full flex items-center justify-between rounded-lg px-4 py-3 text-[10px] font-black uppercase italic tracking-widest transition-all cursor-pointer",
                     value === opt.id
                       ? "bg-slate-900 text-white"
                       : "text-slate-500 hover:bg-slate-50 hover:text-slate-900"
                   )}
+                  onClick={() => {
+                    onChange(opt.id);
+
+                    setIsOpen(false);
+                  }}
                 >
                   {opt.name}
                   {value === opt.id && <Check size={14} strokeWidth={4} />}
