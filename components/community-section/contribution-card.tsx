@@ -47,7 +47,7 @@ export const ContributionCard = ({ item }: ContributionCardProps) => {
         <div className="flex justify-between items-start mb-6">
           <div
             className={cn(
-              "w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500",
+              "w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center shadow-lg transition-transform duration-500",
               item.bg,
               item.color
             )}

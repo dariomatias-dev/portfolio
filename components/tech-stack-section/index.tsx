@@ -13,6 +13,7 @@ import { TechStackSearchInput } from "./tech-stack-search-input";
 
 export const TechStackSection = () => {
   const t = useTranslations();
+
   const [activeTab, setActiveTab] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTech, setSelectedTech] = useState<TechStackItem>(techStack[0]);
