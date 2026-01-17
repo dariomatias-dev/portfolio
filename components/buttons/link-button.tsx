@@ -1,20 +1,20 @@
 import Link, { LinkProps } from "next/link";
-import { HTMLAttributeAnchorTarget, ReactNode } from "react";
+import { ComponentPropsWithoutRef, ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-interface LinkButtonProps extends LinkProps {
-  target?: HTMLAttributeAnchorTarget | undefined;
-  className?: string;
+type AnchorProps = ComponentPropsWithoutRef<"a">;
+
+interface LinkButtonProps extends LinkProps, Omit<AnchorProps, "href"> {
   children: ReactNode;
   disabled?: boolean;
 }
 
 export const LinkButton = ({
-  target,
-  className = "",
+  className,
   children,
   disabled = false,
+  target,
   ...props
 }: LinkButtonProps) => {
   return (

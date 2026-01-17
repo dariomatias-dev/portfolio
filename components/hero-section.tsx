@@ -114,7 +114,9 @@ export const HeroSection = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 w-full justify-center items-center">
           <LinkButton
-            href="#projects"
+            href="/cv.pdf"
+            target="_blank"
+            download
             className="relative inline-flex h-12 justify-center px-8 text-sm"
           >
             <Download size={16} />
