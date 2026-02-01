@@ -61,10 +61,10 @@ export const contributions: ContributionItem[] = [
     repoUrl: "https://github.com/dariomatias-dev/go-validators",
   },
   {
-    typeKey: "items.errorHandling.type",
-    title: "Flutter Error Handling",
-    descriptionKey: "items.errorHandling.description",
-    tagKeys: "items.errorHandling.tags",
+    typeKey: "items.flutterResult.type",
+    title: "Flutter Result",
+    descriptionKey: "items.flutterResult.description",
+    tagKeys: "items.flutterResult.tags",
     stats: { stars: 1, forks: 0 },
     icon: SiDart,
     color: "text-red-400",
@@ -72,7 +72,7 @@ export const contributions: ContributionItem[] = [
     gradient: "from-red-500/20 via-red-900/5 to-transparent",
     border: "group-hover:border-red-500/30",
     command:
-      "git clone https://github.com/dariomatias-dev/flutter_error_handling",
-    repoUrl: "https://github.com/dariomatias-dev/flutter_error_handling",
+      "git clone https://github.com/dariomatias-dev/flutter_result",
+    repoUrl: "https://github.com/dariomatias-dev/flutter_result",
   },
 ];

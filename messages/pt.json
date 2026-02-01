@@ -263,10 +263,10 @@
         "description": "Utilitários de validação leves para Go, focados em garantir a integridade dos dados usando apenas bibliotecas nativas, sem dependências externas.",
         "tags": ["Go"]
       },
-      "errorHandling": {
+      "flutterResult": {
         "type": "Solução Dart",
-        "title": "Flutter Error Handling",
-        "description": "Projeto que apresenta uma abordagem estruturada para lidar com resultados e falhas em apps Dart/Flutter, promovendo fluxos mais previsíveis e legíveis.",
+        "title": "Flutter Result",
+        "description": "Projeto que apresenta uma abordagem estruturada para lidar com resultados e falhas em apps Dart/Flutter, promovendo gestão consistente de erros, melhor legibilidade do código e fluxos mais previsíveis.",
         "tags": ["Dart", "Flutter", "Error Handling", "Arquitetura"]
       }
     }
