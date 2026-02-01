@@ -241,33 +241,33 @@
     "items": {
       "materials": {
         "type": "Repositório de Estudos",
-        "title": "Materiais de Programação",
-        "description": "Repositório pessoal contendo materiais de estudo, exemplos de código, anotações e referências sobre conceitos de programação, linguagens, ferramentas e boas práticas.",
+        "title": "Materials",
+        "description": "Repositório pessoal contendo materiais de estudo, exemplos de código, notas e referências sobre conceitos de programação, linguagens, ferramentas e melhores práticas.",
         "tags": ["Estudo", "Exemplos", "Programação"]
       },
       "scrollInfinity": {
         "type": "Pacote Flutter",
         "title": "Scroll Infinity",
-        "description": "Pacote Flutter que fornece uma solução simples e reutilizável para implementar rolagem infinita em listas, reduzindo boilerplate e melhorando a legibilidade.",
+        "description": "Pacote Flutter que fornece uma solução simples e reutilizável para implementar rolagem infinita em listas, reduzindo boilerplate e melhorando a legibilidade do código.",
         "tags": ["Dart", "Flutter"]
       },
       "syntaxHighlighter": {
         "type": "Pacote Flutter",
         "title": "Flutter Syntax Highlighter",
-        "description": "Widget de destaque de sintaxe customizável para Flutter, com suporte a temas claro/escuro, números de linha, blocos selecionáveis e fácil integração.",
+        "description": "Widget de destaque de sintaxe customizável para código Dart e Flutter, suportando temas claro e escuro, números de linha, blocos de código selecionáveis e fácil integração em projetos existentes.",
         "tags": ["Dart", "Flutter"]
       },
       "goValidators": {
         "type": "Pacote Go",
         "title": "Go Validators",
-        "description": "Utilitários de validação leves para Go, focados em garantir a integridade dos dados usando apenas bibliotecas nativas, sem dependências externas.",
+        "description": "Utilitários de validação leves para aplicações Go, focados em garantir a integridade dos dados usando apenas bibliotecas nativas, sem dependências externas ou sobrecarga de desempenho.",
         "tags": ["Go"]
       },
       "flutterResult": {
         "type": "Solução Dart",
         "title": "Flutter Result",
-        "description": "Projeto que apresenta uma abordagem estruturada para lidar com resultados e falhas em apps Dart/Flutter, promovendo gestão consistente de erros, melhor legibilidade do código e fluxos mais previsíveis.",
-        "tags": ["Dart", "Flutter", "Error Handling", "Arquitetura"]
+        "description": "Repositório que apresenta uma abordagem bem estruturada para lidar com resultados e falhas em aplicações Dart e Flutter, promovendo gerenciamento consistente de erros, melhor legibilidade do código e fluxos de aplicação mais previsíveis.",
+        "tags": ["Dart", "Flutter", "Tratamento de Erros", "Arquitetura"]
       }
     }
   },

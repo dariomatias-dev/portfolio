@@ -236,7 +236,7 @@
     "source": "Source",
     "items": {
       "materials": {
-        "type": "Learning Repository",
+        "type": "Study Repository",
         "title": "Materials",
         "description": "Personal repository containing study materials, code examples, notes, and references on programming concepts, languages, tools, and best practices.",
         "tags": ["Study", "Examples", "Programming"]
