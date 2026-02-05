@@ -71,8 +71,22 @@ export const contributions: ContributionItem[] = [
     bg: "bg-red-950/30",
     gradient: "from-red-500/20 via-red-900/5 to-transparent",
     border: "group-hover:border-red-500/30",
-    command:
-      "git clone https://github.com/dariomatias-dev/flutter_result",
+    command: "git clone https://github.com/dariomatias-dev/flutter_result",
     repoUrl: "https://github.com/dariomatias-dev/flutter_result",
+  },
+  {
+    typeKey: "items.flutterI18nArchitecture.type",
+    title: "Flutter i18n Architecture",
+    descriptionKey: "items.flutterI18nArchitecture.description",
+    tagKeys: "items.flutterI18nArchitecture.tags",
+    stats: { stars: 0, forks: 0 },
+    icon: SiFlutter,
+    color: "text-emerald-400",
+    bg: "bg-emerald-950/30",
+    gradient: "from-emerald-500/20 via-emerald-900/5 to-transparent",
+    border: "group-hover:border-emerald-500/30",
+    command:
+      "git clone https://github.com/dariomatias-dev/flutter_i18n_architecture",
+    repoUrl: "https://github.com/dariomatias-dev/flutter_i18n_architecture",
   },
 ];

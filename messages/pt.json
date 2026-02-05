@@ -268,6 +268,12 @@
         "title": "Flutter Result",
         "description": "Repositório que apresenta uma abordagem bem estruturada para lidar com resultados e falhas em aplicações Dart e Flutter, promovendo gerenciamento consistente de erros, melhor legibilidade do código e fluxos de aplicação mais previsíveis.",
         "tags": ["Dart", "Flutter", "Tratamento de Erros", "Arquitetura"]
+      },
+      "flutterI18nArchitecture": {
+        "type": "Arquitetura Flutter",
+        "title": "Flutter i18n Architecture",
+        "description": "Projeto demonstrativo que apresenta uma abordagem de arquitetura em camadas para a implementação de internacionalização (i18n) em aplicações Flutter, com foco em escalabilidade, separação de responsabilidades e manutenibilidade a longo prazo.",
+        "tags": ["Flutter", "Dart", "i18n", "Arquitetura"]
       }
     }
   },
