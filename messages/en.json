@@ -90,6 +90,9 @@
       },
       "elevasign": {
         "description": "Digital Signature Platform for managing contracts and documents. I have participated in the development since early versions, adding multiple features to the application."
+      },
+      "my_ecommerce": {
+        "description": "SaaS platform for Virtual Stores, developed to enable small entrepreneurs to create, manage, and scale their online businesses."
       }
     }
   },

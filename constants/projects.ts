@@ -52,4 +52,30 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    title: "My E-Commerce",
+    descriptionKey: "my_ecommerce",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "Docker",
+      "Flutter",
+      "Dart",
+    ],
+    category: "fullstack",
+    links: [
+      {
+        type: "site",
+        url: "https://my-commerce-dariomatias-dev.vercel.app",
+      },
+      {
+        type: "github",
+        url: "https://github.com/dariomatias-dev/my_commerce",
+      },
+    ],
+  },
 ];

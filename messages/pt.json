@@ -90,6 +90,9 @@
       },
       "elevasign": {
         "description": "Plataforma de assinatura digital para gestão de contratos e documentos. Participei do desenvolvimento desde versões iniciais adicionando múltiplas funcionalidades."
+      },
+      "my_ecommerce": {
+        "description": "Plataforma SaaS de Lojas Virtuais, desenvolvida para permitir que pequenos empreendedores criem, gerenciem e escalem seus negócios online."
       }
     }
   },

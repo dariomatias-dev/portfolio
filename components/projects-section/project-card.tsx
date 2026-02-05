@@ -15,6 +15,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
   const t = useTranslations();
   const initialImage = `/screenshots/${project.title
     .toLowerCase()
+    .replace("-", "")
     .replace(/\s+/g, "_")}_screenshot.png`;
 
   const [imgSrc, setImgSrc] = useState(initialImage);
@@ -22,7 +23,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
 
   const theme = useMemo(
     () => getProjectCategoryTheme(project.category),
-    [project.category]
+    [project.category],
   );
 
   const Icon = theme.icon;
@@ -30,14 +31,14 @@ export const ProjectCard = ({ project }: { project: Project }) => {
   const primaryLink = useMemo(
     () =>
       project.links.find((l) =>
-        ["site", "playStore", "pubDev"].includes(l.type)
+        ["site", "playStore", "pubDev"].includes(l.type),
       ) || project.links[0],
-    [project.links]
+    [project.links],
   );
 
   const repoLink = useMemo(
     () => project.links.find((l) => l.type === "github"),
-    [project.links]
+    [project.links],
   );
 
   return (
@@ -73,7 +74,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
             <div
               className={cn(
                 "absolute inset-0 rounded-full opacity-20 blur-md",
-                theme.glow
+                theme.glow,
               )}
             />
 
@@ -135,7 +136,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
               "flex items-center justify-center h-10 sm:h-full w-full sm:w-12 rounded-full border text-white gap-2 shrink-0 px-0 transition-all duration-300 active:scale-95",
               repoLink
                 ? "border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20"
-                : "border-white/10 bg-zinc-900/50 text-zinc-500"
+                : "border-white/10 bg-zinc-900/50 text-zinc-500",
             )}
           >
             <SlSocialGithub size={18} />
