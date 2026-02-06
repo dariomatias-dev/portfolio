@@ -31,7 +31,7 @@ export const Footer = () => {
         <div className="flex justify-center mb-14 md:mb-16">
           <button
             onClick={scrollToTop}
-            className="group flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-950 border border-zinc-800 hover:border-blue-500/40 transition-all duration-300 hover:shadow-[0_0_15px_-5px_rgba(37,99,235,0.4)]"
+            className="group flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-950 border border-zinc-800 hover:border-blue-500/40 transition-all duration-300 hover:shadow-[0_0_15px_-5px_rgba(37,99,235,0.4)] cursor-pointer"
           >
             <ArrowUp
               size={14}

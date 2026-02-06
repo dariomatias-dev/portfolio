@@ -60,7 +60,7 @@ export const ContactSection = () => {
             <div className="flex flex-col gap-4 w-full items-center lg:items-start">
               <button
                 onClick={copyEmail}
-                className="group relative flex items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 w-full max-w-sm text-left overflow-hidden"
+                className="group relative flex items-center justify-between p-4 rounded-2xl bg-white border border-slate-200 hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 w-full max-w-sm text-left overflow-hidden cursor-pointer"
               >
                 <div className="absolute inset-0 bg-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -84,7 +84,7 @@ export const ContactSection = () => {
                   <div
                     className={cn(
                       "absolute text-emerald-500 transition-all duration-300 transform",
-                      copied ? "scale-100 opacity-100" : "scale-50 opacity-0"
+                      copied ? "scale-100 opacity-100" : "scale-50 opacity-0",
                     )}
                   >
                     <Check size={20} />
@@ -93,7 +93,7 @@ export const ContactSection = () => {
                   <div
                     className={cn(
                       "text-slate-300 group-hover:text-blue-500 transition-all duration-300 transform",
-                      copied ? "opacity-0 scale-50" : "opacity-100 scale-100"
+                      copied ? "opacity-0 scale-50" : "opacity-100 scale-100",
                     )}
                   >
                     <Copy size={20} />

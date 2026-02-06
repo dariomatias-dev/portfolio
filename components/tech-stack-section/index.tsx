@@ -1,16 +1,16 @@
 "use client";
 
 import { Layers } from "lucide-react";
-import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useRef, useState } from "react";
 
 import { TechStackItem } from "@/@types/tech-stack";
 import { techStack } from "@/constants/technologies";
+import { cn } from "@/lib/utils";
 import { BadgeSection } from "../badge-section";
 import { TechStackDetails } from "./tech-stack-details";
 import { TechStackListItem } from "./tech-stack-list-item";
 import { TechStackSearchInput } from "./tech-stack-search-input";
-import { cn } from "@/lib/utils";
 
 export const TechStackSection = () => {
   const t = useTranslations();
@@ -90,10 +90,10 @@ export const TechStackSection = () => {
                     key={category}
                     onClick={() => setActiveTab(category)}
                     className={cn(
-                      "px-3 py-1.5 rounded-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-300",
+                      "px-3 py-1.5 rounded-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer",
                       activeTab === category
                         ? "bg-slate-900 text-white shadow-lg shadow-slate-900/20"
-                        : "bg-slate-50 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
+                        : "bg-slate-50 text-slate-500 hover:bg-slate-100 hover:text-slate-900",
                     )}
                   >
                     {t(`stack.categories.${category}`)}

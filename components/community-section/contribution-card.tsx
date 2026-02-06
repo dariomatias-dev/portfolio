@@ -33,13 +33,13 @@ export const ContributionCard = ({ item }: ContributionCardProps) => {
     <div
       className={cn(
         "group relative flex flex-col bg-[#0A0C12] rounded-3xl border border-white/5 overflow-hidden transition-all duration-500 hover:shadow-2xl",
-        item.border
+        item.border,
       )}
     >
       <div
         className={cn(
           "absolute top-0 right-0 w-75 h-75 bg-linear-to-bl blur-[80px] opacity-40 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none",
-          item.gradient
+          item.gradient,
         )}
       />
 
@@ -49,7 +49,7 @@ export const ContributionCard = ({ item }: ContributionCardProps) => {
             className={cn(
               "w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center shadow-lg transition-transform duration-500",
               item.bg,
-              item.color
+              item.color,
             )}
           >
             <Icon size={24} />
@@ -71,7 +71,7 @@ export const ContributionCard = ({ item }: ContributionCardProps) => {
           <span
             className={cn(
               "inline-block text-[10px] font-bold uppercase tracking-widest mb-2 opacity-90",
-              item.color
+              item.color,
             )}
           >
             {t(item.typeKey)}
@@ -103,7 +103,7 @@ export const ContributionCard = ({ item }: ContributionCardProps) => {
               <div
                 className={cn(
                   "absolute -inset-0.5 bg-linear-to-r to-transparent rounded-lg opacity-0 group-hover/cmd:opacity-20 blur transition duration-500",
-                  item.gradient.split(" ")[1]
+                  item.gradient.split(" ")[1],
                 )}
               />
 
@@ -125,7 +125,7 @@ export const ContributionCard = ({ item }: ContributionCardProps) => {
                   <div
                     className={cn(
                       "absolute inset-0 flex items-center justify-center text-emerald-500 transition-all duration-300 transform",
-                      copied ? "scale-100 opacity-100" : "scale-50 opacity-0"
+                      copied ? "scale-100 opacity-100" : "scale-50 opacity-0",
                     )}
                   >
                     <Check size={14} />
@@ -133,8 +133,8 @@ export const ContributionCard = ({ item }: ContributionCardProps) => {
 
                   <div
                     className={cn(
-                      "transition-all duration-300 transform",
-                      copied ? "opacity-0 scale-50" : "opacity-100 scale-100"
+                      "transition-all duration-300 transform cursor-pointer",
+                      copied ? "opacity-0 scale-50" : "opacity-100 scale-100",
                     )}
                   >
                     <Copy size={14} />
