@@ -2,8 +2,8 @@ import { Project } from "@/@types/project";
 
 export const projects: Project[] = [
   {
+    key: "portfolio",
     title: "Portfolio",
-    descriptionKey: "portfolio",
     technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
     category: "frontend",
     links: [
@@ -12,8 +12,8 @@ export const projects: Project[] = [
     ],
   },
   {
+    key: "flutterGuideApp",
     title: "Flutter Guide App",
-    descriptionKey: "flutter_guide_app",
     technologies: ["Dart", "Flutter"],
     category: "mobile",
     links: [
@@ -28,8 +28,8 @@ export const projects: Project[] = [
     ],
   },
   {
+    key: "flutterGuideWeb",
     title: "Flutter Guide Web",
-    descriptionKey: "flutter_guide_web",
     technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
     category: "frontend",
     links: [
@@ -41,8 +41,8 @@ export const projects: Project[] = [
     ],
   },
   {
+    key: "eleva_sign",
     title: "ElevaSign",
-    descriptionKey: "elevasign",
     technologies: ["Dart", "Flutter"],
     category: "mobile",
     links: [
@@ -53,8 +53,8 @@ export const projects: Project[] = [
     ],
   },
   {
+    key: "myEcommerce",
     title: "My E-Commerce",
-    descriptionKey: "my_ecommerce",
     technologies: [
       "Next.js",
       "TypeScript",

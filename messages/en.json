@@ -82,16 +82,16 @@
       "portfolio": {
         "description": "Personal portfolio with information about me, projects, experiences, and contact."
       },
-      "flutter_guide_app": {
+      "flutterGuideApp": {
         "description": "Flutter Guide is an educational app that helps developers learn Flutter through practical examples."
       },
-      "flutter_guide_web": {
+      "flutterGuideWeb": {
         "description": "Official Flutter Guide website with information, main features, screenshots, privacy policy, and a direct link to download on the Google Play Store."
       },
-      "elevasign": {
+      "eleva_sign": {
         "description": "Digital Signature Platform for managing contracts and documents. I have participated in the development since early versions, adding multiple features to the application."
       },
-      "my_ecommerce": {
+      "myEcommerce": {
         "description": "SaaS platform for Virtual Stores, developed to enable small entrepreneurs to create, manage, and scale their online businesses."
       }
     }

@@ -9,16 +9,14 @@ import { SlSocialGithub } from "react-icons/sl";
 import { Project } from "@/@types/project";
 import { cn } from "@/lib/utils";
 import { getProjectCategoryTheme } from "@/utils/get-project-category-theme";
+import { toSnakeCase } from "@/utils/to-snake-case";
 import { LinkButton } from "../buttons/link-button";
 import { ImageViewer } from "./image-viewer";
 
 export const ProjectCard = ({ project }: { project: Project }) => {
   const t = useTranslations();
 
-  const initialImage = `/screenshots/${project.title
-    .toLowerCase()
-    .replace("-", "")
-    .replace(/\s+/g, "_")}_screenshot.png`;
+  const initialImage = `/screenshots/${toSnakeCase(project.key)}_screenshot.png`;
 
   const [imgSrc, setImgSrc] = useState(initialImage);
   const [isLoading, setIsLoading] = useState(true);
@@ -109,7 +107,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
             </h3>
 
             <p className="line-clamp-3 text-sm font-medium leading-relaxed text-zinc-400 transition-colors duration-300 group-hover:text-zinc-300">
-              {t(`projects.list.${project.descriptionKey}.description`)}
+              {t(`projects.list.${project.key}.description`)}
             </p>
           </header>
 
