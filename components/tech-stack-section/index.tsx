@@ -3,7 +3,7 @@
 import { Layers } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { TechStackItem } from "@/@types/tech-stack";
 import { techStack } from "@/constants/technologies";
@@ -24,15 +24,28 @@ export const TechStackSection = () => {
 
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const techParam = searchParams.get("tech");
+
   const selectedTech = useMemo(() => {
-    const techParam = searchParams.get("tech")?.toLowerCase();
-    if (!techParam) return techStack[0];
+    const param = techParam?.toLowerCase();
+    if (!param) return techStack[0];
 
     return (
-      techStack.find((tech) => tech.name.toLowerCase() === techParam) ||
+      techStack.find((tech) => tech.name.toLowerCase() === param) ||
       techStack[0]
     );
-  }, [searchParams]);
+  }, [techParam]);
+
+  useEffect(() => {
+    if (techParam && containerRef.current) {
+      const yOffset = -120;
+      const element = containerRef.current;
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }, [techParam]);
 
   const categories = [
     "all",
@@ -55,15 +68,6 @@ export const TechStackSection = () => {
 
   const handleTechClick = (tech: TechStackItem) => {
     router.push(`?tech=${tech.name.toLowerCase()}#stack`, { scroll: false });
-
-    if (containerRef.current) {
-      const yOffset = -120;
-      const element = containerRef.current;
-      const y =
-        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
   };
 
   return (
