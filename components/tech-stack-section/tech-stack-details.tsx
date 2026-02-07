@@ -3,11 +3,11 @@
 import { ArrowUpRight, CheckCircle2, Code2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { TechStackItem } from "@/@types/tech-stack";
+import { Technology } from "@/@types/tech-stack";
 import { LinkButton } from "../buttons/link-button";
 
 interface TechStackDetailsProps {
-  tech: TechStackItem;
+  tech: Technology;
 }
 
 export const TechStackDetails = ({ tech }: TechStackDetailsProps) => {

@@ -4,13 +4,14 @@ export const projects: Project[] = [
   {
     key: "minimalistPortfolio",
     title: "Minimalist Portfolio",
-    technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
+    technologies: ["Tailwind CSS", "TypeScript", "Next.js", "shadcn/ui"],
     category: "frontend",
     links: [
       { type: "site", url: "https://dariomatias-portfolio.vercel.app/" },
       { type: "github", url: "https://github.com/dariomatias-dev/portfolio" },
     ],
   },
+
   {
     key: "flutterGuideApp",
     title: "Flutter Guide App",
@@ -27,10 +28,11 @@ export const projects: Project[] = [
       },
     ],
   },
+
   {
     key: "flutterGuideWeb",
     title: "Flutter Guide Web",
-    technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
+    technologies: ["Tailwind CSS", "TypeScript", "Next.js", "shadcn/ui"],
     category: "frontend",
     links: [
       { type: "site", url: "https://flutter-guide-web.vercel.app/" },
@@ -40,6 +42,7 @@ export const projects: Project[] = [
       },
     ],
   },
+
   {
     key: "elevaSign",
     title: "ElevaSign",
@@ -52,13 +55,14 @@ export const projects: Project[] = [
       },
     ],
   },
+
   {
     key: "myEcommerce",
     title: "My E-Commerce",
     technologies: [
       "Next.js",
       "TypeScript",
-      "TailwindCSS",
+      "Tailwind CSS",
       "Java",
       "Spring Boot",
       "PostgreSQL",

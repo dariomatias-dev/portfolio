@@ -1,11 +1,11 @@
 import { IconType } from "react-icons";
 import { LucideIcon } from "lucide-react";
 
-export type TechStackCategoryType = "Frontend" | "Backend" | "Mobile" | "Database" | "DevOps" | "Design";
+export type TechnologyCategoryType = "Frontend" | "Backend" | "Mobile" | "Database" | "DevOps" | "Design";
 
-export interface TechStackItem {
+export interface Technology {
   name: string;
-  category: TechStackCategoryType;
+  category: TechnologyCategoryType;
   descriptionKey: string;
   url: string;
   docs: string;

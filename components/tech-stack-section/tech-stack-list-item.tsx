@@ -1,10 +1,10 @@
 import { ArrowRight } from "lucide-react";
 
-import { TechStackItem } from "@/@types/tech-stack";
+import { Technology } from "@/@types/tech-stack";
 import { cn } from "@/lib/utils";
 
 interface TechStackListItemProps {
-  tech: TechStackItem;
+  tech: Technology;
   isSelected: boolean;
   onClick: () => void;
 }

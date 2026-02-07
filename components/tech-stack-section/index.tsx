@@ -5,8 +5,8 @@ import { useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import { TechStackItem } from "@/@types/tech-stack";
-import { techStack } from "@/constants/technologies";
+import { Technology } from "@/@types/tech-stack";
+import { technologies } from "@/constants/technologies";
 import { cn } from "@/lib/utils";
 import { BadgeSection } from "../badge-section";
 import { TechStackDetails } from "./tech-stack-details";
@@ -28,11 +28,11 @@ export const TechStackSection = () => {
 
   const selectedTech = useMemo(() => {
     const param = techParam?.toLowerCase();
-    if (!param) return techStack[0];
+    if (!param) return technologies[0];
 
     return (
-      techStack.find((tech) => tech.name.toLowerCase() === param) ||
-      techStack[0]
+      technologies.find((tech) => tech.name.toLowerCase() === param) ||
+      technologies[0]
     );
   }, [techParam]);
 
@@ -56,7 +56,7 @@ export const TechStackSection = () => {
     "devops",
   ];
 
-  const filteredTech = techStack.filter((tech) => {
+  const filteredTech = technologies.filter((tech) => {
     const matchesCategory =
       activeTab === "all" || tech.category.toLowerCase() === activeTab;
     const matchesSearch = tech.name
@@ -66,7 +66,7 @@ export const TechStackSection = () => {
     return matchesCategory && matchesSearch;
   });
 
-  const handleTechClick = (tech: TechStackItem) => {
+  const handleTechClick = (tech: Technology) => {
     router.push(`?tech=${tech.name.toLowerCase()}#stack`, { scroll: false });
   };
 

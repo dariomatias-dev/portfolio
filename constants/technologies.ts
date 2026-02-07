@@ -26,9 +26,9 @@ import {
   SiTypescript,
 } from "react-icons/si";
 
-import { TechStackItem } from "@/@types/tech-stack";
+import { Technology } from "@/@types/tech-stack";
 
-export const techStack: TechStackItem[] = [
+export const technologies: Technology[] = [
   {
     name: "React",
     category: "Frontend",
