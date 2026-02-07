@@ -1,25 +1,14 @@
 "use client";
 
-import {
-  ArrowRight,
-  Box,
-  Code2,
-  ExternalLink,
-  Globe,
-  Info,
-  Link2,
-  Package,
-  Smartphone,
-  X,
-} from "lucide-react";
+import { ArrowRight, Box, Code2, Info, Link2, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useMemo } from "react";
-import { FiGithub } from "react-icons/fi";
 
 import { Project } from "@/@types/project";
 import { cn } from "@/lib/utils";
 import { getProjectCategoryTheme } from "@/utils/get-project-category-theme";
+import { getIconByProjectLinkType } from "@/utils/icon-by-project-link-type";
 import { toSnakeCase } from "@/utils/to-snake-case";
 
 interface ProjectSheetProps {
@@ -49,23 +38,6 @@ export const ProjectSheet = ({
   );
 
   const Icon = theme?.icon || Box;
-
-  const getIconByType = (type: string) => {
-    switch (type) {
-      case "github":
-        return <FiGithub size={20} />;
-      case "site":
-        return <Globe size={20} />;
-      case "playStore":
-        return <Smartphone size={20} />;
-      case "pubDev":
-      case "goDev":
-      case "package":
-        return <Package size={20} />;
-      default:
-        return <ExternalLink size={20} />;
-    }
-  };
 
   return (
     <div
@@ -176,36 +148,42 @@ export const ProjectSheet = ({
                   </div>
 
                   <div className="grid grid-cols-1 gap-3">
-                    {project.links.map((link, idx) => (
-                      <a
-                        key={idx}
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group flex items-center justify-between p-5 rounded-2xl border border-white/5 bg-white/2 hover:bg-white/4 transition-all duration-300"
-                      >
-                        <div className="flex items-center gap-5">
-                          <div className="p-2.5 rounded-xl bg-black/40 text-zinc-500 group-hover:text-white transition-colors">
-                            {getIconByType(link.type)}
+                    {project.links.map((link, idx) => {
+                      const IconByProjectLinkType = getIconByProjectLinkType(
+                        link.type,
+                      );
+
+                      return (
+                        <a
+                          key={idx}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-center justify-between p-5 rounded-2xl border border-white/5 bg-white/2 hover:bg-white/4 transition-all duration-300"
+                        >
+                          <div className="flex items-center gap-5">
+                            <div className="p-2.5 rounded-xl bg-black/40 text-zinc-500 group-hover:text-white transition-colors">
+                              <IconByProjectLinkType size={20} />
+                            </div>
+
+                            <div>
+                              <span className="block font-bold text-zinc-200 text-[15px] capitalize tracking-tight group-hover:text-white transition-colors">
+                                {link.type.replace(/([A-Z])/g, " $1")}
+                              </span>
+
+                              <span className="text-[11px] text-zinc-500 font-medium truncate max-w-64 block">
+                                {link.url.replace(/^https?:\/\//, "")}
+                              </span>
+                            </div>
                           </div>
 
-                          <div>
-                            <span className="block font-bold text-zinc-200 text-[15px] capitalize tracking-tight group-hover:text-white transition-colors">
-                              {link.type.replace(/([A-Z])/g, " $1")}
-                            </span>
-
-                            <span className="text-[11px] text-zinc-500 font-medium truncate max-w-64 block">
-                              {link.url.replace(/^https?:\/\//, "")}
-                            </span>
-                          </div>
-                        </div>
-
-                        <ArrowRight
-                          size={18}
-                          className="text-zinc-800 group-hover:text-zinc-400 transition-all"
-                        />
-                      </a>
-                    ))}
+                          <ArrowRight
+                            size={18}
+                            className="text-zinc-800 group-hover:text-zinc-400 transition-all"
+                          />
+                        </a>
+                      );
+                    })}
                   </div>
                 </section>
               </div>
