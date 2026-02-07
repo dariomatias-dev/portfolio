@@ -102,7 +102,7 @@ export const ProjectSheet = ({
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto custom-scrollbar scroll-smooth">
+        <div className="flex-1 overflow-y-auto">
           {project && (
             <div className="flex flex-col">
               <div className="relative h-[42vh] w-full bg-[#050505] overflow-hidden">
@@ -130,24 +130,24 @@ export const ProjectSheet = ({
                 </div>
               </div>
 
-              <div className="px-10 py-12 space-y-16">
+              <div className="px-10 py-12 space-y-14">
                 <section className="space-y-5">
                   <div className="flex items-center gap-3 text-zinc-500">
-                    <Info size={16} />
+                    <Info size={15} />
 
                     <h3 className="text-[10px] font-black uppercase tracking-[0.4em]">
                       {t(`projects.sections.about`)}
                     </h3>
                   </div>
 
-                  <p className="text-zinc-400 leading-relaxed text-lg font-light whitespace-pre-line">
+                  <p className="text-zinc-400 leading-relaxed text-[15px] font-normal whitespace-pre-line">
                     {t(`projects.list.${project.key}.long`)}
                   </p>
                 </section>
 
-                <section className="space-y-6">
+                <section className="space-y-5">
                   <div className="flex items-center gap-3 text-zinc-500">
-                    <Code2 size={16} />
+                    <Code2 size={15} />
 
                     <h3 className="text-[10px] font-black uppercase tracking-[0.4em]">
                       {t(`projects.sections.technologies`)}
@@ -158,7 +158,7 @@ export const ProjectSheet = ({
                     {project.technologies.map((tech) => (
                       <div
                         key={tech}
-                        className="px-4 py-2 rounded-xl border border-white/5 bg-white/3 text-[11px] text-zinc-300 font-bold uppercase tracking-widest shadow-inner"
+                        className="px-3.5 py-1.5 rounded-lg border border-white/5 bg-white/3 text-[11px] text-zinc-300 font-bold uppercase tracking-wider"
                       >
                         {tech}
                       </div>
@@ -166,9 +166,9 @@ export const ProjectSheet = ({
                   </div>
                 </section>
 
-                <section className="pb-16 space-y-6">
+                <section className="pb-16 space-y-5">
                   <div className="flex items-center gap-3 text-zinc-500">
-                    <Link2 size={16} />
+                    <Link2 size={15} />
 
                     <h3 className="text-[10px] font-black uppercase tracking-[0.4em]">
                       Links
@@ -182,19 +182,19 @@ export const ProjectSheet = ({
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex items-center justify-between p-5 rounded-2xl border border-white/5 bg-white/2 hover:bg-white/4 hover:border-white/10 transition-all duration-500"
+                        className="group flex items-center justify-between p-5 rounded-2xl border border-white/5 bg-white/2 hover:bg-white/4 transition-all duration-300"
                       >
                         <div className="flex items-center gap-5">
-                          <div className="p-3 rounded-xl bg-black/40 text-zinc-500 group-hover:text-white transition-all duration-500">
+                          <div className="p-2.5 rounded-xl bg-black/40 text-zinc-500 group-hover:text-white transition-colors">
                             {getIconByType(link.type)}
                           </div>
 
                           <div>
-                            <span className="block font-bold text-zinc-200 text-base capitalize tracking-tight group-hover:text-white transition-colors">
+                            <span className="block font-bold text-zinc-200 text-[15px] capitalize tracking-tight group-hover:text-white transition-colors">
                               {link.type.replace(/([A-Z])/g, " $1")}
                             </span>
 
-                            <span className="text-[11px] text-zinc-600 font-medium truncate max-w-70 block group-hover:text-zinc-500 transition-colors">
+                            <span className="text-[11px] text-zinc-500 font-medium truncate max-w-64 block">
                               {link.url.replace(/^https?:\/\//, "")}
                             </span>
                           </div>
@@ -202,7 +202,7 @@ export const ProjectSheet = ({
 
                         <ArrowRight
                           size={18}
-                          className="text-zinc-800 group-hover:text-zinc-400 -rotate-45 group-hover:rotate-0 transition-all duration-500"
+                          className="text-zinc-800 group-hover:text-zinc-400 transition-all"
                         />
                       </a>
                     ))}
