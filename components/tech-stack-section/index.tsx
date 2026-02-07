@@ -2,7 +2,7 @@
 
 import { Layers } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo, useRef, useState } from "react";
 
 import { TechStackItem } from "@/@types/tech-stack";
@@ -17,7 +17,6 @@ export const TechStackSection = () => {
   const t = useTranslations();
 
   const router = useRouter();
-  const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const [activeTab, setActiveTab] = useState("all");
@@ -55,10 +54,7 @@ export const TechStackSection = () => {
   });
 
   const handleTechClick = (tech: TechStackItem) => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set("tech", tech.name.toLowerCase());
-
-    router.push(`${pathname}?${params.toString()}`, { scroll: false });
+    router.push(`?tech=${tech.name.toLowerCase()}#stack`, { scroll: false });
 
     if (containerRef.current) {
       const yOffset = -120;
