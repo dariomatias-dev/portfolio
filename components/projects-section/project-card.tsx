@@ -3,6 +3,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useMemo, useState } from "react";
 import { SlSocialGithub } from "react-icons/sl";
 
@@ -113,7 +114,7 @@ export const ProjectCard = ({ project, onOpen }: ProjectCardProps) => {
           className="relative z-20 -mt-12 flex grow flex-col p-6 cursor-pointer"
           onClick={(e) => {
             const target = e.target as HTMLElement;
-            if (!target.closest("button")) {
+            if (!target.closest("button") && !target.closest("a")) {
               onOpen();
             }
           }}
@@ -128,14 +129,16 @@ export const ProjectCard = ({ project, onOpen }: ProjectCardProps) => {
             </p>
           </header>
 
-          <div className="mb-6 mt-auto flex flex-wrap gap-2">
+          <div className="mb-6 mt-auto flex flex-wrap gap-1.5">
             {project.technologies.slice(0, 4).map((tech) => (
-              <span
+              <Link
                 key={tech}
-                className="rounded-md border border-white/5 bg-[#121212] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-zinc-500 transition-all duration-300 group-hover:border-white/10 group-hover:bg-[#18181b] group-hover:text-zinc-300"
+                href={`?tech=${tech.toLowerCase()}#stack`}
+                onClick={(e) => e.stopPropagation()}
+                className="group/badge relative flex items-center gap-1.5 rounded-full border border-white/5 bg-white/2 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-zinc-500 transition-colors duration-300 hover:border-white/20 hover:bg-white/5 hover:text-zinc-200"
               >
                 {tech}
-              </span>
+              </Link>
             ))}
           </div>
 
