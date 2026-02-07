@@ -72,11 +72,12 @@ export const ProjectCard = ({ project, onOpen }: ProjectCardProps) => {
             alt={project.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className={`object-cover transition-all duration-1000 ease-out group-hover:scale-105 ${
+            className={cn(
+              "object-cover transition-all duration-1000 ease-out",
               isLoading
                 ? "opacity-0 blur-lg"
-                : "opacity-90 blur-0 group-hover:opacity-100"
-            }`}
+                : "opacity-90 blur-0 group-hover:opacity-100",
+            )}
             onLoad={() => setIsLoading(false)}
             onError={() => {
               setImgSrc("/image_placeholder.png");

@@ -22,6 +22,7 @@ export const ProjectsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [isSwiperReady, setIsSwiperReady] = useState(false);
 
   const handleOpenProject = (project: Project) => {
     setSelectedProject(project);
@@ -69,7 +70,10 @@ export const ProjectsSection = () => {
         <div className="w-full">
           <Swiper
             modules={[Autoplay]}
-            onSwiper={setSwiper}
+            onSwiper={(s) => {
+              setSwiper(s);
+              setIsSwiperReady(true);
+            }}
             onSlideChange={(s) => setActiveIndex(s.realIndex)}
             spaceBetween={32}
             slidesPerView={1}
@@ -78,14 +82,16 @@ export const ProjectsSection = () => {
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
-            className="pb-12!"
+            className="pb-12"
           >
             {projects.map((project, idx) => (
-              <SwiperSlide key={idx} className="h-auto!">
-                <ProjectCard
-                  project={project}
-                  onOpen={() => handleOpenProject(project)}
-                />
+              <SwiperSlide key={idx} className="h-auto">
+                {isSwiperReady && (
+                  <ProjectCard
+                    project={project}
+                    onOpen={() => handleOpenProject(project)}
+                  />
+                )}
               </SwiperSlide>
             ))}
           </Swiper>
