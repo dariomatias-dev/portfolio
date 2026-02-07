@@ -2,7 +2,8 @@
 
 import { Layers } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useRef, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useMemo, useRef, useState } from "react";
 
 import { TechStackItem } from "@/@types/tech-stack";
 import { techStack } from "@/constants/technologies";
@@ -15,11 +16,24 @@ import { TechStackSearchInput } from "./tech-stack-search-input";
 export const TechStackSection = () => {
   const t = useTranslations();
 
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
   const [activeTab, setActiveTab] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedTech, setSelectedTech] = useState<TechStackItem>(techStack[0]);
 
-  const detailsRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const selectedTech = useMemo(() => {
+    const techParam = searchParams.get("tech")?.toLowerCase();
+    if (!techParam) return techStack[0];
+
+    return (
+      techStack.find((tech) => tech.name.toLowerCase() === techParam) ||
+      techStack[0]
+    );
+  }, [searchParams]);
 
   const categories = [
     "all",
@@ -41,15 +55,18 @@ export const TechStackSection = () => {
   });
 
   const handleTechClick = (tech: TechStackItem) => {
-    setSelectedTech(tech);
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("tech", tech.name.toLowerCase());
 
-    if (window.innerWidth < 1024 && detailsRef.current) {
-      setTimeout(() => {
-        detailsRef.current?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }, 100);
+    router.push(`${pathname}?${params.toString()}`, { scroll: false });
+
+    if (containerRef.current) {
+      const yOffset = -120;
+      const element = containerRef.current;
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
@@ -75,7 +92,10 @@ export const TechStackSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start h-auto lg:h-162.5">
+        <div
+          ref={containerRef}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start h-auto lg:h-162.5 scroll-mt-24"
+        >
           <div className="lg:col-span-5 flex flex-col h-125 lg:h-full bg-white rounded-3xl md:rounded-4xl border border-slate-200 shadow-sm overflow-hidden">
             <div className="p-4 md:p-6 border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-20">
               <TechStackSearchInput
@@ -122,10 +142,7 @@ export const TechStackSection = () => {
             </div>
           </div>
 
-          <div
-            className="lg:col-span-7 h-auto lg:h-full scroll-mt-24"
-            ref={detailsRef}
-          >
+          <div className="lg:col-span-7 h-auto lg:h-full">
             <TechStackDetails tech={selectedTech} />
           </div>
         </div>
