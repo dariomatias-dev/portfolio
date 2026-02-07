@@ -2,8 +2,8 @@ import { Project } from "@/@types/project";
 
 export const projects: Project[] = [
   {
-    key: "portfolio",
-    title: "Portfolio",
+    key: "minimalistPortfolio",
+    title: "Minimalist Portfolio",
     technologies: ["TailwindCSS", "TypeScript", "Next.js", "shadcn/ui"],
     category: "frontend",
     links: [
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    key: "eleva_sign",
+    key: "elevaSign",
     title: "ElevaSign",
     technologies: ["Dart", "Flutter"],
     category: "mobile",

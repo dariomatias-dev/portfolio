@@ -83,7 +83,7 @@
       "technologies": "Tecnologias"
     },
     "list": {
-      "portfolio": {
+      "minimalistPortfolio": {
         "short": "Portfólio pessoal com informações sobre mim, projetos desenvolvidos, experiências profissionais e formas de contato.",
         "long": "Portfólio pessoal com informações sobre mim, projetos desenvolvidos, experiências profissionais e formas de contato."
       },
@@ -95,7 +95,7 @@
         "short": "Site oficial do Flutter Guide contendo informações do projeto, principais funcionalidades, capturas de tela, política de privacidade e link direto para download do aplicativo.",
         "long": "Site oficial do Flutter Guide contendo informações do projeto, principais funcionalidades, capturas de tela, política de privacidade e link direto para download do aplicativo."
       },
-      "eleva_sign": {
+      "elevaSign": {
         "short": "Plataforma de assinatura digital para gestão de contratos e documentos. Participei do desenvolvimento desde versões iniciais, contribuindo com a implementação de diversas funcionalidades.",
         "long": "Plataforma de assinatura digital para gestão de contratos e documentos. Participei do desenvolvimento desde versões iniciais, contribuindo com a implementação de diversas funcionalidades."
       },

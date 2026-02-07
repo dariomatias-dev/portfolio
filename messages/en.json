@@ -83,7 +83,7 @@
       "technologies": "Technologies"
     },
     "list": {
-      "portfolio": {
+      "minimalistPortfolio": {
         "short": "Personal portfolio with information about me, projects, professional experiences, and contact details.",
         "long": "Personal portfolio with information about me, projects, professional experiences, and contact details."
       },
@@ -95,7 +95,7 @@
         "short": "Official Flutter Guide website containing project information, main features, screenshots, privacy policy, and a direct link to download the app from the Google Play Store.",
         "long": "Official Flutter Guide website containing project information, main features, screenshots, privacy policy, and a direct link to download the app from the Google Play Store."
       },
-      "eleva_sign": {
+      "elevaSign": {
         "short": "Digital Signature Platform for managing contracts and documents. I have participated in the development since early versions, contributing to the implementation of multiple features.",
         "long": "Digital Signature Platform for managing contracts and documents. I have participated in the development since early versions, contributing to the implementation of multiple features."
       },
