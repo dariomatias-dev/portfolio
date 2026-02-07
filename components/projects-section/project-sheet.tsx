@@ -1,0 +1,218 @@
+"use client";
+
+import {
+  X,
+  ExternalLink,
+  Globe,
+  Smartphone,
+  Package,
+  Box,
+  Code2,
+  Link2,
+  Info,
+  ArrowRight,
+} from "lucide-react";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { useEffect, useMemo } from "react";
+
+import { Project } from "@/@types/project";
+import { cn } from "@/lib/utils";
+import { getProjectCategoryTheme } from "@/utils/get-project-category-theme";
+import { toSnakeCase } from "@/utils/to-snake-case";
+import { FiGithub } from "react-icons/fi";
+
+interface ProjectSheetProps {
+  project: Project | null;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export const ProjectSheet = ({
+  project,
+  isOpen,
+  onClose,
+}: ProjectSheetProps) => {
+  const t = useTranslations();
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
+  const theme = useMemo(
+    () => (project ? getProjectCategoryTheme(project.category) : null),
+    [project],
+  );
+
+  const Icon = theme?.icon || Box;
+
+  const getIconByType = (type: string) => {
+    switch (type) {
+      case "github":
+        return <FiGithub size={20} />;
+      case "site":
+        return <Globe size={20} />;
+      case "playStore":
+        return <Smartphone size={20} />;
+      case "pubDev":
+      case "goDev":
+      case "package":
+        return <Package size={20} />;
+      default:
+        return <ExternalLink size={20} />;
+    }
+  };
+
+  return (
+    <div
+      className={cn(
+        "fixed inset-0 z-100 flex justify-end transition-all duration-500",
+        isOpen ? "pointer-events-auto" : "pointer-events-none",
+      )}
+    >
+      <div
+        className={cn(
+          "absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity duration-500 ease-in-out",
+          isOpen ? "opacity-100" : "opacity-0",
+        )}
+        onClick={onClose}
+      />
+
+      <aside
+        className={cn(
+          "relative w-full max-w-xl bg-[#050505] border-l border-white/10 h-full shadow-[0_0_80px_rgba(0,0,0,1)] transform transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col",
+          isOpen ? "translate-x-0" : "translate-x-full",
+        )}
+      >
+        <div className="absolute top-0 right-0 w-full h-80 bg-linear-to-b from-blue-500/5 to-transparent pointer-events-none" />
+
+        <div className="absolute right-6 top-6 z-50">
+          <button
+            onClick={onClose}
+            className="group p-2.5 rounded-full bg-zinc-900/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-all border border-white/10 backdrop-blur-md active:scale-90"
+          >
+            <X
+              size={22}
+              className="transition-transform duration-500 group-hover:rotate-90"
+            />
+          </button>
+        </div>
+
+        <div className="flex-1 overflow-y-auto custom-scrollbar scroll-smooth">
+          {project && (
+            <div className="flex flex-col">
+              <div className="relative h-[42vh] w-full bg-[#050505] overflow-hidden">
+                <Image
+                  src={`/screenshots/${toSnakeCase(project.key)}_screenshot.png`}
+                  alt={project.title}
+                  fill
+                  priority
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-[#050505] via-[#050505]/30 to-transparent" />
+
+                <div className="absolute bottom-10 left-10 right-10">
+                  <div className="flex items-center gap-2 rounded-full border border-white/10 bg-zinc-950/50 px-3 py-1.5 backdrop-blur-xl w-fit mb-5 shadow-2xl">
+                    <Icon size={12} className="text-white" />
+
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-100">
+                      {project.category}
+                    </span>
+                  </div>
+
+                  <h2 className="text-5xl font-black text-white tracking-tighter leading-none">
+                    {project.title}
+                  </h2>
+                </div>
+              </div>
+
+              <div className="px-10 py-12 space-y-16">
+                <section className="space-y-5">
+                  <div className="flex items-center gap-3 text-zinc-500">
+                    <Info size={16} />
+
+                    <h3 className="text-[10px] font-black uppercase tracking-[0.4em]">
+                      About
+                    </h3>
+                  </div>
+
+                  <p className="text-zinc-400 leading-relaxed text-lg font-light">
+                    {t(`projects.list.${project.key}.description`)}
+                  </p>
+                </section>
+
+                <section className="space-y-6">
+                  <div className="flex items-center gap-3 text-zinc-500">
+                    <Code2 size={16} />
+
+                    <h3 className="text-[10px] font-black uppercase tracking-[0.4em]">
+                      Technologies
+                    </h3>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2.5">
+                    {project.technologies.map((tech) => (
+                      <div
+                        key={tech}
+                        className="px-4 py-2 rounded-xl border border-white/5 bg-white/3 text-[11px] text-zinc-300 font-bold uppercase tracking-widest shadow-inner"
+                      >
+                        {tech}
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="pb-16 space-y-6">
+                  <div className="flex items-center gap-3 text-zinc-500">
+                    <Link2 size={16} />
+
+                    <h3 className="text-[10px] font-black uppercase tracking-[0.4em]">
+                      Links
+                    </h3>
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-3">
+                    {project.links.map((link, idx) => (
+                      <a
+                        key={idx}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center justify-between p-5 rounded-2xl border border-white/5 bg-white/2 hover:bg-white/4 hover:border-white/10 transition-all duration-500"
+                      >
+                        <div className="flex items-center gap-5">
+                          <div className="p-3 rounded-xl bg-black/40 text-zinc-500 group-hover:text-white transition-all duration-500">
+                            {getIconByType(link.type)}
+                          </div>
+
+                          <div>
+                            <span className="block font-bold text-zinc-200 text-base capitalize tracking-tight group-hover:text-white transition-colors">
+                              {link.type.replace(/([A-Z])/g, " $1")}
+                            </span>
+
+                            <span className="text-[11px] text-zinc-600 font-medium truncate max-w-70 block group-hover:text-zinc-500 transition-colors">
+                              {link.url.replace(/^https?:\/\//, "")}
+                            </span>
+                          </div>
+                        </div>
+
+                        <ArrowRight
+                          size={18}
+                          className="text-zinc-800 group-hover:text-zinc-400 -rotate-45 group-hover:rotate-0 transition-all duration-500"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                </section>
+              </div>
+            </div>
+          )}
+        </div>
+      </aside>
+    </div>
+  );
+};
