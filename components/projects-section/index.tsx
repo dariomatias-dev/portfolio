@@ -7,18 +7,26 @@ import { FiGithub } from "react-icons/fi";
 import type { Swiper as SwiperType } from "swiper";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 
 import { projects } from "@/constants/projects";
 import { BadgeSection } from "../badge-section";
 import { ProjectCard } from "./project-card";
+import { ProjectSheet } from "./project-sheet";
+import { Project } from "@/@types/project";
+import { cn } from "@/lib/utils";
 
 export const ProjectsSection = () => {
   const t = useTranslations();
-
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
+  const handleOpenProject = (project: Project) => {
+    setSelectedProject(project);
+    setIsSheetOpen(true);
+  };
 
   return (
     <section
@@ -75,7 +83,14 @@ export const ProjectsSection = () => {
           >
             {projects.map((project, idx) => (
               <SwiperSlide key={idx} className="h-auto!">
-                <div className="h-full">
+                <div
+                  className="h-full cursor-pointer outline-none group/slide"
+                  onClick={(e) => {
+                    handleOpenProject(project);
+
+                    e.stopPropagation();
+                  }}
+                >
                   <ProjectCard project={project} />
                 </div>
               </SwiperSlide>
@@ -105,11 +120,12 @@ export const ProjectsSection = () => {
                   aria-label={`${t("projects.goToSlide")} ${idx + 1}`}
                 >
                   <div
-                    className={`rounded-full transition-all duration-300 ${
+                    className={cn(
+                      "rounded-full transition-all duration-300",
                       idx === activeIndex
                         ? "w-3 h-3 bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"
-                        : "w-1.5 h-1.5 bg-zinc-700 group-hover:bg-zinc-500"
-                    }`}
+                        : "w-1.5 h-1.5 bg-zinc-700 group-hover:bg-zinc-500",
+                    )}
                   />
                 </button>
               ))}
@@ -146,6 +162,12 @@ export const ProjectsSection = () => {
           </a>
         </div>
       </div>
+
+      <ProjectSheet
+        project={selectedProject}
+        isOpen={isSheetOpen}
+        onClose={() => setIsSheetOpen(false)}
+      />
     </section>
   );
 };
