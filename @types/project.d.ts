@@ -1,3 +1,5 @@
+import { TechnologyId } from "@/enums/technology-id";
+
 export type ProjectLinkType =
   | "github"
   | "site"
@@ -21,7 +23,7 @@ export interface ProjectLink {
 export interface Project {
   key: string;
   title: string;
-  technologies: string[];
+  technologies: TechnologyId[];
   category: ProjectCategory;
   links: ProjectLink[];
 }

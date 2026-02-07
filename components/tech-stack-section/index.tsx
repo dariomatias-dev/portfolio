@@ -3,7 +3,7 @@
 import { Layers } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { Technology } from "@/@types/tech-stack";
 import { technologies } from "@/constants/technologies";
@@ -15,7 +15,6 @@ import { TechStackSearchInput } from "./tech-stack-search-input";
 
 export const TechStackSection = () => {
   const t = useTranslations();
-
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -23,29 +22,34 @@ export const TechStackSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const containerRef = useRef<HTMLDivElement>(null);
-
   const techParam = searchParams.get("tech");
 
-  const selectedTech = useMemo(() => {
-    const param = techParam?.toLowerCase();
-    if (!param) return technologies[0];
+  const techList = useMemo(() => Object.values(technologies), []);
 
-    return (
-      technologies.find((tech) => tech.name.toLowerCase() === param) ||
-      technologies[0]
-    );
-  }, [techParam]);
-
-  useEffect(() => {
-    if (techParam && containerRef.current) {
+  const scrollToContainer = useCallback(() => {
+    if (containerRef.current) {
       const yOffset = -120;
       const element = containerRef.current;
-      const y =
-        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
 
       window.scrollTo({ top: y, behavior: "smooth" });
     }
-  }, [techParam]);
+  }, []);
+
+  const selectedTech = useMemo(() => {
+    const param = techParam?.toLowerCase();
+    if (!param) return techList[0];
+
+    return (
+      techList.find((tech) => tech.name.toLowerCase() === param) || techList[0]
+    );
+  }, [techParam, techList]);
+
+  useEffect(() => {
+    if (techParam) {
+      scrollToContainer();
+    }
+  }, [techParam, scrollToContainer]);
 
   const categories = [
     "all",
@@ -56,18 +60,25 @@ export const TechStackSection = () => {
     "devops",
   ];
 
-  const filteredTech = technologies.filter((tech) => {
-    const matchesCategory =
-      activeTab === "all" || tech.category.toLowerCase() === activeTab;
-    const matchesSearch = tech.name
-      .toLowerCase()
-      .includes(searchQuery.toLowerCase());
+  const filteredTech = useMemo(() => {
+    return techList.filter((tech) => {
+      const matchesCategory =
+        activeTab === "all" || tech.category.toLowerCase() === activeTab;
+      const matchesSearch = tech.name
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
 
-    return matchesCategory && matchesSearch;
-  });
+      return matchesCategory && matchesSearch;
+    });
+  }, [techList, activeTab, searchQuery]);
 
   const handleTechClick = (tech: Technology) => {
-    router.push(`?tech=${tech.name.toLowerCase()}#stack`, { scroll: false });
+    const nextTech = tech.name.toLowerCase();
+    router.push(`?tech=${nextTech}#stack`, { scroll: false });
+
+    if (techParam?.toLowerCase() === nextTech) {
+      scrollToContainer();
+    }
   };
 
   return (

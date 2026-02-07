@@ -27,9 +27,10 @@ import {
 } from "react-icons/si";
 
 import { Technology } from "@/@types/tech-stack";
+import { TechnologyId } from "@/enums/technology-id";
 
-export const technologies: Technology[] = [
-  {
+export const technologies: Record<TechnologyId, Technology> = {
+  react: {
     name: "React",
     category: "Frontend",
     descriptionKey: "react",
@@ -38,7 +39,7 @@ export const technologies: Technology[] = [
     tags: ["UI", "SPA", "Components"],
     icon: SiReact,
   },
-  {
+  nextjs: {
     name: "Next.js",
     category: "Frontend",
     descriptionKey: "nextjs",
@@ -47,7 +48,7 @@ export const technologies: Technology[] = [
     tags: ["SSR", "Fullstack", "Performance"],
     icon: SiNextdotjs,
   },
-  {
+  typescript: {
     name: "TypeScript",
     category: "Frontend",
     descriptionKey: "typescript",
@@ -56,7 +57,7 @@ export const technologies: Technology[] = [
     tags: ["Typing", "Safety", "Scalability"],
     icon: SiTypescript,
   },
-  {
+  tailwindcss: {
     name: "Tailwind CSS",
     category: "Frontend",
     descriptionKey: "tailwindcss",
@@ -65,7 +66,7 @@ export const technologies: Technology[] = [
     tags: ["CSS", "Productivity", "Design System"],
     icon: SiTailwindcss,
   },
-  {
+  shadcnui: {
     name: "shadcn/ui",
     category: "Frontend",
     descriptionKey: "shadcnui",
@@ -74,7 +75,7 @@ export const technologies: Technology[] = [
     tags: ["UI Kit", "Accessibility", "Radix"],
     icon: SiShadcnui,
   },
-  {
+  flutter: {
     name: "Flutter",
     category: "Mobile",
     descriptionKey: "flutter",
@@ -83,7 +84,7 @@ export const technologies: Technology[] = [
     tags: ["Cross-Platform", "Widgets", "Google"],
     icon: SiFlutter,
   },
-  {
+  dart: {
     name: "Dart",
     category: "Mobile",
     descriptionKey: "dart",
@@ -92,7 +93,7 @@ export const technologies: Technology[] = [
     tags: ["Language", "Productivity", "Type Safe"],
     icon: SiDart,
   },
-  {
+  nodejs: {
     name: "Node.js",
     category: "Backend",
     descriptionKey: "nodejs",
@@ -101,7 +102,7 @@ export const technologies: Technology[] = [
     tags: ["Server", "JS Runtime", "API"],
     icon: SiNodedotjs,
   },
-  {
+  java: {
     name: "Java",
     category: "Backend",
     descriptionKey: "java",
@@ -110,7 +111,7 @@ export const technologies: Technology[] = [
     tags: ["OOP", "Enterprise", "Robustness"],
     icon: FaJava,
   },
-  {
+  springboot: {
     name: "Spring Boot",
     category: "Backend",
     descriptionKey: "springboot",
@@ -119,7 +120,7 @@ export const technologies: Technology[] = [
     tags: ["Java", "Framework", "Microservices"],
     icon: SiSpring,
   },
-  {
+  express: {
     name: "Express",
     category: "Backend",
     descriptionKey: "express",
@@ -128,7 +129,7 @@ export const technologies: Technology[] = [
     tags: ["Framework", "Minimalist", "Http"],
     icon: SiExpress,
   },
-  {
+  fastify: {
     name: "Fastify",
     category: "Backend",
     descriptionKey: "fastify",
@@ -137,7 +138,7 @@ export const technologies: Technology[] = [
     tags: ["Performance", "Schema", "Logging"],
     icon: SiFastify,
   },
-  {
+  nestjs: {
     name: "NestJS",
     category: "Backend",
     descriptionKey: "nestjs",
@@ -146,7 +147,7 @@ export const technologies: Technology[] = [
     tags: ["Architecture", "Modular", "TypeScript"],
     icon: SiNestjs,
   },
-  {
+  go: {
     name: "Go",
     category: "Backend",
     descriptionKey: "go",
@@ -155,7 +156,7 @@ export const technologies: Technology[] = [
     tags: ["Performance", "Concurrency", "Systems"],
     icon: SiGo,
   },
-  {
+  python: {
     name: "Python",
     category: "Backend",
     descriptionKey: "python",
@@ -164,7 +165,7 @@ export const technologies: Technology[] = [
     tags: ["AI", "Automation", "Data Science"],
     icon: SiPython,
   },
-  {
+  firebase: {
     name: "Firebase",
     category: "Backend",
     descriptionKey: "firebase",
@@ -173,7 +174,7 @@ export const technologies: Technology[] = [
     tags: ["BaaS", "Realtime", "Auth"],
     icon: SiFirebase,
   },
-  {
+  prisma: {
     name: "Prisma",
     category: "Database",
     descriptionKey: "prisma",
@@ -182,7 +183,7 @@ export const technologies: Technology[] = [
     tags: ["ORM", "TypeScript", "Migration"],
     icon: SiPrisma,
   },
-  {
+  postgresql: {
     name: "PostgreSQL",
     category: "Database",
     descriptionKey: "postgresql",
@@ -191,7 +192,7 @@ export const technologies: Technology[] = [
     tags: ["SQL", "Relational", "ACID"],
     icon: SiPostgresql,
   },
-  {
+  sqlite: {
     name: "SQLite",
     category: "Database",
     descriptionKey: "sqlite",
@@ -200,7 +201,7 @@ export const technologies: Technology[] = [
     tags: ["Embedded", "SQL", "Lightweight"],
     icon: SiSqlite,
   },
-  {
+  mongodb: {
     name: "MongoDB",
     category: "Database",
     descriptionKey: "mongodb",
@@ -209,7 +210,7 @@ export const technologies: Technology[] = [
     tags: ["NoSQL", "Documents", "Flexible"],
     icon: SiMongodb,
   },
-  {
+  redis: {
     name: "Redis",
     category: "Database",
     descriptionKey: "redis",
@@ -218,7 +219,7 @@ export const technologies: Technology[] = [
     tags: ["Cache", "In-Memory", "Speed"],
     icon: SiRedis,
   },
-  {
+  aws: {
     name: "AWS",
     category: "DevOps",
     descriptionKey: "aws",
@@ -227,7 +228,7 @@ export const technologies: Technology[] = [
     tags: ["Cloud", "Infrastructure", "Serverless"],
     icon: SiAmazonwebservices,
   },
-  {
+  docker: {
     name: "Docker",
     category: "DevOps",
     descriptionKey: "docker",
@@ -236,7 +237,7 @@ export const technologies: Technology[] = [
     tags: ["Containers", "Deploy", "Virtualization"],
     icon: SiDocker,
   },
-  {
+  git: {
     name: "Git",
     category: "DevOps",
     descriptionKey: "git",
@@ -245,7 +246,7 @@ export const technologies: Technology[] = [
     tags: ["Versioning", "Collaboration", "Code"],
     icon: SiGit,
   },
-  {
+  linux: {
     name: "Linux",
     category: "DevOps",
     descriptionKey: "linux",
@@ -254,4 +255,4 @@ export const technologies: Technology[] = [
     tags: ["OS", "Server", "Open Source"],
     icon: SiLinux,
   },
-];
+};

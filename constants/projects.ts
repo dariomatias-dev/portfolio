@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     key: "minimalistPortfolio",
     title: "Minimalist Portfolio",
-    technologies: ["Tailwind CSS", "TypeScript", "Next.js", "shadcn/ui"],
+    technologies: ["tailwindcss", "typescript", "nextjs", "shadcnui"],
     category: "frontend",
     links: [
       { type: "site", url: "https://dariomatias-portfolio.vercel.app/" },
@@ -15,7 +15,7 @@ export const projects: Project[] = [
   {
     key: "flutterGuideApp",
     title: "Flutter Guide App",
-    technologies: ["Dart", "Flutter"],
+    technologies: ["dart", "flutter"],
     category: "mobile",
     links: [
       {
@@ -32,7 +32,7 @@ export const projects: Project[] = [
   {
     key: "flutterGuideWeb",
     title: "Flutter Guide Web",
-    technologies: ["Tailwind CSS", "TypeScript", "Next.js", "shadcn/ui"],
+    technologies: ["tailwindcss", "typescript", "nextjs", "shadcnui"],
     category: "frontend",
     links: [
       { type: "site", url: "https://flutter-guide-web.vercel.app/" },
@@ -46,7 +46,7 @@ export const projects: Project[] = [
   {
     key: "elevaSign",
     title: "ElevaSign",
-    technologies: ["Dart", "Flutter"],
+    technologies: ["dart", "flutter"],
     category: "mobile",
     links: [
       {
@@ -60,15 +60,15 @@ export const projects: Project[] = [
     key: "myEcommerce",
     title: "My E-Commerce",
     technologies: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Java",
-      "Spring Boot",
-      "PostgreSQL",
-      "Docker",
-      "Flutter",
-      "Dart",
+      "nextjs",
+      "typescript",
+      "tailwindcss",
+      "java",
+      "springboot",
+      "postgresql",
+      "docker",
+      "flutter",
+      "dart",
     ],
     category: "fullstack",
     links: [
