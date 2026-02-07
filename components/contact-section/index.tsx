@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 
 export const ContactSection = () => {
   const t = useTranslations();
+
   const [copied, setCopied] = useState(false);
 
   const copyEmail = () => {

@@ -13,7 +13,11 @@ import { toSnakeCase } from "@/utils/to-snake-case";
 import { LinkButton } from "../buttons/link-button";
 import { ImageViewer } from "./image-viewer";
 
-export const ProjectCard = ({ project }: { project: Project }) => {
+interface ProjectCardProps {
+  project: Project;
+}
+
+export const ProjectCard = ({ project }: ProjectCardProps) => {
   const t = useTranslations();
 
   const initialImage = `/screenshots/${toSnakeCase(project.key)}_screenshot.png`;

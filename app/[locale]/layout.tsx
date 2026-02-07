@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { notFound } from "next/navigation";
 
 import "./globals.css";
 
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { routing } from "@/i18n/routing";
-import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -18,7 +18,7 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-const RootLayout = async ({ children, params }: RootLayoutProps) => {
+const RootLayout = async ({ params, children }: RootLayoutProps) => {
   const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) {
@@ -26,7 +26,7 @@ const RootLayout = async ({ children, params }: RootLayoutProps) => {
   }
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale}>
       <body>
         <NextIntlClientProvider>
           <Header />
