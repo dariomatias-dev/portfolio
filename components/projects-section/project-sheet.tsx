@@ -140,7 +140,7 @@ export const ProjectSheet = ({
                     </h3>
                   </div>
 
-                  <p className="text-zinc-400 leading-relaxed text-lg font-light">
+                  <p className="text-zinc-400 leading-relaxed text-lg font-light whitespace-pre-line">
                     {t(`projects.list.${project.key}.long`)}
                   </p>
                 </section>
