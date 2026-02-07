@@ -3,6 +3,7 @@
 import { ArrowRight, Box, Code2, Info, Link2, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useMemo } from "react";
 
 import { Project } from "@/@types/project";
@@ -126,14 +127,16 @@ export const ProjectSheet = ({
                     </h3>
                   </div>
 
-                  <div className="flex flex-wrap gap-2.5">
+                  <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
-                      <div
+                      <Link
                         key={tech}
-                        className="px-3.5 py-1.5 rounded-lg border border-white/5 bg-white/3 text-[11px] text-zinc-300 font-bold uppercase tracking-wider"
+                        href={`?tech=${tech.toLowerCase()}#stack`}
+                        onClick={onClose}
+                        className="group/badge relative flex items-center rounded-full border border-white/5 bg-white/2 px-3 py-1 text-[11px] font-semibold tracking-wide text-zinc-500 transition-colors duration-300 hover:border-white/20 hover:bg-white/5 hover:text-zinc-200"
                       >
                         {tech}
-                      </div>
+                      </Link>
                     ))}
                   </div>
                 </section>
