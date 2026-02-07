@@ -84,23 +84,27 @@
     },
     "list": {
       "portfolio": {
-        "description": "Portfolio pessoal com informações sobre mim, projetos, experiências e contato."
+        "short": "Portfólio pessoal com informações sobre mim, projetos desenvolvidos, experiências profissionais e formas de contato.",
+        "long": "Portfólio pessoal com informações sobre mim, projetos desenvolvidos, experiências profissionais e formas de contato."
       },
       "flutterGuideApp": {
-        "description": "Flutter Guide é um app educacional que ajuda desenvolvedores a aprender Flutter através de exemplos práticos."
+        "short": "Flutter Guide é um aplicativo educacional criado para ajudar desenvolvedores a aprender Flutter por meio de exemplos práticos e conceitos aplicados.",
+        "long": "Flutter Guide é um aplicativo educacional criado para ajudar desenvolvedores a aprender Flutter por meio de exemplos práticos e conceitos aplicados."
       },
       "flutterGuideWeb": {
-        "description": "Site oficial do Flutter Guide com informações, recursos, capturas de tela, política de privacidade e link para download."
+        "short": "Site oficial do Flutter Guide contendo informações do projeto, principais funcionalidades, capturas de tela, política de privacidade e link direto para download do aplicativo.",
+        "long": "Site oficial do Flutter Guide contendo informações do projeto, principais funcionalidades, capturas de tela, política de privacidade e link direto para download do aplicativo."
       },
       "eleva_sign": {
-        "description": "Plataforma de assinatura digital para gestão de contratos e documentos. Participei do desenvolvimento desde versões iniciais adicionando múltiplas funcionalidades."
+        "short": "Plataforma de assinatura digital para gestão de contratos e documentos. Participei do desenvolvimento desde versões iniciais, contribuindo com a implementação de diversas funcionalidades.",
+        "long": "Plataforma de assinatura digital para gestão de contratos e documentos. Participei do desenvolvimento desde versões iniciais, contribuindo com a implementação de diversas funcionalidades."
       },
       "myEcommerce": {
-        "description": "Plataforma SaaS de Lojas Virtuais, desenvolvida para permitir que pequenos empreendedores criem, gerenciem e escalem seus negócios online."
+        "short": "Plataforma SaaS de Lojas Virtuais, desenvolvida para permitir que pequenos empreendedores criem, gerenciem e escalem seus negócios online de forma eficiente.",
+        "long": "Plataforma SaaS de Lojas Virtuais, desenvolvida para permitir que pequenos empreendedores criem, gerenciem e escalem seus negócios online de forma eficiente."
       }
     }
   },
-
   "stack": {
     "title": "Stack de Desenvolvimento Abrangente",
     "subtitle": "Uma coleção selecionada de ferramentas e tecnologias para construir soluções digitais robustas e escaláveis.",

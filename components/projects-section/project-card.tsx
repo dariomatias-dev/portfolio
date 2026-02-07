@@ -111,7 +111,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             </h3>
 
             <p className="line-clamp-3 text-sm font-medium leading-relaxed text-zinc-400 transition-colors duration-300 group-hover:text-zinc-300">
-              {t(`projects.list.${project.key}.description`)}
+              {t(`projects.list.${project.key}.short`)}
             </p>
           </header>
 

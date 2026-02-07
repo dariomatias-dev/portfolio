@@ -84,23 +84,27 @@
     },
     "list": {
       "portfolio": {
-        "description": "Personal portfolio with information about me, projects, experiences, and contact."
+        "short": "Personal portfolio with information about me, projects, professional experiences, and contact details.",
+        "long": "Personal portfolio with information about me, projects, professional experiences, and contact details."
       },
       "flutterGuideApp": {
-        "description": "Flutter Guide is an educational app that helps developers learn Flutter through practical examples."
+        "short": "Flutter Guide is an educational application designed to help developers learn Flutter through practical examples and hands-on concepts.",
+        "long": "Flutter Guide is an educational application designed to help developers learn Flutter through practical examples and hands-on concepts."
       },
       "flutterGuideWeb": {
-        "description": "Official Flutter Guide website with information, main features, screenshots, privacy policy, and a direct link to download on the Google Play Store."
+        "short": "Official Flutter Guide website containing project information, main features, screenshots, privacy policy, and a direct link to download the app from the Google Play Store.",
+        "long": "Official Flutter Guide website containing project information, main features, screenshots, privacy policy, and a direct link to download the app from the Google Play Store."
       },
       "eleva_sign": {
-        "description": "Digital Signature Platform for managing contracts and documents. I have participated in the development since early versions, adding multiple features to the application."
+        "short": "Digital Signature Platform for managing contracts and documents. I have participated in the development since early versions, contributing to the implementation of multiple features.",
+        "long": "Digital Signature Platform for managing contracts and documents. I have participated in the development since early versions, contributing to the implementation of multiple features."
       },
       "myEcommerce": {
-        "description": "SaaS platform for Virtual Stores, developed to enable small entrepreneurs to create, manage, and scale their online businesses."
+        "short": "SaaS platform for Virtual Stores, developed to enable small entrepreneurs to create, manage, and scale their online businesses efficiently.",
+        "long": "SaaS platform for Virtual Stores, developed to enable small entrepreneurs to create, manage, and scale their online businesses efficiently."
       }
     }
   },
-
   "stack": {
     "title": "Comprehensive Development Stack",
     "subtitle": "A curated collection of tools and technologies to build scalable and robust digital solutions.",
