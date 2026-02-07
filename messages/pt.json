@@ -78,6 +78,10 @@
     "prevSlide": "Slide anterior",
     "nextSlide": "Próximo slide",
     "goToSlide": "Ir para o slide",
+    "sections": {
+      "about": "Sobre",
+      "technologies": "Tecnologias"
+    },
     "list": {
       "portfolio": {
         "description": "Portfolio pessoal com informações sobre mim, projetos, experiências e contato."

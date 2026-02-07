@@ -1,26 +1,26 @@
 "use client";
 
 import {
-  X,
-  ExternalLink,
-  Globe,
-  Smartphone,
-  Package,
+  ArrowRight,
   Box,
   Code2,
-  Link2,
+  ExternalLink,
+  Globe,
   Info,
-  ArrowRight,
+  Link2,
+  Package,
+  Smartphone,
+  X,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useMemo } from "react";
+import { FiGithub } from "react-icons/fi";
 
 import { Project } from "@/@types/project";
 import { cn } from "@/lib/utils";
 import { getProjectCategoryTheme } from "@/utils/get-project-category-theme";
 import { toSnakeCase } from "@/utils/to-snake-case";
-import { FiGithub } from "react-icons/fi";
 
 interface ProjectSheetProps {
   project: Project | null;
@@ -136,7 +136,7 @@ export const ProjectSheet = ({
                     <Info size={16} />
 
                     <h3 className="text-[10px] font-black uppercase tracking-[0.4em]">
-                      About
+                      {t(`projects.sections.about`)}
                     </h3>
                   </div>
 
@@ -150,7 +150,7 @@ export const ProjectSheet = ({
                     <Code2 size={16} />
 
                     <h3 className="text-[10px] font-black uppercase tracking-[0.4em]">
-                      Technologies
+                      {t(`projects.sections.technologies`)}
                     </h3>
                   </div>
 
