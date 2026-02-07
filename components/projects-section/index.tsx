@@ -5,16 +5,16 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { FiGithub } from "react-icons/fi";
 import type { Swiper as SwiperType } from "swiper";
+import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 
+import { Project } from "@/@types/project";
 import { projects } from "@/constants/projects";
+import { cn } from "@/lib/utils";
 import { BadgeSection } from "../badge-section";
 import { ProjectCard } from "./project-card";
 import { ProjectSheet } from "./project-sheet";
-import { Project } from "@/@types/project";
-import { cn } from "@/lib/utils";
 
 export const ProjectsSection = () => {
   const t = useTranslations();
@@ -42,7 +42,6 @@ export const ProjectsSection = () => {
             <BadgeSection theme="dark" icon={Code2}>
               {t("navigation.projects")}
             </BadgeSection>
-
             <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-6">
               {t.rich("projects.title", {
                 highlight: (chunks) => (
@@ -83,16 +82,10 @@ export const ProjectsSection = () => {
           >
             {projects.map((project, idx) => (
               <SwiperSlide key={idx} className="h-auto!">
-                <div
-                  className="h-full cursor-pointer outline-none group/slide"
-                  onClick={(e) => {
-                    handleOpenProject(project);
-
-                    e.stopPropagation();
-                  }}
-                >
-                  <ProjectCard project={project} />
-                </div>
+                <ProjectCard
+                  project={project}
+                  onOpen={() => handleOpenProject(project)}
+                />
               </SwiperSlide>
             ))}
           </Swiper>

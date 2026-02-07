@@ -15,9 +15,10 @@ import { ImageViewer } from "./image-viewer";
 
 interface ProjectCardProps {
   project: Project;
+  onOpen: () => void;
 }
 
-export const ProjectCard = ({ project }: ProjectCardProps) => {
+export const ProjectCard = ({ project, onOpen }: ProjectCardProps) => {
   const t = useTranslations();
 
   const initialImage = `/screenshots/${toSnakeCase(project.key)}_screenshot.png`;
@@ -59,7 +60,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         />
 
         <button
-          onClick={openViewer}
+          onClick={(e) => {
+            e.stopPropagation();
+            openViewer();
+          }}
           aria-label={`Visualizar imagem do projeto ${project.title}`}
           className="relative z-10 h-56 w-full overflow-hidden border-b border-white/5 bg-zinc-950 outline-none"
         >
@@ -104,7 +108,15 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           </div>
         </button>
 
-        <div className="relative z-20 -mt-12 flex grow flex-col p-6">
+        <div
+          className="relative z-20 -mt-12 flex grow flex-col p-6 cursor-pointer"
+          onClick={(e) => {
+            const target = e.target as HTMLElement;
+            if (!target.closest("button")) {
+              onOpen();
+            }
+          }}
+        >
           <header className="mb-4">
             <h3 className="mb-2 text-xl font-bold tracking-tight text-white transition-all duration-300 group-hover:text-zinc-200">
               {project.title}
@@ -130,6 +142,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             <LinkButton
               href={primaryLink?.url ?? "#"}
               target="_blank"
+              onClick={(e) => e.stopPropagation()}
               className="group/btn flex-1 justify-center rounded-full px-4 py-2.5 text-sm"
             >
               <span className="relative z-10">{t("actions.viewProject")}</span>
@@ -145,6 +158,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               href={repoLink?.url ?? "#"}
               target="_blank"
               disabled={!repoLink}
+              onClick={(e) => e.stopPropagation()}
               className={cn(
                 "flex h-10 w-full shrink-0 items-center justify-center gap-2 rounded-full border px-0 text-white transition-all duration-300 active:scale-95 sm:h-full sm:w-12",
                 repoLink
