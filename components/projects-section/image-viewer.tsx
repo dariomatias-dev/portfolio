@@ -1,6 +1,8 @@
 "use client";
 
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
@@ -18,6 +20,7 @@ export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
 
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
+
     document.body.style.overflow = "hidden";
 
     return () => {
@@ -27,9 +30,7 @@ export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        onClose();
-      }
+      if (event.key === "Escape") onClose();
     };
 
     document.addEventListener("keydown", handleKeyDown);
@@ -39,22 +40,22 @@ export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
 
   const modalContent = (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-2 backdrop-blur-sm"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={alt}
     >
       <div
-        className="relative h-auto max-h-[90vh] w-full max-w-5xl"
+        className="relative h-auto max-h-[96vh] w-full max-w-[90vw]"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative overflow-hidden rounded-lg border border-zinc-700 bg-zinc-900 shadow-xl">
           <Image
             src={src}
             alt={alt}
-            width={1920}
-            height={1080}
+            width={2560}
+            height={1440}
             className={`h-auto w-full object-contain transition-opacity duration-300 ${
               isLoading || hasError ? "opacity-0" : "opacity-100"
             }`}
@@ -63,7 +64,7 @@ export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
               setIsLoading(false);
               setHasError(true);
             }}
-            style={{ maxHeight: "90vh" }}
+            style={{ maxHeight: "96vh" }}
           />
 
           {isLoading && (
@@ -84,10 +85,18 @@ export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
             </div>
           )}
         </div>
-      </div>
 
-      <div className="absolute right-4 top-4">
-        <CloseButton onClick={onClose} />
+        <div className="absolute right-3 top-3 sm:right-4 sm:top-4 flex gap-3">
+          <Link
+            href={src}
+            target="_blank"
+            className="group p-2 sm:p-2.5 rounded-full bg-zinc-900/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-all border border-white/10 backdrop-blur-md active:scale-90"
+          >
+            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+          </Link>
+
+          <CloseButton onClick={onClose} />
+        </div>
       </div>
     </div>
   );
