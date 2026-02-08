@@ -59,7 +59,7 @@ export const TechStackDetails = ({ tech }: TechStackDetailsProps) => {
             {tech.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-slate-300 text-[11px] md:text-xs font-medium hover:bg-white/10 hover:border-white/20 transition-colors cursor-default"
+                className="group relative flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] md:text-xs font-medium text-slate-300 transition-colors duration-300 hover:bg-white/10 hover:border-white/20 hover:text-white cursor-default"
               >
                 {tag}
               </span>

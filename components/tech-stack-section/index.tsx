@@ -94,10 +94,10 @@ export const TechStackSection = () => {
                     key={category}
                     onClick={() => setActiveTab(category)}
                     className={cn(
-                      "px-3 py-1.5 rounded-lg text-[11px] font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer",
+                      "group relative flex items-center rounded-full border border-gray-200 px-3 py-1 text-[11px] font-semibold tracking-wide transition-colors duration-300 cursor-pointer",
                       activeTab === category
-                        ? "bg-slate-900 text-white shadow-lg shadow-slate-900/20"
-                        : "bg-slate-50 text-slate-500 hover:bg-slate-100 hover:text-slate-900",
+                        ? "bg-slate-900 text-white border-slate-900 shadow-lg shadow-slate-900/20"
+                        : "bg-white text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-900",
                     )}
                   >
                     {t(`stack.categories.${category}`)}

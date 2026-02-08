@@ -96,7 +96,7 @@ export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
           <Link
             href={src}
             target="_blank"
-            className="group p-2 sm:p-2.5 rounded-full bg-zinc-900/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-all border border-white/10 backdrop-blur-md active:scale-90"
+            className="group p-2 sm:p-2.5 rounded-full bg-zinc-900/60 hover:bg-zinc-900 text-zinc-100 hover:text-white transition-all border border-white/10 backdrop-blur-md active:scale-90"
           >
             <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
           </Link>
