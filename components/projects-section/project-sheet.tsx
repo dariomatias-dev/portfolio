@@ -62,8 +62,8 @@ export const ProjectSheet = ({
 
       <aside
         className={cn(
-          "relative w-full max-w-xl bg-[#050505] border-l border-white/10 h-full shadow-[0_0_80px_rgba(0,0,0,1)] transform transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col",
-          isOpen ? "translate-x-0" : "translate-x-full",
+          "relative w-full max-w-xl bg-[#050505] border-l border-white/10 h-full transform transition-transform duration-500 ease-in-out flex flex-col",
+          isOpen ? "translate-x-0 shadow-xl" : "translate-x-full shadow-none",
         )}
       >
         <div className="absolute top-0 right-0 w-full h-80 bg-linear-to-b from-blue-500/5 to-transparent pointer-events-none" />
@@ -87,7 +87,7 @@ export const ProjectSheet = ({
                 <div className="absolute inset-0 bg-linear-to-t from-[#050505] via-[#050505]/30 to-transparent" />
 
                 <div className="absolute bottom-10 left-10 right-10">
-                  <div className="flex items-center gap-2 rounded-full border border-white/10 bg-zinc-950/50 px-3 py-1.5 backdrop-blur-xl w-fit mb-5 shadow-2xl">
+                  <div className="flex items-center gap-2 rounded-full border border-white/10 bg-zinc-950/50 px-3 py-1.5 backdrop-blur-xl w-fit mb-5 shadow-xl">
                     <Icon size={12} className="text-white" />
 
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-100">
@@ -136,7 +136,7 @@ export const ProjectSheet = ({
                   </div>
                 </section>
 
-                <section className="pb-16 space-y-5">
+                <section className="space-y-5">
                   <div className="flex items-center gap-3 text-zinc-500">
                     <Link2 size={15} />
 
@@ -157,19 +157,19 @@ export const ProjectSheet = ({
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group flex items-center justify-between p-5 rounded-2xl border border-white/5 bg-white/2 hover:bg-white/4 transition-all duration-300"
+                          className="group flex flex-row items-center justify-between p-5 rounded-2xl border border-white/5 bg-white/2 hover:bg-white/4 transition-all duration-300"
                         >
-                          <div className="flex items-center gap-5">
-                            <div className="p-2.5 rounded-xl bg-black/40 text-zinc-500 group-hover:text-white transition-colors">
+                          <div className="flex items-center gap-5 min-w-0 flex-1">
+                            <div className="p-2.5 rounded-xl bg-black/40 text-zinc-500 group-hover:text-white transition-colors shrink-0">
                               <IconByProjectLinkType size={20} />
                             </div>
 
-                            <div>
-                              <span className="block font-bold text-zinc-200 text-[15px] capitalize tracking-tight group-hover:text-white transition-colors">
+                            <div className="min-w-0">
+                              <span className="block font-bold text-zinc-200 text-[15px] capitalize tracking-tight group-hover:text-white transition-colors truncate">
                                 {link.type.replace(/([A-Z])/g, " $1")}
                               </span>
 
-                              <span className="text-[11px] text-zinc-500 font-medium truncate max-w-64 block">
+                              <span className="text-[11px] text-zinc-500 font-medium truncate block">
                                 {link.url.replace(/^https?:\/\//, "")}
                               </span>
                             </div>
@@ -177,7 +177,7 @@ export const ProjectSheet = ({
 
                           <ArrowRight
                             size={18}
-                            className="text-zinc-800 group-hover:text-zinc-400 transition-all"
+                            className="text-zinc-800 group-hover:text-zinc-400 transition-all ml-5 shrink-0"
                           />
                         </a>
                       );

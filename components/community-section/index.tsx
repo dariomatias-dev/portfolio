@@ -23,7 +23,7 @@ export const CommunitySection = () => {
   return (
     <section
       id="community"
-      className="relative py-20 md:py-24 bg-[#02040A] overflow-hidden border-t border-white/5"
+      className="relative py-20 md:py-24 bg-[#050505] border-t border-white/5 overflow-hidden"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--tw-gradient-stops))] from-indigo-900/10 via-[#02040A] to-[#02040A]" />
 

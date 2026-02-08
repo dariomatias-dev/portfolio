@@ -25,7 +25,7 @@ export const PhilosophySection = () => {
   }, []);
 
   return (
-    <section className="relative py-20 bg-white overflow-hidden selection:bg-blue-100 selection:text-blue-900">
+    <section className="relative py-20 bg-white selection:bg-blue-100 selection:text-blue-900 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[20px_20px] opacity-40" />
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-linear-to-b from-slate-50 to-transparent pointer-events-none" />

@@ -75,10 +75,7 @@ export const ProjectsSection = () => {
   };
 
   return (
-    <section
-      id="projects"
-      className="relative py-32 bg-[#030303] overflow-hidden"
-    >
+    <section id="projects" className="relative py-32 bg-[#050505] overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-250 h-125 bg-blue-600/10 blur-[150px] rounded-full pointer-events-none opacity-40" />
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay" />
 
