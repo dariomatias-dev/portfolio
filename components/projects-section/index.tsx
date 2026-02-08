@@ -132,7 +132,7 @@ export const ProjectsSection = () => {
             className="pb-12"
           >
             {projects.map((project, idx) => (
-              <SwiperSlide key={idx} className="h-auto">
+              <SwiperSlide key={idx} className="h-auto! flex flex-col">
                 {isSwiperReady && (
                   <ProjectCard
                     project={project}

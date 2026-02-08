@@ -54,7 +54,7 @@ export const ProjectCard = ({ project, onOpen }: ProjectCardProps) => {
   return (
     <>
       <article
-        className={`group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/5 bg-[#09090b] transition-all duration-500 hover:border-white/10 transform-gpu ${theme.shadow}`}
+        className={`group relative flex flex-1 flex-col overflow-hidden rounded-3xl border border-white/5 bg-[#09090b] transition-all duration-500 hover:border-white/10 transform-gpu h-full ${theme.shadow}`}
       >
         <div
           className={`pointer-events-none absolute inset-0 bg-linear-to-b ${theme.glow} z-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100`}
@@ -66,7 +66,7 @@ export const ProjectCard = ({ project, onOpen }: ProjectCardProps) => {
             openViewer();
           }}
           aria-label={`Visualizar imagem do projeto ${project.title}`}
-          className="relative z-10 h-56 w-full overflow-hidden border-b border-white/5 bg-zinc-950 outline-none"
+          className="relative z-10 h-56 w-full shrink-0 overflow-hidden border-b border-white/5 bg-zinc-950 outline-none"
         >
           <Image
             src={imgSrc}
@@ -111,7 +111,7 @@ export const ProjectCard = ({ project, onOpen }: ProjectCardProps) => {
         </button>
 
         <div
-          className="relative z-20 -mt-12 flex grow flex-col p-6 cursor-pointer"
+          className="relative z-20 -mt-12 flex flex-1 flex-col p-6 cursor-pointer"
           onClick={(e) => {
             const target = e.target as HTMLElement;
             if (!target.closest("button") && !target.closest("a")) {

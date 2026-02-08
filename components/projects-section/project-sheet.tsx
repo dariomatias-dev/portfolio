@@ -54,7 +54,7 @@ export const ProjectSheet = ({
     >
       <div
         className={cn(
-          "absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity duration-500 ease-in-out",
+          "absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity duration-500 ease-in-out cursor-pointer",
           isOpen ? "opacity-100" : "opacity-0",
         )}
         onClick={onClose}
