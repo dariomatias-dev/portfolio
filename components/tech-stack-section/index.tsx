@@ -3,9 +3,10 @@
 import { Layers } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { technologies } from "@/constants/technologies";
+import { TechnologyId } from "@/enums/technology-id";
 import { cn } from "@/lib/utils";
 import { BadgeSection } from "../badge-section";
 import { TechStackDetails } from "./tech-stack-details";
@@ -20,18 +21,29 @@ export const TechStackSection = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
   const techParam = searchParams.get("tech");
 
-  const techList = useMemo(() => Object.values(technologies), []);
+  const techEntries = useMemo(() => Object.entries(technologies), []);
 
-  const selectedTech = useMemo(() => {
-    const param = techParam?.toLowerCase();
-    if (!param) return techList[0];
+  const currentId = useMemo(() => {
+    if (!techParam) return "react" as TechnologyId;
 
-    return (
-      techList.find((tech) => tech.name.toLowerCase() === param) || techList[0]
-    );
-  }, [techParam, techList]);
+    const decodedParam = decodeURIComponent(techParam).toLowerCase();
+
+    const found = techEntries.find(([id, tech]) => {
+      return (
+        id.toLowerCase() === decodedParam ||
+        tech.name.toLowerCase() === decodedParam
+      );
+    });
+
+    return (found ? found[0] : "react") as TechnologyId;
+  }, [techParam, techEntries]);
+
+  const selectedTech = useMemo(() => technologies[currentId], [currentId]);
 
   const categories = [
     "all",
@@ -43,7 +55,7 @@ export const TechStackSection = () => {
   ];
 
   const filteredTech = useMemo(() => {
-    return techList.filter((tech) => {
+    return techEntries.filter(([, tech]) => {
       const matchesCategory =
         activeTab === "all" || tech.category.toLowerCase() === activeTab;
       const matchesSearch = tech.name
@@ -52,7 +64,40 @@ export const TechStackSection = () => {
 
       return matchesCategory && matchesSearch;
     });
-  }, [techList, activeTab, searchQuery]);
+  }, [techEntries, activeTab, searchQuery]);
+
+  useEffect(() => {
+    if (techParam) {
+      sectionRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      const timer = setTimeout(() => {
+        const container = scrollContainerRef.current;
+        const escapedId = CSS.escape(currentId);
+        const activeElement = container?.querySelector(
+          `[data-tech-id="${escapedId}"]`,
+        ) as HTMLElement;
+
+        if (container && activeElement) {
+          const elementOffsetTop = activeElement.offsetTop;
+          const elementHeight = activeElement.offsetHeight;
+          const containerHeight = container.offsetHeight;
+
+          const scrollTarget =
+            elementOffsetTop - containerHeight / 2 + elementHeight / 2;
+
+          container.scrollTo({
+            top: scrollTarget,
+            behavior: "smooth",
+          });
+        }
+      }, 400);
+
+      return () => clearTimeout(timer);
+    }
+  }, [currentId, techParam]);
 
   return (
     <section
@@ -77,6 +122,7 @@ export const TechStackSection = () => {
         </div>
 
         <div
+          ref={sectionRef}
           id="stack-details"
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start h-auto lg:h-162.5 scroll-mt-24"
         >
@@ -106,14 +152,18 @@ export const TechStackSection = () => {
               </div>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent">
+            <div
+              ref={scrollContainerRef}
+              className="relative flex-1 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent"
+            >
               {filteredTech.length > 0 ? (
-                filteredTech.map((tech) => (
-                  <TechStackListItem
-                    key={tech.name}
-                    tech={tech}
-                    isSelected={selectedTech.name === tech.name}
-                  />
+                filteredTech.map(([id, tech]) => (
+                  <div key={id} data-tech-id={id}>
+                    <TechStackListItem
+                      tech={tech}
+                      isSelected={currentId === id}
+                    />
+                  </div>
                 ))
               ) : (
                 <div className="flex flex-col items-center justify-center h-40 text-center px-4">

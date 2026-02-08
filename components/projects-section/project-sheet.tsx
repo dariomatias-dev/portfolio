@@ -126,7 +126,7 @@ export const ProjectSheet = ({
                   </div>
 
                   <div className="mb-6 mt-auto flex flex-wrap gap-1.5">
-                    {project.technologies.slice(0, 4).map((tech) => (
+                    {project.technologies.map((tech) => (
                       <TechnologyBadge
                         key={tech}
                         tech={tech}
