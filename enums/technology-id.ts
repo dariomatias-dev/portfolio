@@ -1,26 +1,44 @@
 export type TechnologyId =
+  // Frontend
   | "react"
   | "nextjs"
   | "typescript"
   | "tailwindcss"
   | "shadcnui"
+
+  // Mobile
   | "flutter"
   | "dart"
+
+  // Backend / Node.js
   | "nodejs"
-  | "java"
-  | "springboot"
   | "express"
   | "fastify"
   | "nestjs"
+
+  // Backend / Java
+  | "java"
+  | "springboot"
+
+  // Backend / Go
   | "go"
+
+  // Backend / Python
   | "python"
-  | "firebase"
-  | "prisma"
+
+  // Database
   | "postgresql"
+  | "plpgsql"
   | "sqlite"
   | "mongodb"
   | "redis"
+  | "prisma"
+  | "liquibase"
+
+  // Infra / Cloud / DevOps
+  | "firebase"
   | "aws"
+  | "minio"
   | "docker"
   | "git"
   | "linux";
