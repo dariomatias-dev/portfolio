@@ -3,16 +3,15 @@
 import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
 import { useCallback, useMemo, useState } from "react";
 import { SlSocialGithub } from "react-icons/sl";
 
 import { Project } from "@/@types/project";
-import { technologies } from "@/constants/technologies";
 import { cn } from "@/lib/utils";
 import { getProjectCategoryTheme } from "@/utils/get-project-category-theme";
 import { toSnakeCase } from "@/utils/to-snake-case";
 import { LinkButton } from "../buttons/link-button";
+import { TechnologyBadge } from "../technology-badge";
 import { ImageViewer } from "./image-viewer";
 
 interface ProjectCardProps {
@@ -131,20 +130,13 @@ export const ProjectCard = ({ project, onOpen }: ProjectCardProps) => {
           </header>
 
           <div className="mb-6 mt-auto flex flex-wrap gap-1.5">
-            {project.technologies.slice(0, 4).map((tech) => {
-              const displayName = technologies[tech]?.name || tech;
-
-              return (
-                <Link
-                  key={tech}
-                  href={`?tech=${tech.toLowerCase()}#stack-details`}
-                  onClick={(e) => e.stopPropagation()}
-                  className="group/badge relative flex items-center gap-1.5 rounded-full border border-white/5 bg-white/2 px-2.5 py-1 text-[10px] font-semibold tracking-wide text-zinc-500 transition-colors duration-300 hover:border-white/20 hover:bg-white/5 hover:text-zinc-200"
-                >
-                  {displayName}
-                </Link>
-              );
-            })}
+            {project.technologies.slice(0, 4).map((tech) => (
+              <TechnologyBadge
+                key={tech}
+                tech={tech}
+                onClick={(e) => e.stopPropagation()}
+              />
+            ))}
           </div>
 
           <footer className="flex flex-col gap-3 border-t border-white/5 pt-5 sm:flex-row sm:gap-2">

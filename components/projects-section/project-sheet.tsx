@@ -3,7 +3,6 @@
 import { ArrowRight, Box, Code2, Info, Link2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useMemo } from "react";
 
 import { Project } from "@/@types/project";
@@ -12,6 +11,7 @@ import { getProjectCategoryTheme } from "@/utils/get-project-category-theme";
 import { getIconByProjectLinkType } from "@/utils/icon-by-project-link-type";
 import { toSnakeCase } from "@/utils/to-snake-case";
 import { CloseButton } from "../close-button";
+import { TechnologyBadge } from "../technology-badge";
 
 interface ProjectSheetProps {
   project: Project | null;
@@ -121,16 +121,13 @@ export const ProjectSheet = ({
                     </h3>
                   </div>
 
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <Link
+                  <div className="mb-6 mt-auto flex flex-wrap gap-1.5">
+                    {project.technologies.slice(0, 4).map((tech) => (
+                      <TechnologyBadge
                         key={tech}
-                        href={`?tech=${tech.toLowerCase()}#stack-details`}
-                        onClick={onClose}
-                        className="group/badge relative flex items-center rounded-full border border-white/5 bg-white/2 px-3 py-1 text-[11px] font-semibold tracking-wide text-zinc-500 transition-colors duration-300 hover:border-white/20 hover:bg-white/5 hover:text-zinc-200"
-                      >
-                        {tech}
-                      </Link>
+                        tech={tech}
+                        onClick={(e) => e?.stopPropagation()}
+                      />
                     ))}
                   </div>
                 </section>
