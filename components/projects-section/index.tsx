@@ -141,7 +141,7 @@ export const ProjectsSection = () => {
           </Swiper>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-6">
           <div className="inline-flex items-center bg-[#0E0E10] border border-white/10 rounded-full p-1.5 shadow-2xl backdrop-blur-md">
             <button
               onClick={() => swiper?.slidePrev()}

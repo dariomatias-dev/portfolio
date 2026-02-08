@@ -32,6 +32,7 @@ import { Technology } from "@/@types/tech-stack";
 import { TechnologyId } from "@/enums/technology-id";
 
 export const technologies: Record<TechnologyId, Technology> = {
+  // Frontend
   react: {
     name: "React",
     category: "Frontend",
@@ -77,6 +78,8 @@ export const technologies: Record<TechnologyId, Technology> = {
     tags: ["UI Kit", "Accessibility", "Radix"],
     icon: SiShadcnui,
   },
+
+  // Mobile
   flutter: {
     name: "Flutter",
     category: "Mobile",
@@ -95,6 +98,8 @@ export const technologies: Record<TechnologyId, Technology> = {
     tags: ["Language", "Productivity", "Type Safe"],
     icon: SiDart,
   },
+
+  // Backend / Node.js
   nodejs: {
     name: "Node.js",
     category: "Backend",
@@ -103,24 +108,6 @@ export const technologies: Record<TechnologyId, Technology> = {
     docs: "https://nodejs.org/en/docs/",
     tags: ["Server", "JS Runtime", "API"],
     icon: SiNodedotjs,
-  },
-  java: {
-    name: "Java",
-    category: "Backend",
-    descriptionKey: "java",
-    url: "https://www.java.com",
-    docs: "https://docs.oracle.com/en/java/",
-    tags: ["OOP", "Enterprise", "Robustness"],
-    icon: FaJava,
-  },
-  springboot: {
-    name: "Spring Boot",
-    category: "Backend",
-    descriptionKey: "springboot",
-    url: "https://spring.io/projects/spring-boot",
-    docs: "https://docs.spring.io/spring-boot/docs/current/reference/html/",
-    tags: ["Java", "Framework", "Microservices"],
-    icon: SiSpring,
   },
   express: {
     name: "Express",
@@ -149,6 +136,28 @@ export const technologies: Record<TechnologyId, Technology> = {
     tags: ["Architecture", "Modular", "TypeScript"],
     icon: SiNestjs,
   },
+
+  // Backend / Java
+  java: {
+    name: "Java",
+    category: "Backend",
+    descriptionKey: "java",
+    url: "https://www.java.com",
+    docs: "https://docs.oracle.com/en/java/",
+    tags: ["OOP", "Enterprise", "Robustness"],
+    icon: FaJava,
+  },
+  springboot: {
+    name: "Spring Boot",
+    category: "Backend",
+    descriptionKey: "springboot",
+    url: "https://spring.io/projects/spring-boot",
+    docs: "https://docs.spring.io/spring-boot/docs/current/reference/html/",
+    tags: ["Java", "Framework", "Microservices"],
+    icon: SiSpring,
+  },
+
+  // Backend / Go
   go: {
     name: "Go",
     category: "Backend",
@@ -158,6 +167,8 @@ export const technologies: Record<TechnologyId, Technology> = {
     tags: ["Performance", "Concurrency", "Systems"],
     icon: SiGo,
   },
+
+  // Backend / Python
   python: {
     name: "Python",
     category: "Backend",
@@ -167,24 +178,8 @@ export const technologies: Record<TechnologyId, Technology> = {
     tags: ["AI", "Automation", "Data Science"],
     icon: SiPython,
   },
-  firebase: {
-    name: "Firebase",
-    category: "Backend",
-    descriptionKey: "firebase",
-    url: "https://firebase.google.com",
-    docs: "https://firebase.google.com/docs",
-    tags: ["BaaS", "Realtime", "Auth"],
-    icon: SiFirebase,
-  },
-  prisma: {
-    name: "Prisma",
-    category: "Database",
-    descriptionKey: "prisma",
-    url: "https://prisma.io",
-    docs: "https://www.prisma.io/docs",
-    tags: ["ORM", "TypeScript", "Migration"],
-    icon: SiPrisma,
-  },
+
+  // Database
   postgresql: {
     name: "PostgreSQL",
     category: "Database",
@@ -192,6 +187,15 @@ export const technologies: Record<TechnologyId, Technology> = {
     url: "https://postgresql.org",
     docs: "https://www.postgresql.org/docs/",
     tags: ["SQL", "Relational", "ACID"],
+    icon: SiPostgresql,
+  },
+  plpgsql: {
+    name: "PL/pgSQL",
+    category: "Database",
+    descriptionKey: "plpgsql",
+    url: "https://www.postgresql.org/docs/current/plpgsql.html",
+    docs: "https://www.postgresql.org/docs/current/plpgsql.html",
+    tags: ["Procedural", "PostgreSQL", "Functions"],
     icon: SiPostgresql,
   },
   sqlite: {
@@ -221,6 +225,35 @@ export const technologies: Record<TechnologyId, Technology> = {
     tags: ["Cache", "In-Memory", "Speed"],
     icon: SiRedis,
   },
+  prisma: {
+    name: "Prisma",
+    category: "Database",
+    descriptionKey: "prisma",
+    url: "https://prisma.io",
+    docs: "https://www.prisma.io/docs",
+    tags: ["ORM", "TypeScript", "Migration"],
+    icon: SiPrisma,
+  },
+  liquibase: {
+    name: "Liquibase",
+    category: "Database",
+    descriptionKey: "liquibase",
+    url: "https://www.liquibase.org",
+    docs: "https://docs.liquibase.com/",
+    tags: ["Migration", "Versioning", "Database"],
+    icon: SiLiquibase,
+  },
+
+  // Infra / Cloud / DevOps
+  firebase: {
+    name: "Firebase",
+    category: "Backend",
+    descriptionKey: "firebase",
+    url: "https://firebase.google.com",
+    docs: "https://firebase.google.com/docs",
+    tags: ["BaaS", "Realtime", "Auth"],
+    icon: SiFirebase,
+  },
   aws: {
     name: "AWS",
     category: "DevOps",
@@ -229,6 +262,15 @@ export const technologies: Record<TechnologyId, Technology> = {
     docs: "https://docs.aws.amazon.com/",
     tags: ["Cloud", "Infrastructure", "Serverless"],
     icon: SiAmazonwebservices,
+  },
+  minio: {
+    name: "MinIO",
+    category: "DevOps",
+    descriptionKey: "minio",
+    url: "https://min.io",
+    docs: "https://docs.min.io/",
+    tags: ["Object Storage", "S3 Compatible", "Cloud"],
+    icon: SiMinio,
   },
   docker: {
     name: "Docker",
@@ -256,32 +298,5 @@ export const technologies: Record<TechnologyId, Technology> = {
     docs: "https://docs.kernel.org/",
     tags: ["OS", "Server", "Open Source"],
     icon: SiLinux,
-  },
-  plpgsql: {
-    name: "PL/pgSQL",
-    category: "Database",
-    descriptionKey: "plpgsql",
-    url: "https://www.postgresql.org/docs/current/plpgsql.html",
-    docs: "https://www.postgresql.org/docs/current/plpgsql.html",
-    tags: ["Procedural", "PostgreSQL", "Functions"],
-    icon: SiPostgresql,
-  },
-  liquibase: {
-    name: "Liquibase",
-    category: "Database",
-    descriptionKey: "liquibase",
-    url: "https://www.liquibase.org",
-    docs: "https://docs.liquibase.com/",
-    tags: ["Migration", "Versioning", "Database"],
-    icon: SiLiquibase,
-  },
-  minio: {
-    name: "MinIO",
-    category: "DevOps",
-    descriptionKey: "minio",
-    url: "https://min.io",
-    docs: "https://docs.min.io/",
-    tags: ["Object Storage", "S3 Compatible", "Cloud"],
-    icon: SiMinio,
   },
 };
