@@ -22,7 +22,7 @@ export const TechStackSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const detailsRef = useRef<HTMLDivElement>(null);
 
   const techParam = searchParams.get("tech");
 
@@ -58,6 +58,7 @@ export const TechStackSection = () => {
     return techEntries.filter(([, tech]) => {
       const matchesCategory =
         activeTab === "all" || tech.category.toLowerCase() === activeTab;
+
       const matchesSearch = tech.name
         .toLowerCase()
         .includes(searchQuery.toLowerCase());
@@ -67,36 +68,36 @@ export const TechStackSection = () => {
   }, [techEntries, activeTab, searchQuery]);
 
   useEffect(() => {
-    if (techParam) {
-      sectionRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    if (!techParam) return;
 
-      const timer = setTimeout(() => {
-        const container = scrollContainerRef.current;
-        const escapedId = CSS.escape(currentId);
-        const activeElement = container?.querySelector(
-          `[data-tech-id="${escapedId}"]`,
-        ) as HTMLElement;
+    detailsRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
 
-        if (container && activeElement) {
-          const elementOffsetTop = activeElement.offsetTop;
-          const elementHeight = activeElement.offsetHeight;
-          const containerHeight = container.offsetHeight;
+    const timer = setTimeout(() => {
+      const container = scrollContainerRef.current;
+      const escapedId = CSS.escape(currentId);
+      const activeElement = container?.querySelector(
+        `[data-tech-id="${escapedId}"]`,
+      ) as HTMLElement;
 
-          const scrollTarget =
-            elementOffsetTop - containerHeight / 2 + elementHeight / 2;
+      if (container && activeElement) {
+        const elementOffsetTop = activeElement.offsetTop;
+        const elementHeight = activeElement.offsetHeight;
+        const containerHeight = container.offsetHeight;
 
-          container.scrollTo({
-            top: scrollTarget,
-            behavior: "smooth",
-          });
-        }
-      }, 400);
+        const scrollTarget =
+          elementOffsetTop - containerHeight / 2 + elementHeight / 2;
 
-      return () => clearTimeout(timer);
-    }
+        container.scrollTo({
+          top: scrollTarget,
+          behavior: "smooth",
+        });
+      }
+    }, 400);
+
+    return () => clearTimeout(timer);
   }, [currentId, techParam]);
 
   return (
@@ -121,11 +122,7 @@ export const TechStackSection = () => {
           </div>
         </div>
 
-        <div
-          ref={sectionRef}
-          id="stack-details"
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start h-auto lg:h-162.5 scroll-mt-24"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start h-auto lg:h-162.5 scroll-mt-24">
           <div className="lg:col-span-5 flex flex-col h-125 lg:h-full bg-white rounded-3xl md:rounded-4xl border border-slate-200 shadow-sm overflow-hidden">
             <div className="p-4 md:p-6 border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-20">
               <TechStackSearchInput
@@ -175,7 +172,11 @@ export const TechStackSection = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-7 h-auto lg:h-full">
+          <div
+            ref={detailsRef}
+            id="stack-details"
+            className="lg:col-span-7 h-auto lg:h-full scroll-mt-24"
+          >
             <TechStackDetails tech={selectedTech} />
           </div>
         </div>
