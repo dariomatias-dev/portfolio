@@ -27,7 +27,11 @@ export const ProjectSheet = ({
   const t = useTranslations();
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "unset";
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
 
     return () => {
       document.body.style.overflow = "unset";

@@ -2,7 +2,8 @@
 
 import { ChevronLeft, ChevronRight, Code2, ExternalLink } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { FiGithub } from "react-icons/fi";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
@@ -18,15 +19,59 @@ import { ProjectSheet } from "./project-sheet";
 
 export const ProjectsSection = () => {
   const t = useTranslations();
+
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [isSwiperReady, setIsSwiperReady] = useState(false);
 
+  useEffect(() => {
+    const update = () => {
+      const projectKey = searchParams.get("project");
+
+      if (projectKey) {
+        const project = projects.find((p) => p.key === projectKey);
+
+        if (project) {
+          setSelectedProject(project);
+          setIsSheetOpen(true);
+
+          return;
+        }
+      }
+
+      setIsSheetOpen(false);
+    };
+
+    update();
+  }, [searchParams]);
+
   const handleOpenProject = (project: Project) => {
-    setSelectedProject(project);
-    setIsSheetOpen(true);
+    const params = new URLSearchParams(searchParams.toString());
+
+    params.set("project", project.key);
+
+    router.push(`${pathname}?${params.toString()}#projects`, { scroll: false });
+  };
+
+  const handleCloseProject = () => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    params.delete("project");
+
+    const query = params.toString();
+
+    router.push(
+      query ? `${pathname}?${query}#projects` : `${pathname}#projects`,
+      {
+        scroll: false,
+      },
+    );
   };
 
   return (
@@ -43,6 +88,7 @@ export const ProjectsSection = () => {
             <BadgeSection theme="dark" icon={Code2}>
               {t("navigation.projects")}
             </BadgeSection>
+
             <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-6">
               {t.rich("projects.title", {
                 highlight: (chunks) => (
@@ -52,6 +98,7 @@ export const ProjectsSection = () => {
                 ),
               })}
             </h2>
+
             <p className="text-lg text-zinc-400 font-light leading-relaxed">
               {t("projects.subtitle")}
             </p>
@@ -165,7 +212,7 @@ export const ProjectsSection = () => {
       <ProjectSheet
         project={selectedProject}
         isOpen={isSheetOpen}
-        onClose={() => setIsSheetOpen(false)}
+        onClose={handleCloseProject}
       />
     </section>
   );
