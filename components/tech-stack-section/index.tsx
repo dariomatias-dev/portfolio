@@ -2,10 +2,9 @@
 
 import { Layers } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useMemo, useState } from "react";
 
-import { Technology } from "@/@types/tech-stack";
 import { technologies } from "@/constants/technologies";
 import { cn } from "@/lib/utils";
 import { BadgeSection } from "../badge-section";
@@ -15,26 +14,15 @@ import { TechStackSearchInput } from "./tech-stack-search-input";
 
 export const TechStackSection = () => {
   const t = useTranslations();
-  const router = useRouter();
+
   const searchParams = useSearchParams();
 
   const [activeTab, setActiveTab] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const containerRef = useRef<HTMLDivElement>(null);
   const techParam = searchParams.get("tech");
 
   const techList = useMemo(() => Object.values(technologies), []);
-
-  const scrollToContainer = useCallback(() => {
-    if (containerRef.current) {
-      const yOffset = -120;
-      const element = containerRef.current;
-      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
-
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  }, []);
 
   const selectedTech = useMemo(() => {
     const param = techParam?.toLowerCase();
@@ -44,12 +32,6 @@ export const TechStackSection = () => {
       techList.find((tech) => tech.name.toLowerCase() === param) || techList[0]
     );
   }, [techParam, techList]);
-
-  useEffect(() => {
-    if (techParam) {
-      scrollToContainer();
-    }
-  }, [techParam, scrollToContainer]);
 
   const categories = [
     "all",
@@ -71,15 +53,6 @@ export const TechStackSection = () => {
       return matchesCategory && matchesSearch;
     });
   }, [techList, activeTab, searchQuery]);
-
-  const handleTechClick = (tech: Technology) => {
-    const nextTech = tech.name.toLowerCase();
-    router.push(`?tech=${nextTech}#stack`, { scroll: false });
-
-    if (techParam?.toLowerCase() === nextTech) {
-      scrollToContainer();
-    }
-  };
 
   return (
     <section
@@ -104,7 +77,7 @@ export const TechStackSection = () => {
         </div>
 
         <div
-          ref={containerRef}
+          id="stack-details"
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start h-auto lg:h-162.5 scroll-mt-24"
         >
           <div className="lg:col-span-5 flex flex-col h-125 lg:h-full bg-white rounded-3xl md:rounded-4xl border border-slate-200 shadow-sm overflow-hidden">
@@ -140,7 +113,6 @@ export const TechStackSection = () => {
                     key={tech.name}
                     tech={tech}
                     isSelected={selectedTech.name === tech.name}
-                    onClick={() => handleTechClick(tech)}
                   />
                 ))
               ) : (

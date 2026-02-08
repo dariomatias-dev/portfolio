@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 import { Technology } from "@/@types/tech-stack";
 import { cn } from "@/lib/utils";
@@ -6,19 +7,17 @@ import { cn } from "@/lib/utils";
 interface TechStackListItemProps {
   tech: Technology;
   isSelected: boolean;
-  onClick: () => void;
 }
 
 export const TechStackListItem = ({
   tech,
   isSelected,
-  onClick,
 }: TechStackListItemProps) => {
   const Icon = tech.icon;
 
   return (
-    <button
-      onClick={onClick}
+    <Link
+      href={`?tech=${tech.name.toLowerCase()}#stack-details`}
       className={cn(
         "w-full text-left flex items-center gap-4 p-3 rounded-xl border transition-all duration-300 group relative overflow-hidden cursor-pointer",
         isSelected
@@ -70,6 +69,6 @@ export const TechStackListItem = ({
           />
         </div>
       </div>
-    </button>
+    </Link>
   );
 };

@@ -79,6 +79,7 @@ export const ProjectSheet = ({
                   priority
                   className="object-cover"
                 />
+
                 <div className="absolute inset-0 bg-linear-to-t from-[#050505] via-[#050505]/30 to-transparent" />
 
                 <div className="absolute bottom-10 left-10 right-10">
@@ -124,7 +125,7 @@ export const ProjectSheet = ({
                     {project.technologies.map((tech) => (
                       <Link
                         key={tech}
-                        href={`?tech=${tech.toLowerCase()}#stack`}
+                        href={`?tech=${tech.toLowerCase()}#stack-details`}
                         onClick={onClose}
                         className="group/badge relative flex items-center rounded-full border border-white/5 bg-white/2 px-3 py-1 text-[11px] font-semibold tracking-wide text-zinc-500 transition-colors duration-300 hover:border-white/20 hover:bg-white/5 hover:text-zinc-200"
                       >
