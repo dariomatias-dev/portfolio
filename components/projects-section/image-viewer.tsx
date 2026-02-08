@@ -1,7 +1,10 @@
-import { X } from "lucide-react";
+"use client";
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+
+import { CloseButton } from "@/components/close-button";
 
 interface ImageViewerProps {
   src: string;
@@ -30,17 +33,9 @@ export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
     };
 
     document.addEventListener("keydown", handleKeyDown);
+
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
-
-  const handleLoad = () => {
-    setIsLoading(false);
-  };
-
-  const handleError = () => {
-    setIsLoading(false);
-    setHasError(true);
-  };
 
   const modalContent = (
     <div
@@ -54,7 +49,7 @@ export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
         className="relative h-auto max-h-[90vh] w-full max-w-5xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative overflow-hidden rounded-lg border border-zinc-700 bg-zinc-900 shadow-xl dark:border-zinc-800">
+        <div className="relative overflow-hidden rounded-lg border border-zinc-700 bg-zinc-900 shadow-xl">
           <Image
             src={src}
             alt={alt}
@@ -63,19 +58,17 @@ export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
             className={`h-auto w-full object-contain transition-opacity duration-300 ${
               isLoading || hasError ? "opacity-0" : "opacity-100"
             }`}
-            onLoad={handleLoad}
-            onError={handleError}
+            onLoad={() => setIsLoading(false)}
+            onError={() => {
+              setIsLoading(false);
+              setHasError(true);
+            }}
             style={{ maxHeight: "90vh" }}
           />
 
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center">
-              <div
-                className="h-10 w-10 animate-spin rounded-full border-4 border-solid border-white/20 border-t-white"
-                role="status"
-              >
-                <span className="sr-only">Carregando...</span>
-              </div>
+              <div className="h-10 w-10 animate-spin rounded-full border-4 border-white/20 border-t-white" />
             </div>
           )}
 
@@ -93,13 +86,9 @@ export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
         </div>
       </div>
 
-      <button
-        onClick={onClose}
-        className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-black/50 text-white transition-colors hover:bg-black/75"
-        aria-label="Fechar visualizador de imagem"
-      >
-        <X size={20} />
-      </button>
+      <div className="absolute right-4 top-4">
+        <CloseButton onClick={onClose} />
+      </div>
     </div>
   );
 

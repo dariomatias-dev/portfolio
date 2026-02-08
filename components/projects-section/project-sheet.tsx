@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Box, Code2, Info, Link2, X } from "lucide-react";
+import { ArrowRight, Box, Code2, Info, Link2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { getProjectCategoryTheme } from "@/utils/get-project-category-theme";
 import { getIconByProjectLinkType } from "@/utils/icon-by-project-link-type";
 import { toSnakeCase } from "@/utils/to-snake-case";
+import { CloseButton } from "../close-button";
 
 interface ProjectSheetProps {
   project: Project | null;
@@ -64,15 +65,7 @@ export const ProjectSheet = ({
         <div className="absolute top-0 right-0 w-full h-80 bg-linear-to-b from-blue-500/5 to-transparent pointer-events-none" />
 
         <div className="absolute right-6 top-6 z-50">
-          <button
-            onClick={onClose}
-            className="group p-2.5 rounded-full bg-zinc-900/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-all border border-white/10 backdrop-blur-md active:scale-90"
-          >
-            <X
-              size={22}
-              className="transition-transform duration-500 group-hover:rotate-90"
-            />
-          </button>
+          <CloseButton onClick={onClose} />
         </div>
 
         <div className="flex-1 overflow-y-auto">
