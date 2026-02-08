@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 import { CloseButton } from "@/components/close-button";
+import { cn } from "@/lib/utils";
 
 interface ImageViewerProps {
   src: string;
@@ -40,14 +41,18 @@ export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
 
   const modalContent = (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-2 backdrop-blur-sm"
-      onClick={onClose}
+      className="fixed inset-0 z-50 flex items-center justify-center"
       role="dialog"
       aria-modal="true"
       aria-label={alt}
     >
       <div
-        className="relative h-auto max-h-[96vh] w-full max-w-[90vw]"
+        className="absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
+        onClick={onClose}
+      />
+
+      <div
+        className="relative h-auto max-h-[96vh] w-full max-w-[90vw] p-2"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative overflow-hidden rounded-lg border border-zinc-700 bg-zinc-900 shadow-xl">
@@ -56,9 +61,10 @@ export const ImageViewer = ({ src, alt, onClose }: ImageViewerProps) => {
             alt={alt}
             width={2560}
             height={1440}
-            className={`h-auto w-full object-contain transition-opacity duration-300 ${
-              isLoading || hasError ? "opacity-0" : "opacity-100"
-            }`}
+            className={cn(
+              "h-auto w-full object-contain transition-opacity duration-300",
+              isLoading || hasError ? "opacity-0" : "opacity-100",
+            )}
             onLoad={() => setIsLoading(false)}
             onError={() => {
               setIsLoading(false);
