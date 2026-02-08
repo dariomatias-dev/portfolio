@@ -105,6 +105,7 @@
       }
     }
   },
+
   "stack": {
     "title": "Stack de Desenvolvimento Abrangente",
     "subtitle": "Uma coleção selecionada de ferramentas e tecnologias para construir soluções digitais robustas e escaláveis.",
@@ -195,6 +196,15 @@
       },
       "linux": {
         "description": "Sistema operacional de código aberto baseado no kernel Linux. A base da infraestrutura de servidores moderna."
+      },
+      "plpgsql": {
+        "description": "Linguagem procedural do PostgreSQL que permite escrever funções, gatilhos e lógicas complexas no banco de dados."
+      },
+      "liquibase": {
+        "description": "Ferramenta de gerenciamento de mudanças no esquema do banco de dados que ajuda a versionar, rastrear e implantar alterações de forma confiável."
+      },
+      "minio": {
+        "description": "Sistema de armazenamento de objetos de alta performance compatível com a API do Amazon S3, projetado para aplicações cloud-native."
       }
     }
   },

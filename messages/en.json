@@ -105,6 +105,7 @@
       }
     }
   },
+
   "stack": {
     "title": "Comprehensive Development Stack",
     "subtitle": "A curated collection of tools and technologies to build scalable and robust digital solutions.",
@@ -195,6 +196,15 @@
       },
       "linux": {
         "description": "Open source operating system based on the Linux kernel. The foundation of modern server infrastructure."
+      },
+      "plpgsql": {
+        "description": "Procedural language for PostgreSQL that allows writing functions, triggers, and complex database logic."
+      },
+      "liquibase": {
+        "description": "Database schema change management tool that helps track, version, and deploy database changes reliably."
+      },
+      "minio": {
+        "description": "High-performance object storage system compatible with Amazon S3 APIs, designed for cloud-native applications."
       }
     }
   },
