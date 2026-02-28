@@ -28,9 +28,9 @@ export const ProjectSheet = ({
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "unset";
+      document.documentElement.style.overflow = "unset";
     }
 
     return () => {
@@ -54,7 +54,7 @@ export const ProjectSheet = ({
     >
       <div
         className={cn(
-          "absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity duration-500 ease-in-out cursor-pointer",
+          "absolute inset-0 bg-black/60 transition-opacity duration-500 ease-in-out cursor-pointer",
           isOpen ? "opacity-100" : "opacity-0",
         )}
         onClick={onClose}
@@ -80,7 +80,7 @@ export const ProjectSheet = ({
                   src={`/screenshots/${toSnakeCase(project.key)}_screenshot.png`}
                   alt={project.title}
                   fill
-                  priority
+                  loading="lazy"
                   className="object-cover"
                 />
 
