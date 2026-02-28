@@ -81,4 +81,12 @@ export const projects: Project[] = [
       },
     ],
   },
+
+  {
+    key: "hytaleGuide",
+    title: "Hytale Guide",
+    technologies: ["nextjs", "typescript", "tailwindcss"],
+    category: "frontend",
+    links: [{ type: "site", url: "https://hytale-guide.vercel.app/" }],
+  },
 ];
